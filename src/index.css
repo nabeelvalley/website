@@ -1,13 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap');
+
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --header-font: 'Nova Mono', monospace;
+  --body-font: 'Montserrat Alternates', sans-serif;
+
+  --main-padding: 40px;
+  --row-count: 9;
+  --grid-size: calc((100vh - 2 * var(--main-padding)) - (8 * 10px));
+  --row-size: calc(var(--grid-size) / var(--row-count));
+}
+
+.Gallery {
+  margin: var(--main-padding);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(var(--row-count), var(--row-size));
+  grid-template-columns: repeat(200, var(--row-size));
+  grid-auto-columns: var(--row-size);
+  grid-gap: 10px;
+}
+
+.Gallery img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Title .text {
+  font-family: var(--body-font);
+}
+
+.Title .heading {
+  font-family: var(--header-font);
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.item-off-screen {
+  opacity: 0.6;
+}
+
+.item-on-screen {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
