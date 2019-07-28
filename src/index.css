@@ -8,6 +8,11 @@ body {
   overflow-y: hidden;
 }
 
+body {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 :root {
   --header-font: 'Nova Mono', monospace;
   --body-font: 'Montserrat Alternates', sans-serif;
@@ -16,6 +21,7 @@ body {
   --row-count: 9;
   --grid-size: calc((100vh - 2 * var(--main-padding)) - (8 * 10px));
   --row-size: calc(var(--grid-size) / var(--row-count));
+  --small-breakpoint: 630px;
 }
 
 .Gallery {
@@ -51,6 +57,12 @@ body {
 .item-on-screen {
   opacity: 1;
   transition: opacity 2s ease;
+}
+
+@media (max-height: 630px) {
+  .hidden-small {
+    display: none;
+  }
 }
 
 /* scrollbar */

@@ -8,10 +8,10 @@ const Title = ({ height, width, heading, subheading, date }) => {
         <div className="text">
             by Nabeel Valley
         </div>
-        <div className="text">
+        <div className="text hidden-small">
             {subheading}
         </div>
-        <div className="text">
+        <div className="text hidden-small">
             {date}
         </div>
     </div>
