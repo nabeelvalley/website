@@ -4,7 +4,7 @@ import VanillaTilt from 'vanilla-tilt';
 class GridImage extends Component {
     componentDidMount() {
         VanillaTilt.init(this.rootNode, {
-            max: 2,
+            max: 5,
             speed: 400,
             glare: true,
             'max-glare': 0.5,
@@ -12,7 +12,10 @@ class GridImage extends Component {
     }
 
     render() {
-        return <img data-sal="fade"
+
+        const salClass = this.props.fade === false ? '' : 'fade'
+
+        return <img data-sal={salClass}
             data-sal-duration="1000"
             data-sal-easing="ease-out-bounce"
             ref={node => (this.rootNode = node)}

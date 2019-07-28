@@ -10,9 +10,7 @@ class App extends Component {
   componentDidMount() {
     sal({
       threshold: 0.1,
-      once: false,
-      // animateClassName: 'item-on-screen',
-      // disabledClassName: 'item-off-screen'
+      once: true,
     });
   }
 
@@ -21,9 +19,9 @@ class App extends Component {
 
     const items = [
       title,
-      <GridImage key="1" src="images/image1.jpg" startColumn="1" endColumn="5" startRow="3" endRow="9" />,
-      <GridImage key="2" src="images/image2.jpg" startColumn="5" endColumn="10" startRow="1" endRow="4" />,
-      <GridImage key="3" src="images/image3.jpg" startColumn="5" endColumn="9" startRow="4" endRow="10" />,
+      <GridImage key="1" src="images/image1.jpg" startColumn="1" endColumn="5" startRow="3" endRow="9" fade={false} />,
+      <GridImage key="2" src="images/image2.jpg" startColumn="5" endColumn="10" startRow="1" endRow="4" fade={false} />,
+      <GridImage key="3" src="images/image3.jpg" startColumn="5" endColumn="9" startRow="4" endRow="10" fade={false} />,
       <GridImage key="5" src="images/image5.jpg" startColumn="9" endColumn="13" startRow="4" endRow="10" />,
       <GridImage key="4" src="images/image4.jpg" startColumn="10" endColumn="12" startRow="1" endRow="4" />,
       <GridImage key="6" src="images/image6.jpg" startColumn="12" endColumn="span 3" startRow="1" endRow="3" />,
