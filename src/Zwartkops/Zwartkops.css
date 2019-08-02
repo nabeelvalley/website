@@ -1,0 +1,8 @@
+.Zwartkops .item-off-screen {
+  opacity: 0.6;
+}
+
+.Zwartkops .item-on-screen {
+  opacity: 1;
+  transition: opacity 2s ease;
+}

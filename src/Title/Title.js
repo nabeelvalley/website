@@ -1,4 +1,5 @@
 import React from 'react';
+import './Title.css';
 
 const Title = ({ height, width, heading, subheading, date }) => {
     return <div className="Title" style={{ gridColumn: `span ${width}`, gridRow: `span ${height}` }}>

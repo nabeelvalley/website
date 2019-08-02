@@ -1,0 +1,15 @@
+.Title .text {
+  font-family: var(--body-font);
+}
+
+.Title .heading {
+  font-family: var(--header-font);
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+@media (max-height: 630px) {
+  .Title .hidden-small {
+    display: none;
+  }
+}

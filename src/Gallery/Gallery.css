@@ -1,0 +1,16 @@
+.Gallery {
+  margin: var(--main-padding);
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: repeat(var(--row-count), var(--row-size));
+  grid-template-columns: repeat(auto, var(--row-size));
+  grid-auto-columns: var(--row-size);
+  grid-gap: 10px;
+  padding-right: var(--main-padding);
+}
+
+.Gallery img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
