@@ -22,7 +22,7 @@ const isLocalhost = Boolean(
 
 export function register(config) {
   // Check that service workers are registered
-  if ('serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator && !isLocalhost) {
     // Use the window load event to keep the page load performant
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js');

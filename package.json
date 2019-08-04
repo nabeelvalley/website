@@ -15,10 +15,10 @@
     "styled-components": "^4.3.2",
     "vanilla-tilt": "^1.7.0"
   },
-  "homepage": "http://nabeelvalley.github.io",
+  "homepage": "https://nabeelvalley.github.io",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
