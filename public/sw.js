@@ -15,6 +15,19 @@ if (workbox) {
         })
     )
 
+    workbox.routing.registerRoute(
+        /\.(?:png|jpg)$/,
+        workbox.strategies.cacheFirst({
+            cacheName: 'static-cache',
+            plugins: [
+                new workbox.expiration.Plugin({
+                    maxEntries: 50,
+                    maxAgeSeconds: 2 * 24 * 60 * 60 // 2 Days
+                })
+            ]
+        })
+    )
+
     // Cache the underlying font files with a cache-first strategy for 1 year.
     workbox.routing.registerRoute(
         /^https:\/\/fonts\.gstatic\.com/,
@@ -35,8 +48,8 @@ if (workbox) {
     console.log(`Boo! Workbox didn't load 😬`)
 }
 
-navigator.serviceWorker.getRegistrations().then(function (registrations) {
-    for (let registration of registrations) {
-        registration.unregister()
-    }
-})
+// navigator.serviceWorker.getRegistrations().then(function (registrations) {
+//     for (let registration of registrations) {
+//         registration.unregister()
+//     }
+// })

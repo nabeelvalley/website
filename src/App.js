@@ -1,8 +1,19 @@
-import React from 'react';
-import Zwartkops from './Zwartkops/Zwartkops';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import Preloader from './Components/Preloader/Preloader';
 
-const App = () => {
-  return <Zwartkops />
-}
+const Home = lazy(() => import('./Home/Home'));
+const Zwartkops = lazy(() => import('./Zwartkops/Zwartkops'));
 
-export default App;
+const App = () => (
+  <Router>
+    <Suspense fallback={Preloader}>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/Gallery/Zwartkops" component={Zwartkops} />
+        <Route component={Home} />
+      </Switch>
+    </Suspense>
+  </Router>
+)
+export default App

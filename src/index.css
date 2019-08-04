@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
