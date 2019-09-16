@@ -1,6 +1,6 @@
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
-import Preloader from './Components/Preloader/Preloader';
+import Preloader from './Zwartkops/Components/Preloader/Preloader';
 
 const Home = lazy(() => import('./Home/Home'));
 const Zwartkops = lazy(() => import('./Zwartkops/Zwartkops'));
