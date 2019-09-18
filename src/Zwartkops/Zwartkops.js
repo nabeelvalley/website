@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Gallery from './Components/Gallery/Gallery';
 import GalleryImage from './Components/Gallery/GalleryImage'
 import Title from './Components/Title/Title'
+import './Zwartkops.css'
 
 import sal from 'sal.js'
 import 'sal.js/dist/sal.css';

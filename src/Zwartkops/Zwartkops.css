@@ -1,3 +1,7 @@
+.Zwartkops {
+  height: 100vh;
+}
+
 .Zwartkops .item-off-screen {
   opacity: 0.6;
 }

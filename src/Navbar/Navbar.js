@@ -1,10 +1,10 @@
 import React from 'react'
 import './Navbar.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
-const Navbar = ({ activeRoute }) => (
+const Navbar = (props) => (
     <nav className="Navbar">
-        <div className="logo" style={activeRoute === 'home' ? { visibility: 'hidden', width: 0, height: 0 } : {}}>Nabeel Valley</div>
+        <div className="logo" style={props.location.pathname === '/home' ? { visibility: 'hidden', width: 0, height: 0 } : {}}>Nabeel Valley</div>
         <ul className="linkGroup">
             {
                 ['Home', 'Blog', 'Code', 'About']
@@ -17,4 +17,4 @@ const Navbar = ({ activeRoute }) => (
     </nav>
 )
 
-export default Navbar
+export default withRouter(Navbar)

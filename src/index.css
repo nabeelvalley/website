@@ -20,11 +20,15 @@ body {
   --color-primary: #e44d90;
   --color-secondary: #484848;
   --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-light-transparent: rgba(255, 255, 255, 0.9);
 
   --size-s: 16px;
   --size-m: 24px;
   --size-l: 48px;
   --size-h: 160px;
+
+  --screen-small: 690px;
 
   --main-margin: 7%;
   --main-width: calc(100% - var(--main-margin) * 2);
@@ -33,6 +37,13 @@ body {
   --grid-size: calc((100vh - 2 * var(--main-margin)) - (8 * 10px));
   --row-size: calc(var(--grid-size) / var(--row-count));
   --small-breakpoint: 630px;
+}
+
+/* flex wrapping */
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* unstyle links */

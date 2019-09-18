@@ -5,13 +5,23 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   width: var(--main-width);
   margin: 0;
   padding: 20px var(--main-margin);
+  background-color: var(--color-light-transparent);
 }
 
 .logo {
   font-family: var(--font-primary);
+}
+
+@media (max-width: 450px) {
+  .logo {
+    display: none;
+    width: 0;
+    height: 0;
+  }
 }
 
 .linkGroup {
@@ -23,7 +33,7 @@
 
 .link {
   display: inline;
-  margin: 0 15px;
+  margin-left: 15px;
 }
 
 .link .active {

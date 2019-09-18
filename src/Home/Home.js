@@ -1,7 +1,7 @@
 import React from 'react'
-// import { Redirect } from 'react-router-dom'
 
-const Home = () => <div></div>
-// <Redirect to='/Gallery/Zwartkops' />
+const Home = () => <div className="Home">
+
+</div>
 
 export default Home
