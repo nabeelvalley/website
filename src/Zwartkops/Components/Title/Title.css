@@ -1,9 +1,9 @@
 .Title .text {
-  font-family: var(--body-font);
+  font-family: var(--font-secondary);
 }
 
 .Title .heading {
-  font-family: var(--header-font);
+  font-family: var(--font-primary);
   font-size: 24px;
   margin-bottom: 5px;
 }

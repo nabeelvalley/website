@@ -14,14 +14,36 @@ body {
 }
 
 :root {
-  --header-font: 'Nova Mono', monospace;
-  --body-font: 'Montserrat Alternates', sans-serif;
+  --font-primary: 'Nova Mono', monospace;
+  --font-secondary: 'Montserrat Alternates', sans-serif;
 
-  --main-padding: 40px;
+  --color-primary: #e44d90;
+  --color-secondary: #484848;
+  --color-dark: #000000;
+
+  --size-s: 16px;
+  --size-m: 24px;
+  --size-l: 48px;
+  --size-h: 160px;
+
+  --main-margin: 7%;
+  --main-width: calc(100% - var(--main-margin) * 2);
+
   --row-count: 9;
-  --grid-size: calc((100vh - 2 * var(--main-padding)) - (8 * 10px));
+  --grid-size: calc((100vh - 2 * var(--main-margin)) - (8 * 10px));
   --row-size: calc(var(--grid-size) / var(--row-count));
   --small-breakpoint: 630px;
+}
+
+/* unstyle links */
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+a:hover {
+  color: unset;
 }
 
 /* scrollbar */
