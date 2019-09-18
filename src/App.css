@@ -1,3 +1,3 @@
 .App {
-  margin: var(--top-margin) var(--main-margin);
+  margin: var(--top-margin) var(--main-margin) 0 var(--main-margin);
 }

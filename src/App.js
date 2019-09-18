@@ -17,9 +17,9 @@ const App = (props) => (
 
           <Redirect exact from="/" to="home" />
 
-          <Route path="/home" component={Home} />
+          <Route exact path="/home" component={Home} />
 
-          <Redirect to="home" />
+          <Redirect to="/home" />
         </Switch>
       </Suspense>
     </Router>
