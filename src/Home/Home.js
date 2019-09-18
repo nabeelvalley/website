@@ -1,7 +1,8 @@
 import React from 'react'
+import Landing from '../Components/Landing/Landing';
 
 const Home = () => <div className="Home">
-    <h1>Hello</h1>
+    <Landing />
 </div>
 
 export default Home

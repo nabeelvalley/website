@@ -4,6 +4,7 @@
   --row-count: 10;
   --grid-size: calc((100vh - 2 * var(--main-margin)) - (8 * 10px));
   --row-size: calc(var(--grid-size) / var(--row-count));
+  overflow-y: hidden;
 }
 
 .Zwartkops .item-off-screen {

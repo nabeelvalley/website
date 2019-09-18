@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
@@ -10,14 +10,15 @@
   margin: 0;
   padding: 20px var(--main-margin);
   background-color: var(--color-light-transparent);
+  font-size: var(--size-m);
 }
 
-.logo {
+.Navbar .logo {
   font-family: var(--font-primary);
 }
 
 @media (max-width: 450px) {
-  .logo {
+  .Navbar .logo {
     display: none;
     width: 0;
     height: 0;
@@ -29,6 +30,7 @@
   list-style-type: none;
   padding-left: 0px;
   margin: 0;
+  text-transform: lowercase;
 }
 
 .link {

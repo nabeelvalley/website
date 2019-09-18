@@ -1,0 +1,60 @@
+/* positioning */
+
+.Landing .text {
+  grid-column: 1 / 5;
+}
+
+.Landing .image {
+  grid-column: 1 / 5;
+  height: 30vh;
+}
+
+@media (min-width: 690px) {
+  .Landing .text {
+    grid-column: 1 / 7;
+  }
+  .Landing .image {
+    grid-column: 1 / 9;
+    height: 40vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Landing .text {
+    grid-column: 1 / 6;
+  }
+
+  .Landing .image {
+    grid-column: 7 / 13;
+    height: unset;
+  }
+}
+
+/* styling  */
+
+.Landing .logo {
+  font-family: var(--font-primary);
+  font-size: var(--size-h);
+  line-height: 0.8;
+}
+
+.Landing .subheading {
+  font-family: var(--font-secondary);
+  font-size: var(--size-m);
+  text-align: center;
+  margin: 35px;
+}
+
+.Landing .icons {
+  text-align: center;
+}
+
+.Landing .icon {
+  display: inline-block;
+  text-align: center;
+  height: 45px;
+  width: 45px;
+  margin: 0 5px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
