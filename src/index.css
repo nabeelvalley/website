@@ -32,7 +32,7 @@ body {
   --medium-breakpoint: 1080px;
   --large-breakpoint: 1200px;
 
-  --main-margin: 5%;
+  --main-margin: 3%;
   --top-margin: calc(65px + 10vh);
   --main-width: calc(100% - var(--main-margin) * 2);
 }
