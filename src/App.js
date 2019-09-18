@@ -1,24 +1,27 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import React from 'react';
-import Home from './Home/Home'
-import Zwartkops from './Zwartkops/Zwartkops'
+import React, { Suspense, lazy } from 'react';
+import Preloader from './Components/Preloader/Preloader';
 import Navbar from './Navbar/Navbar'
 import './App.css'
+
+const Home = lazy(() => import('./Home/Home'));
+const Zwartkops = lazy(() => import('./Zwartkops/Zwartkops'));
 
 const App = (props) => (
   <div className="App">
     <Router>
       <Navbar />
-      <Switch>
-        <Route exact path="/gallery/zwartkops" component={Zwartkops} />
+      <Suspense fallback={Preloader}>
+        <Switch>
+          <Route exact path="/gallery/zwartkops" component={Zwartkops} />
 
-        <Redirect exact from="/" to="home" />
+          <Redirect exact from="/" to="home" />
 
-        <Route exact path="/" component={Navbar} />
-        <Route path="/home" component={Home} />
+          <Route path="/home" component={Home} />
 
-        <Redirect to="home" />
-      </Switch>
+          <Redirect to="home" />
+        </Switch>
+      </Suspense>
     </Router>
   </div>
 )
