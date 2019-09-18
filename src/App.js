@@ -10,7 +10,7 @@ const App = (props) => (
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/Gallery/Zwartkops" component={Zwartkops} />
+        <Route exact path="/gallery/zwartkops" component={Zwartkops} />
 
         <Redirect exact from="/" to="home" />
 
