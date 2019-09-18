@@ -32,6 +32,10 @@
 
 /* styling  */
 
+.Landing .text {
+  margin-bottom: 35px;
+}
+
 .Landing .logo {
   font-family: var(--font-primary);
   font-size: var(--size-h);
