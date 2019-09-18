@@ -32,7 +32,7 @@ body {
   --medium-breakpoint: 1080px;
   --large-breakpoint: 1200px;
 
-  --main-margin: 7%;
+  --main-margin: 5%;
   --top-margin: calc(65px + 10vh);
   --main-width: calc(100% - var(--main-margin) * 2);
 }
@@ -46,6 +46,7 @@ body {
 @media (min-width: 690px) {
   :root {
     --size-h: 110px;
+    --main-margin: 7%;
   }
 }
 
