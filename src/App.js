@@ -8,13 +8,14 @@ import './App.css'
 const App = (props) => (
   <div className="App">
     <Router>
+      <Navbar />
       <Switch>
         <Route exact path="/Gallery/Zwartkops" component={Zwartkops} />
 
         <Redirect exact from="/" to="home" />
 
-        <Route path="/" component={Navbar} />
-        <Route exact path="/about" component={Home} />
+        <Route exact path="/" component={Navbar} />
+        <Route path="/home" component={Home} />
 
         <Redirect to="home" />
       </Switch>

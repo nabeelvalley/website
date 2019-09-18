@@ -28,15 +28,11 @@ body {
   --size-l: 48px;
   --size-h: 160px;
 
-  --screen-small: 690px;
+  --small-breakpoint: 690px;
 
   --main-margin: 7%;
+  --top-margin: calc(65px + 10vh);
   --main-width: calc(100% - var(--main-margin) * 2);
-
-  --row-count: 9;
-  --grid-size: calc((100vh - 2 * var(--main-margin)) - (8 * 10px));
-  --row-size: calc(var(--grid-size) / var(--row-count));
-  --small-breakpoint: 630px;
 }
 
 /* flex wrapping */

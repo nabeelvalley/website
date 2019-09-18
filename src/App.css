@@ -1,5 +1,5 @@
 .App {
-  margin: 65px var(--main-margin);
+  margin: var(--top-margin) var(--main-margin);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
