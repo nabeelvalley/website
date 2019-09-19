@@ -22,9 +22,9 @@ body {
   --color-light: #ffffff;
   --color-light-transparent: rgba(255, 255, 255, 0.9);
 
-  --size-s: 16px;
+  --size-s: 15px;
   --size-m: 20px;
-  --size-l: 48px;
+  --size-l: 30px;
   --size-h: 60px;
 
   --xsmall-breakpoint: 400px;
@@ -32,7 +32,7 @@ body {
   --medium-breakpoint: 1080px;
   --large-breakpoint: 1200px;
 
-  --main-margin: 3%;
+  --main-margin: 5%;
   --top-margin: calc(65px + 10vh);
   --main-width: calc(100% - var(--main-margin) * 2);
 }
@@ -53,7 +53,6 @@ body {
 /* standard grid */
 
 .grid {
-  margin: var(--top-margin) var(--main-margin);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;

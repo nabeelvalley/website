@@ -2,6 +2,7 @@
 
 .Landing .text {
   grid-column: 1 / 5;
+  text-align: center;
 }
 
 .Landing .image {
@@ -11,7 +12,7 @@
 
 @media (min-width: 690px) {
   .Landing .text {
-    grid-column: 1 / 7;
+    grid-column: 1 / 9;
   }
   .Landing .image {
     grid-column: 1 / 9;

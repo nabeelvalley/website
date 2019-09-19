@@ -25,7 +25,7 @@
   }
 }
 
-.linkGroup {
+.Navbar .linkGroup {
   font-family: var(--font-secondary);
   list-style-type: none;
   padding-left: 0px;
@@ -33,12 +33,12 @@
   text-transform: lowercase;
 }
 
-.link {
+.Navbar .link {
   display: inline;
   margin-left: 15px;
 }
 
-.link .active {
+.Navbar .link .active {
   border-bottom: 1px solid var(--color-primary);
   margin-bottom: 3px;
   padding-bottom: 3px;

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
 import Preloader from './Components/Preloader/Preloader';
+import Footer from './Components/Footer/Footer'
 import Navbar from './Navbar/Navbar'
 import './App.css'
 
@@ -22,6 +23,7 @@ const App = (props) => (
           <Redirect to="/home" />
         </Switch>
       </Suspense>
+      <Footer />
     </Router>
   </div>
 )
