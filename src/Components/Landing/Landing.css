@@ -14,6 +14,7 @@
   .Landing .text {
     grid-column: 1 / 9;
   }
+
   .Landing .image {
     grid-column: 1 / 9;
     height: 40vh;
@@ -57,9 +58,16 @@
 .Landing .icon {
   display: inline-block;
   text-align: center;
-  height: 45px;
-  width: 45px;
+  height: 35px;
+  width: 35px;
   margin: 0 5px;
   background-color: var(--color-primary);
   border-radius: 50%;
+}
+
+@media (min-width: 1080px) {
+  .Landing .icon {
+    width: 45px;
+    height: 45px;
+  }
 }
