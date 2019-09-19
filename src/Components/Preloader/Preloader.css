@@ -1,12 +1,12 @@
 .Preloader {
-  width: 50px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   text-align: center;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .Preloader > div {
-  background-color: #333;
+  background-color: var(--color-primary);
   height: 100%;
   width: 6px;
   display: inline-block;
