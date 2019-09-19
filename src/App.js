@@ -12,7 +12,7 @@ const App = (props) => (
   <div className="App">
     <Router>
       <Navbar />
-      <Suspense fallback={Preloader}>
+      <Suspense fallback={<Preloader />}>
         <Switch>
           <Route exact path="/gallery/zwartkops" component={Zwartkops} />
 

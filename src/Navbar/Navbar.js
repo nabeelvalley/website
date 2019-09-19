@@ -6,13 +6,10 @@ const Navbar = (props) => (
     <nav className="Navbar">
         <div className="logo" style={props.location.pathname === '/home' ? { visibility: 'hidden', width: 0, height: 0 } : {}}>Nabeel Valley</div>
         <ul className="linkGroup">
-            {
-                ['Home', 'Blog', 'Code', 'About']
-                    .map(item =>
-                        <li key={item} className="link">
-                            <NavLink activeClassName="active" to={'/' + item.toLowerCase()}>{item}</NavLink>
-                        </li>)
-            }
+            <li activeClassName="active" className="link"><NavLink to="/home">Home</NavLink></li>
+            <li activeClassName="active" className="link"><NavLink to="/blog">Blog</NavLink></li>
+            <li activeClassName="active" className="link"><NavLink to="/code">Code</NavLink></li>
+            <li activeClassName="active" className="link"><NavLink to="/about">About</NavLink></li>
         </ul>
     </nav>
 )

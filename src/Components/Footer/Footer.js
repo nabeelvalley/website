@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => <div className="Footer grid">
@@ -11,10 +12,10 @@ const Footer = () => <div className="Footer grid">
         </div>
     </div>
     <ol className="linkGroup">
-        <li className="link">Home</li>
-        <li className="link">Blog</li>
-        <li className="link">Code</li>
-        <li className="link">About</li>
+        <li className="link"><NavLink to="/home">Home</NavLink></li>
+        <li className="link"><NavLink to="/blog">Blog</NavLink></li>
+        <li className="link"><NavLink to="/code">Code</NavLink></li>
+        <li className="link"><NavLink to="/about">About</NavLink></li>
     </ol>
 </div>
 
