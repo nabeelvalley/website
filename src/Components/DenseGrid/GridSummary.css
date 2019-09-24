@@ -1,0 +1,29 @@
+/* styling */
+
+.GridSummary .title {
+  margin: 0 0 var(--text-spacing) 0;
+  font-family: var(--font-secondary);
+  font-size: var(--size-l);
+}
+
+.GridSummary .date {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: var(--text-spacing);
+  font-family: var(--font-primary);
+  font-size: var(--size-s);
+  text-transform: lowercase;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.GridSummary .synops,
+.GridSummary .link {
+  font-family: var(--font-secondary);
+  font-size: var(--size-s);
+  margin-bottom: var(--text-spacing);
+}
+
+.GridSummary .link {
+  color: var(--color-primary);
+  text-transform: lowercase;
+}

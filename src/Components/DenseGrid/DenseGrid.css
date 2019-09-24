@@ -1,0 +1,14 @@
+.DenseGrid {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: var(--grid-gap);
+  grid-row-gap: var(--grid-gap);
+  margin-bottom: var(--block-spacing);
+}
+
+@media (min-width: 690px) {
+  .DenseGrid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
