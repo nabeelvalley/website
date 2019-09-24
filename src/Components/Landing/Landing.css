@@ -54,24 +54,3 @@
   text-align: center;
   margin: 35px;
 }
-
-.Landing .icons {
-  text-align: center;
-}
-
-.Landing .icon {
-  display: inline-block;
-  text-align: center;
-  height: 35px;
-  width: 35px;
-  margin: 0 5px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-}
-
-@media (min-width: 1080px) {
-  .Landing .icon {
-    width: 45px;
-    height: 45px;
-  }
-}

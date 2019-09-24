@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar/Navbar'
 import './App.css'
 
 const Home = lazy(() => import('./Home/Home'));
+const Blog = lazy(() => import('./Blog/Blog'));
 const Zwartkops = lazy(() => import('./Zwartkops/Zwartkops'));
 
 const App = (props) => (
@@ -19,6 +20,7 @@ const App = (props) => (
           <Redirect exact from="/" to="home" />
 
           <Route exact path="/home" component={Home} />
+          <Route exact path="/blog" component={Blog} />
 
           <Redirect to="/home" />
         </Switch>

@@ -1,0 +1,16 @@
+.ContentPage .header {
+  text-align: center;
+  margin-bottom: var(--block-spacing);
+}
+
+.ContentPage .heading {
+  font-family: var(--font-primary);
+  font-size: var(--size-h);
+  line-height: 0.8;
+}
+
+.ContentPage .subheading {
+  font-family: var(--font-secondary);
+  font-size: var(--size-m);
+  margin: 35px;
+}
