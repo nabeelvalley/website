@@ -57,7 +57,6 @@
 /* styling */
 
 .Footer {
-  margin-top: var(--top-margin);
   border-top: 1px solid var(--color-primary);
   padding: 85px 0;
 }

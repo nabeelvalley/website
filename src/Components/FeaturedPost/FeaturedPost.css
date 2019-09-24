@@ -72,7 +72,7 @@
 .FeaturedPost .synops,
 .FeaturedPost .link {
   font-family: var(--font-secondary);
-  font-size: var(--size-m);
+  font-size: var(--size-s);
   margin-bottom: var(--text-spacing);
 }
 

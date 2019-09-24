@@ -1,0 +1,25 @@
+.ProjectGroup .flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 690px) {
+  .ProjectGroup .flex > *:nth-child(odd) {
+    padding-right: calc(var(--grid-gap) / 2);
+  }
+  .ProjectGroup .flex > *:nth-child(even) {
+    padding-left: calc(var(--grid-gap) / 2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .ProjectGroup .flex {
+    grid-column: 2 / -2;
+  }
+}
+
+.ProjectGroup.contained {
+  grid-column: span 8;
+}

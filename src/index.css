@@ -27,6 +27,8 @@ body {
   --size-l: 30px;
   --size-h: 60px;
 
+  --grid-gap: 10px;
+
   --xsmall-breakpoint: 400px;
   --small-breakpoint: 690px;
   --medium-breakpoint: 1080px;
@@ -58,8 +60,8 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: var(--grid-gap);
+  grid-row-gap: var(--grid-gap);
 }
 
 @media (min-width: 690px) {
@@ -85,6 +87,8 @@ body {
 /* heading */
 
 h1,
+h2,
+h3,
 p {
   margin: 0;
 }

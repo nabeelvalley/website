@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import React, { Suspense, lazy } from 'react';
 import Preloader from './Components/Preloader/Preloader';
 import Footer from './Components/Footer/Footer'
-import Navbar from './Navbar/Navbar'
+import Navbar from './Components/Navbar/Navbar'
 import './App.css'
 
 const Home = lazy(() => import('./Home/Home'));
