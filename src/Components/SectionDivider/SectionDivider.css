@@ -1,0 +1,32 @@
+.SectionDivider {
+  margin-bottom: var(--block-spacing);
+  display: flex;
+  flex-direction: column;
+}
+
+.SectionDivider .title {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: var(--size-l);
+  text-transform: lowercase;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.SectionDivider .title:before {
+  border-top: 1px solid var(--color-primary);
+  content: '';
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+.SectionDivider .title .text {
+  background: var(--color-light);
+  padding: 0 15px;
+}

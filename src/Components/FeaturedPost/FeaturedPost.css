@@ -49,10 +49,8 @@
   margin-bottom: var(--block-spacing);
 }
 
-@media (min-width: 1080px) {
-  .FeaturedPost .image {
-    min-height: auto;
-  }
+.FeaturedPost .image {
+  height: auto;
 }
 
 .FeaturedPost .title {
