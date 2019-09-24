@@ -34,6 +34,10 @@
 
 /* styling  */
 
+.Landing {
+  margin-bottom: var(--block-spacing);
+}
+
 .Landing .text {
   margin-bottom: 35px;
 }

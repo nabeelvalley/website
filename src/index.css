@@ -32,6 +32,9 @@ body {
   --medium-breakpoint: 1080px;
   --large-breakpoint: 1200px;
 
+  --block-spacing: 65px;
+  --text-spacing: 15px;
+
   --main-margin: 5%;
   --top-margin: calc(65px + 10vh);
   --main-width: calc(100% - var(--main-margin) * 2);
@@ -84,6 +87,11 @@ body {
 h1,
 p {
   margin: 0;
+}
+
+h1,
+h2,
+h3 {
   font-weight: normal;
 }
 
