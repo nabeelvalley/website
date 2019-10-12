@@ -2,7 +2,7 @@ import React from 'react'
 import ContentPage from '../Components/ContentPage/ContentPage'
 import PostListing from '../Components/PostListing/PostListing'
 
-const Blog = () => <ContentPage title="Blog" subtitle="rants and thoughts">
+const Blog = () => <ContentPage title="Blog" subtitle="Rants and Ramblings">
     <PostListing textAlignRight={true}
         image="/images/posts/image1.jpg"
         title="blog post title"
