@@ -63,6 +63,7 @@
 
 .InfoBlock {
   margin-bottom: var(--block-spacing);
+  text-transform: lowercase;
 }
 
 .InfoBlock .summary {
@@ -76,6 +77,7 @@
 }
 
 .InfoBlock .location {
+  margin-bottom: calc(var(--text-spacing) / 4);
   font-family: var(--font-secondary);
   font-size: var(--size-s);
   color: var(--color-primary);
@@ -84,6 +86,7 @@
 .InfoBlock .description,
 .InfoBlock .date,
 .InfoBlock .body {
+  margin-bottom: calc(var(--text-spacing) / 4);
   font-family: var(--font-secondary);
   font-size: var(--size-s);
 }
