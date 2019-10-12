@@ -1,0 +1,90 @@
+/* positioning */
+
+.PostListing .image {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.PostListing .text {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+@media (min-width: 690px) {
+  .PostListing .image,
+  .PostListing .text {
+    grid-row: 1;
+  }
+
+  .PostListing.text-left .text {
+    grid-column: 1 / 5;
+  }
+
+  .PostListing.text-left .image {
+    grid-column: 5 / 9;
+  }
+
+  .PostListing.text-right .text {
+    grid-column: 5 / 9;
+  }
+
+  .PostListing.text-right .image {
+    grid-column: 1 / 5;
+  }
+}
+
+@media (min-width: 1200px) {
+  .PostListing.text-left .text {
+    grid-column: 1 / 7;
+  }
+
+  .PostListing.text-left .image {
+    grid-column: 7 / 13;
+  }
+
+  .PostListing.text-right .text {
+    grid-column: 7 / 13;
+  }
+
+  .PostListing.text-right .image {
+    grid-column: 1 / 7;
+  }
+}
+
+/* styling */
+
+.PostListing {
+  margin-bottom: var(--block-spacing);
+}
+
+.PostListing .image {
+  height: auto;
+}
+
+.PostListing .title {
+  margin: 0 0 var(--text-spacing) 0;
+  font-family: var(--font-secondary);
+  font-size: var(--size-l);
+}
+
+.PostListing .date {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: var(--text-spacing);
+  font-family: var(--font-primary);
+  font-size: var(--size-s);
+  text-transform: lowercase;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.PostListing .synops,
+.PostListing .link {
+  font-family: var(--font-secondary);
+  font-size: var(--size-s);
+  margin-bottom: var(--text-spacing);
+}
+
+.PostListing .link {
+  color: var(--color-primary);
+  text-transform: lowercase;
+}
