@@ -2,7 +2,7 @@ import React from 'react'
 import ContentPage from '../Components/ContentPage/ContentPage'
 import PostListing from '../Components/PostListing/PostListing'
 
-const Blog = () => <ContentPage title="Blog" subtitle="rants and thoughts">
+const Code = () => <ContentPage title="Code" subtitle="endeavours in monspace">
     <PostListing textAlignRight={true}
         image="/images/posts/image1.jpg"
         title="blog post title"
@@ -20,4 +20,4 @@ const Blog = () => <ContentPage title="Blog" subtitle="rants and thoughts">
     />
 </ContentPage>
 
-export default Blog
+export default Code

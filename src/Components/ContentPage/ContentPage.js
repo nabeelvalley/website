@@ -1,10 +1,11 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import SocialIcons from '../SocialIcons/SocialIcons'
 
 import './ContentPage.css'
 import Sidebar from '../Sidebar/Sidebar'
 
-const ContentPage = ({ title, subtitle, children }) => <div className="ContentPage">
+const ContentPage = ({ title, subtitle, children, location }) => console.log(location) || <div className="ContentPage">
     <div className="header">
         <h1 className="heading">{title}</h1>
         <p className="subheading">{subtitle}</p>
@@ -15,14 +16,23 @@ const ContentPage = ({ title, subtitle, children }) => <div className="ContentPa
             {children}
         </main>
         <div className="links">
-            <Sidebar
-                title="Blog"
-            />
-            <Sidebar
-                title="Code"
-            />
+            {
+                location.pathname !== '/blog'
+                    ? <Sidebar
+                        title="Blog"
+                    />
+                    : null
+            }
+            {
+                location.pathname !== '/code'
+                    ? < Sidebar
+                        title="Code"
+                    />
+                    : null
+            }
+
         </div>
     </div>
 </div>
 
-export default ContentPage
+export default withRouter(ContentPage)

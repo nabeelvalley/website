@@ -7,6 +7,7 @@ import './App.css'
 
 const Home = lazy(() => import('./Home/Home'));
 const Blog = lazy(() => import('./Blog/Blog'));
+const Code = lazy(() => import('./Code/Code'));
 const Zwartkops = lazy(() => import('./Zwartkops/Zwartkops'));
 
 const App = (props) => (
@@ -21,6 +22,7 @@ const App = (props) => (
 
           <Route exact path="/home" component={Home} />
           <Route exact path="/blog" component={Blog} />
+          <Route exact path="/code" component={Code} />
 
           <Redirect to="/home" />
         </Switch>
