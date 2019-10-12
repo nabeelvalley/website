@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import AnyLink from '../AnyLink/AnyLink'
 
 import './FeaturedPost.css'
 
@@ -9,7 +9,7 @@ const FeaturedPost = ({ image, title, date, synops, link }) => <div className="F
         <h2 className="title">{title}</h2>
         <div className="date">{date}</div>
         <p className="synops">{synops}</p>
-        <p className="link"><NavLink to={link}>Read More</NavLink></p>
+        <p className="link"><AnyLink to={link}>Read More</AnyLink></p>
     </div>
 </div>
 

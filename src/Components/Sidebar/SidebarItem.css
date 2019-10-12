@@ -1,0 +1,59 @@
+.SidebarItem {
+  text-transform: lowercase;
+  margin-bottom: calc(var(--text-spacing) * 2);
+  width: 100%;
+}
+
+.SidebarItem .summary {
+  margin-top: calc(var(--text-spacing) / 2);
+}
+
+.SidebarItem .tech {
+  margin: 0;
+  padding: 0;
+}
+
+.SidebarItem .title {
+  font-family: var(--font-secondary);
+  font-size: var(--size-m);
+  margin-bottom: var(--text-spacing);
+}
+
+.SidebarItem .tech .item {
+  display: inline;
+  font-family: var(--font-primary);
+  font-size: var(--size-s);
+  padding-right: var(--size-s);
+}
+
+.SidebarItem .tech .item::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  height: var(--size-s);
+  width: var(--size-s);
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  margin-right: calc(var(--size-s) / 2);
+}
+
+.SidebarItem .summary {
+  font-family: var(--font-secondary);
+  font-size: var(--size-s);
+}
+
+.SidebarItem .description {
+  margin-bottom: var(--text-spacing);
+}
+
+.SidebarItem .link {
+  color: var(--color-primary);
+}
+
+.SidebarItem .date {
+  display: inline-block;
+  padding-bottom: 10px;
+  font-family: var(--font-primary);
+  font-size: var(--size-s);
+  text-transform: lowercase;
+}

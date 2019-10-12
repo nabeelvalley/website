@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import AnyLink from '../AnyLink/AnyLink'
 import './ProjectItem.css'
 
 const ProjectItem = ({ title, tech, description, link }) => <div className="ProjectItem">
@@ -13,7 +13,7 @@ const ProjectItem = ({ title, tech, description, link }) => <div className="Proj
     </div>
     <div className="summary">
         <p className="description">{description}</p>
-        <p className="link"><NavLink to={link}>More Info</NavLink></p>
+        <p className="link"><AnyLink to={link}>More Info</AnyLink></p>
     </div>
 </div >
 

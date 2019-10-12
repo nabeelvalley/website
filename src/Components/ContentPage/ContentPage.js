@@ -4,6 +4,7 @@ import SocialIcons from '../SocialIcons/SocialIcons'
 
 import './ContentPage.css'
 import Sidebar from '../Sidebar/Sidebar'
+import SidebarItem from '../Sidebar/SidebarItem'
 
 const ContentPage = ({ title, subtitle, children, location }) => <div className="ContentPage">
     <div className="header">
@@ -17,7 +18,25 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
         </main>
         <div className="links">
             <Sidebar title="Posts">
-
+                <SidebarItem
+                    title="External link an all fields"
+                    date="date"
+                    description="hello here is some words that can be a descriprion blah blah you know"
+                    tech={['react', 'markdown', 'css']}
+                    link="https://www.github.com/nabeelvalley"
+                />
+                <SidebarItem
+                    title="External Project Link"
+                    description="hello here is some words that can be a descriprion blah blah you know"
+                    tech={['react', 'markdown', 'css']}
+                    link="https://www.github.com/nabeelvalley"
+                />
+                <SidebarItem
+                    title="Internal Post Link"
+                    date="22 October 2019"
+                    description="hello here is some words that can be a descriprion blah blah you know"
+                    link="/blog/testPost"
+                />
             </Sidebar>
         </div>
     </div>
