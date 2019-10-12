@@ -30,7 +30,6 @@ const ContentPage = ({ title, subtitle, children, location }) => console.log(loc
                     />
                     : null
             }
-
         </div>
     </div>
 </div>

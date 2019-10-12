@@ -1,0 +1,9 @@
+.GridImage {
+  height: auto;
+}
+
+@media (max-width: 689px) {
+  .GridImage {
+    grid-column: span 4 !important;
+  }
+}

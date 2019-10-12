@@ -10,23 +10,6 @@
   }
 }
 
-@media (min-width: 1080px) {
-  .ProjectItem {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: var(--grid-gap);
-    grid-row-gap: var(--grid-gap);
-  }
-
-  .ProjectItem .overview {
-    grid-column: span 2;
-  }
-
-  .ProjectItem .summary {
-    grid-column: span 3;
-  }
-}
-
 .ProjectItem .summary {
   margin-top: calc(var(--text-spacing) / 2);
 }

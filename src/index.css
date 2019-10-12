@@ -17,6 +17,7 @@ body {
   --font-secondary: 'Montserrat Alternates', sans-serif;
 
   --color-primary: #e44d90;
+  --color-primary-l: #e44d9181;
   --color-secondary: #484848;
   --color-dark: #000000;
   --color-light: #ffffff;
@@ -110,6 +111,15 @@ a:hover {
   color: unset;
 }
 
+/* selection */
+
+*::selection {
+  background: var(--color-primary-l);
+}
+*::-moz-selection {
+  background: var(--color-primary-l);
+}
+
 /* scrollbar */
 
 /* width */
@@ -117,18 +127,18 @@ a:hover {
   width: 10px;
 }
 
-/* Track */
+/* track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
+/* handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--color-primary-l);
   border-radius: 10px;
 }
 
-/* Handle on hover */
+/* handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color-primary);
 }
