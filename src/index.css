@@ -23,7 +23,7 @@ body {
   --color-light: #ffffff;
   --color-light-transparent: rgba(255, 255, 255, 0.9);
 
-  --size-s: 15px;
+  --size-s: 16px;
   --size-m: 20px;
   --size-l: 30px;
   --size-h: 60px;
@@ -103,7 +103,7 @@ h3 {
 /* unstyle links */
 
 a {
-  color: unset;
+  color: var(--color-primary);
   text-decoration: unset;
 }
 

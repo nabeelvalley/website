@@ -16,6 +16,10 @@
   display: inline;
 }
 
+.Footer a {
+  color: var(--color-secondary);
+}
+
 @media (min-width: 690px) {
   .Footer {
     text-align: left;

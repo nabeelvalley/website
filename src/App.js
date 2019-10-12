@@ -4,29 +4,35 @@ import Preloader from './Components/Preloader/Preloader';
 import Footer from './Components/Footer/Footer'
 import Navbar from './Components/Navbar/Navbar'
 import './App.css'
+import ScrollToTop from './Components/Helpers/ScrollToTop';
 
 const Home = lazy(() => import('./Home/Home'));
-const Blog = lazy(() => import('./Blog/Blog'));
 const Code = lazy(() => import('./Code/Code'));
+const Blog = lazy(() => import('./Blog/Blog'));
+const Post = lazy(() => import('./Components/Post/Post'));
 const Zwartkops = lazy(() => import('./Zwartkops/Zwartkops'));
 
 const App = (props) => (
   <div className="App">
     <Router>
       <Navbar />
-      <Suspense fallback={<Preloader />}>
-        <Switch>
-          <Route exact path="/gallery/zwartkops" component={Zwartkops} />
+      <ScrollToTop>
+        <Suspense fallback={<Preloader />}>
+          <Switch>
+            <Route exact path="/gallery/zwartkops" component={Zwartkops} />
 
-          <Redirect exact from="/" to="home" />
+            <Redirect exact from="/" to="home" />
 
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/blog" component={Blog} />
-          <Route exact path="/code" component={Code} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/code" component={Code} />
+            <Route exact path="/blog" component={Blog} />
 
-          <Redirect to="/home" />
-        </Switch>
-      </Suspense>
+            <Route exact path="*" component={Post} />
+
+            <Redirect to="/home" />
+          </Switch>
+        </Suspense>
+      </ScrollToTop>
       <Footer />
     </Router>
   </div>
