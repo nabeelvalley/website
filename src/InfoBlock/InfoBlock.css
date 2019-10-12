@@ -78,7 +78,7 @@
 
 .InfoBlock .location {
   margin-bottom: calc(var(--text-spacing) / 4);
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: var(--size-s);
   color: var(--color-primary);
 }
@@ -90,6 +90,15 @@
   font-family: var(--font-secondary);
   font-size: var(--size-s);
 }
+
+.InfoBlock .description,
+.InfoBlock .date,
+.InfoBlock .body {
+  margin-bottom: calc(var(--text-spacing) / 4);
+  font-family: var(--font-secondary);
+  font-size: var(--size-s);
+}
+
 .InfoBlock .body p:not(:last-child) {
   margin-bottom: var(--text-spacing);
 }
