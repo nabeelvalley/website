@@ -8,34 +8,41 @@ const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
 
     <ProjectGroup isFullWidth={false}>
         <ProjectItem
-            title="Project 1"
-            tech={["js", "react", "docker"]}
-            description="this is the description of a project ya know"
-            link="#"
+            title="Form and Structure"
+            tech={['svelte', 'js', 'netlify']}
+            description="Website about Poetic Form and Structure built with Svelte, one of those 'always-a-work-in-progress' kind of things"
+            link="https://github.com/nabeelvalley/FormAndStructure"
+            linkText="Go to GitHub"
         />
         <ProjectItem
-            title="Project 1"
-            tech={["js", "react", "docker"]}
-            description="this is the description of a project ya know"
-            link="#"
+            title="Salaah Times"
+            tech={['react', 'strapi', 'docker', 'mongo-db']}
+            description="Web App to enable Masaajid to manage and publish their Salaah Times for a given area. Built with StrapiCMS, Mongo and React and an unnecessarily complicated Docker build"
+            link="https://github.com/nabeelvalley/SalaahTimesApp"
+            linkText="Go to GitHub"
+        />
+        <ProjectItem
+            title="Hangman.js"
+            tech={['node.js']}
+            description="Basic Implementation of Hangman using node.js, worked through while teaching the Introduction to Web Development weekend-classes at Al Ghazali College"
+            link="https://github.com/nabeelvalley/hangman-js"
+            linkText="Go to GitHub"
+        />
+        <ProjectItem
+            title="Twit List"
+            tech={['node.js', 'express', 'twitter', 'mongo-db']}
+            description="Application that allows you to bookmark Tweets and save them to your account simply by sharing that tweet with an app host user's account, works in tandem with the Webhooks Project"
+            link="https://github.com/nabeelvalley/TwitList"
+            linkText="Go to GitHub"
+        />
+        <ProjectItem
+            title="Webhooks"
+            tech={['node.js', 'express', 'twitter']}
+            description="A repository for testing and developing Webhooks for different applications such as Twitter, Facebook, and Twillio. At the moment it's mostly just a Twitter bot with some FUNctionality backed by the Twit List application"
+            link="https://github.com/nabeelvalley/Webhooks"
+            linkText="Go to GitHub"
         />
     </ProjectGroup>
-
-    <PostListing textAlignRight={true}
-        image="/images/posts/image1.jpg"
-        title="blog post title"
-        date="15 September 2019"
-        synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-        link="/home"
-    />
-
-    <PostListing
-        image="/images/posts/image1.jpg"
-        title="blog post title"
-        date="15 September 2019"
-        synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-        link="/home"
-    />
 </ContentPage>
 
 export default Code

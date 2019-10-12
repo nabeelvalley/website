@@ -4,19 +4,11 @@ import PostListing from '../Components/PostListing/PostListing'
 
 const Blog = () => <ContentPage title="Blog" subtitle="Rants and Ramblings">
     <PostListing textAlignRight={true}
-        image="/images/posts/image1.jpg"
-        title="blog post title"
-        date="15 September 2019"
-        synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-        link="/home"
-    />
-
-    <PostListing
-        image="/images/posts/image1.jpg"
-        title="blog post title"
-        date="15 September 2019"
-        synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-        link="/home"
+        image="/content/blog/2019/12-10/header.jpg"
+        title="Looky, a wild HTML!"
+        date="13 October 2019"
+        synops="The first blog post, A quick journey through my design and development process"
+        link="/blog/2019/12-10/looky-a-wild-html"
     />
 </ContentPage>
 

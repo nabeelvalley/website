@@ -13,6 +13,7 @@ const convertMarkdownToHtml = (text) => {
     const html = converter.makeHtml(text)
     return html
 }
+
 const Markdown = ({ text }) => <div className="Markdown" dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(text) }}></div>
 
 export default Markdown

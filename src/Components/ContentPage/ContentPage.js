@@ -19,23 +19,31 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
         <div className="links">
             <Sidebar title="What's New?">
                 <SidebarItem
-                    title="External link an all fields"
-                    date="date"
-                    description="hello here is some words that can be a descriprion blah blah you know"
-                    tech={['react', 'markdown', 'css']}
-                    link="https://www.github.com/nabeelvalley"
+                    title="Looky, a wild HTML!"
+                    date="13 October 2019"
+                    description="The first blog post, A quick journey through my design and development process"
+                    link="/blog/2019/12-10/looky-a-wild-html"
                 />
                 <SidebarItem
-                    title="External Project Link"
-                    description="hello here is some words that can be a descriprion blah blah you know"
-                    tech={['react', 'markdown', 'css']}
-                    link="https://www.github.com/nabeelvalley"
+                    title="Zwartkops Gallery"
+                    date="27 July 2019"
+                    description="A photo gallery of the Extreme Racing Festival at Zwartkops Raceway in Centurion"
+                    link="/gallery/zwartkops"
+                    linkText="View the Gallery"
                 />
                 <SidebarItem
-                    title="Internal Post Link"
-                    date="22 October 2019"
-                    description="hello here is some words that can be a descriprion blah blah you know"
-                    link="/blog/testPost"
+                    title="Form and Structure"
+                    tech={['svelte', 'js', 'netlify']}
+                    description="Website about Poetic Form and Structure built with Svelte, one of those 'always-a-work-in-progress' kind of things"
+                    link="https://github.com/nabeelvalley/FormAndStructure"
+                    linkText="Go to GitHub"
+                />
+                <SidebarItem
+                    title="Salaah Times"
+                    tech={['react', 'strapi', 'docker', 'mongo-db']}
+                    description="Web App to enable Masaajid to manage and publish their Salaah Times for a given area. Built with StrapiCMS, Mongo and React and an unnecessarily complicated Docker build"
+                    link="https://github.com/nabeelvalley/SalaahTimesApp"
+                    linkText="Go to GitHub"
                 />
             </Sidebar>
         </div>

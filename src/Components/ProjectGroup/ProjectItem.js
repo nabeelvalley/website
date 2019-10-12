@@ -2,7 +2,7 @@ import React from 'react'
 import AnyLink from '../AnyLink/AnyLink'
 import './ProjectItem.css'
 
-const ProjectItem = ({ title, tech, description, link }) => <div className="ProjectItem">
+const ProjectItem = ({ title, tech, description, link, linkText = "More Info" }) => <div className="ProjectItem">
     <div className="overview">
         <h3 className="title">{title}</h3>
         <ul className="tech">
@@ -13,7 +13,7 @@ const ProjectItem = ({ title, tech, description, link }) => <div className="Proj
     </div>
     <div className="summary">
         <p className="description">{description}</p>
-        <p className="link"><AnyLink to={link}>More Info</AnyLink></p>
+        <p className="link"><AnyLink to={link}>{linkText}</AnyLink></p>
     </div>
 </div >
 

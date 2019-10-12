@@ -11,63 +11,41 @@ import GridImage from '../Components/DenseGrid/GridImage';
 const Home = () => <div className="Home">
     <Landing />
     <FeaturedPost
-        image="/images/posts/image1.jpg"
-        title="blog post title"
-        date="15 September 2019"
-        synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-        link="/home"
+        image="/content/blog/2019/12-10/header.jpg"
+        title="Looky, a wild HTML!"
+        date="13 October 2019"
+        synops="The first blog post, A quick journey through my design and development process"
+        link="/blog/2019/12-10/looky-a-wild-html"
     />
     <SectionDivider title="What's New?" />
     <ProjectGroup isFullWidth={true}>
         <ProjectItem
-            title="Project 1"
-            tech={["js", "react", "docker"]}
-            description="this is the description of a project ya know"
-            link="#"
+            title="Salaah Times"
+            tech={['react', 'strapi', 'docker', 'mongo-db']}
+            description="Web App to enable Masaajid to manage and publish their Salaah Times for a given area. Built with StrapiCMS, Mongo and React and an unnecessarily complicated Docker build"
+            link="https://github.com/nabeelvalley/SalaahTimesApp"
+            linkText="Go to GitHub"
         />
         <ProjectItem
-            title="Project 1"
-            tech={["js", "react", "docker"]}
-            description="this is the description of a project ya know"
-            link="#"
+            title="Form and Structure"
+            tech={['svelte', 'js', 'netlify']}
+            description="Website about Poetic Form and Structure built with Svelte, one of those 'always-a-work-in-progress' kind of things"
+            link="https://github.com/nabeelvalley/FormAndStructure"
+            linkText="Go to GitHub"
         />
     </ProjectGroup>
     <DenseGrid>
         <GridSummary
-            title="blog post title"
-            date="15 September 2019"
-            synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-            link="/home"
+            title="Zwartkops Gallery"
+            date="27 July 2019"
+            synops="A photo gallery of the Extreme Racing Festival at Zwartkops Raceway in Centurion"
+            link="/gallery/zwartkops"
+            linkText="View the Gallery"
         />
         <GridImage
-            image="/images/posts/image1.jpg"
+            image="/images/zwartkops/image12.jpg"
             gridColumn="span 4"
             gridRow="span 3"
-        />
-        <GridImage
-            image="/images/posts/image2.jpg"
-            gridColumn="span 3"
-            gridRow="span 4"
-        />
-        <GridSummary
-            title="blog post title"
-            date="15 September 2019"
-            synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-            link="/home"
-            gridRow="span 1"
-        />
-        <GridSummary
-            title="blog post title"
-            date="15 September 2019"
-            synops="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dapibus mauris, vitae ultrices ipsum. Fusce eget massa lectus. Pellentesque non lorem."
-            link="/home"
-            gridRow="span 1"
-        />
-        <GridImage
-            image="/images/posts/image3.jpg"
-            gridColumn="span 4"
-            gridRow="span 3"
-            useAutoHeight
         />
     </DenseGrid>
 </div>

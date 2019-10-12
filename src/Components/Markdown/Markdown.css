@@ -1,3 +1,8 @@
+.Markdown {
+  font-family: var(--font-secondary);
+  font-size: var(--size-s);
+}
+
 .Markdown > * {
   margin-bottom: var(--text-spacing);
 }
