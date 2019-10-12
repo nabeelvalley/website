@@ -4,7 +4,7 @@ import PostListing from '../Components/PostListing/PostListing'
 import ProjectGroup from '../Components/ProjectGroup/ProjectGroup'
 import ProjectItem from '../Components/ProjectGroup/ProjectItem'
 
-const Code = () => <ContentPage title="Code" subtitle="endeavours in monspace">
+const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
 
     <ProjectGroup isFullWidth={false}>
         <ProjectItem

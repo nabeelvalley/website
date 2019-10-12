@@ -25,7 +25,7 @@ class Post extends React.Component {
         try {
             const res = await fetch(`/content${this.state.slug}.json`)
             const json = await res.json()
-            this.setState({ ...this.state, ...json})
+            this.setState({ ...this.state, ...json })
         } catch (error) {
             this.setState({ ...this.state, metaLoadingError: true, date: "Page not found", title: "404" })
             console.error('failed to load post meta')

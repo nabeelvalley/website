@@ -13,6 +13,7 @@
   font-family: var(--font-secondary);
   font-size: var(--size-m);
   margin: 35px;
+  text-transform: lowercase;
 }
 
 .ContentPage .links {
@@ -44,7 +45,6 @@
     /* grid-row: 1; */
   }
 }
-
 
 .ContentPage {
   margin-bottom: var(--block-spacing);

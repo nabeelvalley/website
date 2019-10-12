@@ -10,7 +10,7 @@ How ya doing fam?
 
 ## Literally all the code for the Markdown Renderer
 
-SO, first run a bas command obvs
+So, first run a bash command obvs
 
 ```bash
 yarn start

@@ -52,5 +52,6 @@
   font-family: var(--font-secondary);
   font-size: var(--size-m);
   text-align: center;
+  text-transform: lowercase;
   margin: 35px;
 }

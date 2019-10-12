@@ -16,20 +16,9 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
             {children}
         </main>
         <div className="links">
-            {
-                location.pathname !== '/blog'
-                    ? <Sidebar
-                        title="Blog"
-                    />
-                    : null
-            }
-            {
-                location.pathname !== '/code'
-                    ? < Sidebar
-                        title="Code"
-                    />
-                    : null
-            }
+            <Sidebar title="Posts">
+
+            </Sidebar>
         </div>
     </div>
 </div>
