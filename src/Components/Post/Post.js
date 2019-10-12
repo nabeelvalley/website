@@ -28,7 +28,7 @@ class Blog extends React.Component {
             const metaJson = await metaRes.json()
             this.setState({ ...this.state, subtitle: metaJson.date, title: metaJson.title })
         } catch (error) {
-            this.setState({ ...this.state, metaLoadingError: true, subtitle: "Looks like a 404", title: "Page not found" })
+            this.setState({ ...this.state, metaLoadingError: true, subtitle: "Page not found", title: "404" })
             console.error('failed to load post meta')
         }
 
@@ -51,7 +51,7 @@ class Blog extends React.Component {
                     ? <Preloader />
                     : !this.state.contentLoadingError && !this.state.metaLoadingError
                         ? < Markdown text={this.state.content} />
-                        : <p>I can't seem to find the page you're looking for, but you may as well <NavLink to="/home">take a look around</NavLink> since you're here anyway right?`</p>
+                        : <p>I can't seem to find the page you're looking for, but you may as well <NavLink to="/home">take a look around</NavLink> since you're here anyway right?</p>
             }
         </ContentPage>
     }
