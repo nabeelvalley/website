@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import Preloader from './Components/Preloader/Preloader';
 import Footer from './Components/Footer/Footer'
 import Navbar from './Components/Navbar/Navbar'
+import ScrollToTop from './Components/Helpers/ScrollToTop'
 
 import './App.css'
 
@@ -17,6 +18,7 @@ const App = (props) => (
   <div className="App">
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Suspense fallback={<Preloader />}>
         <Switch>
           <Route exact path="/gallery/zwartkops" component={Zwartkops} />

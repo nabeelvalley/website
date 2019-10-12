@@ -1,7 +1,6 @@
 import React from 'react'
 import ContentPage from '../Components/ContentPage/ContentPage'
-import PostListing from '../Components/PostListing/PostListing'
-import InfoBlock from '../InfoBlock/InfoBlock'
+import InfoBlock from '../Components/InfoBlock/InfoBlock'
 import SectionDivider from '../Components/SectionDivider/SectionDivider'
 
 const About = () => <ContentPage title="About" subtitle="Software Developer, Student">
