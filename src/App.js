@@ -7,8 +7,9 @@ import Navbar from './Components/Navbar/Navbar'
 import './App.css'
 
 const Home = lazy(() => import('./Home/Home'));
-const Code = lazy(() => import('./Code/Code'));
 const Blog = lazy(() => import('./Blog/Blog'));
+const Code = lazy(() => import('./Code/Code'));
+const About = lazy(() => import('./About/About'));
 const Post = lazy(() => import('./Components/Post/Post'));
 const Zwartkops = lazy(() => import('./Zwartkops/Zwartkops'));
 
@@ -23,8 +24,9 @@ const App = (props) => (
           <Redirect exact from="/" to="home" />
 
           <Route exact path="/home" component={Home} />
-          <Route exact path="/code" component={Code} />
           <Route exact path="/blog" component={Blog} />
+          <Route exact path="/code" component={Code} />
+          <Route exact path="/about" component={About} />
 
           <Route exact path="*" component={Post} />
 

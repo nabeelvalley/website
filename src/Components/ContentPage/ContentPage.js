@@ -17,7 +17,7 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
             {children}
         </main>
         <div className="links">
-            <Sidebar title="Posts">
+            <Sidebar title="What's New?">
                 <SidebarItem
                     title="External link an all fields"
                     date="date"
