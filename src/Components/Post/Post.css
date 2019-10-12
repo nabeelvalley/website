@@ -1,0 +1,27 @@
+.Post p {
+  font-family: var(--font-secondary);
+  font-size: var(--size-s);
+}
+
+.Post h2,
+.Post h3,
+.Post h4 {
+  font-family: var(--font-secondary);
+  margin-bottom: var(--text-spacing);
+  font-weight: 600;
+}
+
+.Post h2::before {
+  content: '# ';
+  color: var(--color-primary);
+}
+
+.Post h3::before {
+  content: '## ';
+  color: var(--color-primary);
+}
+
+.Post h4::before {
+  content: '### ';
+  color: var(--color-primary);
+}

@@ -23,6 +23,11 @@ body {
   --color-light: #ffffff;
   --color-light-transparent: rgba(255, 255, 255, 0.9);
 
+  --color-code-1: var(--color-primary);
+  --color-code-2: #2d4654;
+  --color-code-3: #fc7753;
+  --color-code-4: #66d7d1;
+
   --size-s: 16px;
   --size-m: 20px;
   --size-l: 30px;

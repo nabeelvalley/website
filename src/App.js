@@ -4,7 +4,6 @@ import Preloader from './Components/Preloader/Preloader';
 import Footer from './Components/Footer/Footer'
 import Navbar from './Components/Navbar/Navbar'
 import './App.css'
-import ScrollToTop from './Components/Helpers/ScrollToTop';
 
 const Home = lazy(() => import('./Home/Home'));
 const Code = lazy(() => import('./Code/Code'));
@@ -16,7 +15,6 @@ const App = (props) => (
   <div className="App">
     <Router>
       <Navbar />
-      <ScrollToTop>
         <Suspense fallback={<Preloader />}>
           <Switch>
             <Route exact path="/gallery/zwartkops" component={Zwartkops} />
@@ -32,7 +30,6 @@ const App = (props) => (
             <Redirect to="/home" />
           </Switch>
         </Suspense>
-      </ScrollToTop>
       <Footer />
     </Router>
   </div>

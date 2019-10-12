@@ -1,0 +1,45 @@
+.Markdown > * {
+  margin-bottom: var(--text-spacing);
+}
+
+.Markdown code {
+  font-family: var(--font-primary);
+  font-weight: 100;
+  white-space: pre-wrap;
+  font-size: 14px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* remove hljs default padding */
+.Markdown .hljs {
+  padding: 0px;
+}
+
+.Markdown .hljs-keyword {
+  color: var(--color-code-1);
+}
+
+.Markdown .hljs-string {
+  color: var(--color-code-3);
+}
+
+.Markdown .hljs-meta {
+  color: var(--color-code-2);
+}
+
+.Markdown .hljs-title {
+  color: var(--color-code-4);
+}
+
+.Markdown .hljs-attr {
+  color: var(--color-code-3);
+}
+
+.Markdown blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: var(--text-spacing);
+  border-left: 2px solid var(--color-primary);
+}
