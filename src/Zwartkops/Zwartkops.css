@@ -1,6 +1,7 @@
 .Zwartkops {
   height: 100vh;
-  margin-top: calc(-1 * var(--top-margin));
+  margin-top: -70px;
+  margin-bottom: var(--block-spacing);
   --row-count: 10;
   --grid-size: calc((100vh - 2 * var(--main-margin)) - (8 * 10px));
   --row-size: calc(var(--grid-size) / var(--row-count));
