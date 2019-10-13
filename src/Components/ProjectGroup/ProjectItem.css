@@ -36,8 +36,8 @@
   content: '';
   display: inline-block;
   position: relative;
-  height: var(--size-s);
-  width: var(--size-s);
+  height: calc(0.7 * var(--size-s));
+  width: calc(0.7 * var(--size-s));
   border-radius: 50%;
   background-color: var(--color-primary);
   margin-right: calc(var(--size-s) / 2);
