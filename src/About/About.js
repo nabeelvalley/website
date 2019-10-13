@@ -53,7 +53,7 @@ const About = () => <ContentPage title="About" subtitle="Software Developer, Stu
         heading="Al Ghazali College"
         location="Pretoria, South Africa"
         description="National Senior Certificate"
-        date="Jan'14-Dec'17"
+        date="Dec'13"
         body="national senior certificate with mathematics, physical sciences, life sciences, and information technology along with english as my primary language and afrikaans as the second"
         summaryAlignRight
     />
