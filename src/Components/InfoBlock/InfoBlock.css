@@ -70,7 +70,7 @@
   margin-bottom: var(--text-spacing);
 }
 
-.InfoBlock .heading {
+.InfoBlock .summary .heading {
   margin-bottom: var(--text-spacing);
   font-family: var(--font-secondary);
   font-size: var(--size-l);
