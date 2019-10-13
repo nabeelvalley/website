@@ -40,7 +40,7 @@ const Home = () => <div className="Home">
             date="27 July 2019"
             description="A photo gallery of the Extreme Racing Festival at Zwartkops Raceway in Centurion"
             link="/gallery/zwartkops"
-            linkText="View the Gallery"
+            linkText="View Gallery"
         />
         <GridImage
             image="/images/zwartkops/image12.jpg"

@@ -31,7 +31,7 @@ const ContentPage = ({ title, subtitle, children, location }) => console.log(loc
                             date="27 July 2019"
                             description="A photo gallery of the Extreme Racing Festival at Zwartkops Raceway in Centurion"
                             link="/gallery/zwartkops"
-                            linkText="View the Gallery"
+                            linkText="View Gallery"
                         />
                     </Sidebar>
                     : null
