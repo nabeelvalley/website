@@ -22,6 +22,7 @@
 
 .ContentPage .main {
   grid-column: 1 / -1;
+  margin-bottom: var(--block-spacing);
 }
 
 @media (min-width: 1080px) {

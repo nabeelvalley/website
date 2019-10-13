@@ -1,6 +1,5 @@
 import React from 'react'
 import ContentPage from '../Components/ContentPage/ContentPage'
-import PostListing from '../Components/PostListing/PostListing'
 import ProjectGroup from '../Components/ProjectGroup/ProjectGroup'
 import ProjectItem from '../Components/ProjectGroup/ProjectItem'
 
