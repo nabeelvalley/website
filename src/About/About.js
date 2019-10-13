@@ -46,7 +46,7 @@ const About = () => <ContentPage title="About" subtitle="Software Developer, Stu
         location="Pretoria, South Africa"
         description="BEng(Mech)"
         date="Jan'14-Dec'17"
-        body="bachelor's degree in mechanical engineering with a final year specialization in mechatronics and reasearcha research project focused on renewable energy, i also tutored engineering programming in python to second year students"
+        body="bachelor's degree in mechanical engineering with a final year specialization in mechatronics and a research project focused on renewable energy, i also tutored engineering programming in python to second year students"
     />
 
     <InfoBlock
