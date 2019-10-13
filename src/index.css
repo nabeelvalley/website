@@ -48,6 +48,24 @@ body {
   --main-width: calc(100% - var(--main-margin) * 2);
 }
 
+/* Dark mode */
+
+body {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #e44d90;
+    --color-primary-l: #e44d9181;
+    --color-secondary: #ffffff;
+    --color-dark: #ffffff;
+    --color-light: rgb(39, 39, 39);
+    --color-light-transparent: rgba(36, 36, 36, 0.9);
+  }
+}
+
 @media (min-width: 400px) {
   :root {
     --size-h: 80px;
