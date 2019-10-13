@@ -11,8 +11,8 @@ const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
             title="Form and Structure"
             tech={['svelte', 'js', 'netlify']}
             description="Website about Poetic Form and Structure built with Svelte, one of those 'always-a-work-in-progress' kind of things"
-            link="https://github.com/nabeelvalley/FormAndStructure"
-            linkText="Go to GitHub"
+            link="https://formandstructure.netlify.com"
+            linkText="Go to Site"
         />
         <ProjectItem
             title="Salaah Times"

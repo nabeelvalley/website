@@ -58,7 +58,7 @@ That being said, and my heart being content. It was time to code
 
 # The _"Bashing your head against a wall"_ Process
 
-I used React - Why? Because I used React. Sure, I could have went the Server-Side route and made sure I was sending normal HTML to people, but I wanted a sustainable component library that I could develop as well as super-quick responsiveness on the client, and from experience, I knew I could knock this out fastest with React. That being said, I kind of wish I had looked at setting up SSR before I started, because I feel like it's going to be admin to add after (will basically need to refactor out all the `<Suspense/>`) tags
+I used React - Why? Because I used React. Sure, I could have went the Server-Side route and made sure I was sending normal HTML to people, but I wanted a sustainable component library that I could develop as well as super-quick responsiveness on the client, and from experience, I knew I could knock this out fastest with React. That being said, I kind of wish I had looked at setting up pre-rendering before I started, because I feel like it's going to be admin to add after (will basically need to refactor out all the `<Suspense/>`) tags
 
 Now, as any front-end developer should know in 2019, you gotta start with `npx create-react-app my-app` and after about three years of `node_modules` you're ready to go
 
