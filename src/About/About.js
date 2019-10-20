@@ -1,9 +1,15 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import ContentPage from '../Components/ContentPage/ContentPage'
 import InfoBlock from '../Components/InfoBlock/InfoBlock'
 import SectionDivider from '../Components/SectionDivider/SectionDivider'
 
 const About = () => <ContentPage title="About" subtitle="Software Developer, Student">
+    <Helmet>
+        <title>About Me | Nabeel Valley</title>
+        <meta name="description" content="A little bit about my work and education experiences" />
+    </Helmet>
+
     <InfoBlock
         heading="Me"
         location="Pretoria, South Africa"

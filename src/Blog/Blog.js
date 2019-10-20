@@ -1,8 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import ContentPage from '../Components/ContentPage/ContentPage'
 import PostListing from '../Components/PostListing/PostListing'
 
 const Blog = () => <ContentPage title="Blog" subtitle="Rants and Ramblings">
+    <Helmet>
+        <title>Blog | Nabeel Valley</title>
+        <meta name="description" content="Rants and Ramblings. Random thoughts on Web Development, Photography, Design, and Life" />
+    </Helmet>
+
     <PostListing
         image="/content/blog/2019/12-10/header.jpg"
         title="Looky, a wild HTML!"

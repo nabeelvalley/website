@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet'
 import Gallery from './Components/Gallery/Gallery';
 import GalleryImage from './Components/Gallery/GalleryImage'
 import Title from './Components/Title/Title'
@@ -58,6 +59,11 @@ class Zwartkops extends Component {
 
         return (
             <div className="Zwartkops">
+                    <Helmet>
+                        <title>Zwartkops Gallery | Nabeel Valley</title>
+                        <meta name="description" content="Photo Gallery of the Extreme Racing Festival in July 2019 at Zwartkops Raceway, Centurion" />
+                    </Helmet>
+
                 <Gallery items={items} />
             </div>
         );

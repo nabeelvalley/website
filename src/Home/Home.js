@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import Landing from '../Components/Landing/Landing';
 import FeaturedPost from '../Components/FeaturedPost/FeaturedPost'
 import SectionDivider from '../Components/SectionDivider/SectionDivider'
@@ -9,6 +10,11 @@ import GridSummary from '../Components/DenseGrid/GridSummary'
 import GridImage from '../Components/DenseGrid/GridImage';
 
 const Home = () => <div className="Home">
+    <Helmet>
+        <title>Home | Nabeel Valley</title>
+        <meta name="description" content="Nabeel Valley's Portfolio and Blog. Web Development, Photography, and Design" />
+    </Helmet>
+
     <Landing />
     <FeaturedPost
         image="/content/blog/2019/12-10/header.jpg"

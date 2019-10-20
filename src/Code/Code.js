@@ -1,9 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import ContentPage from '../Components/ContentPage/ContentPage'
 import ProjectGroup from '../Components/ProjectGroup/ProjectGroup'
 import ProjectItem from '../Components/ProjectGroup/ProjectItem'
 
 const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
+    <Helmet>
+        <title>Code | Nabeel Valley</title>
+        <meta name="description" content="Projects I'm currently working on. Pretty much everything from React and MongoDB to Jenkins and Docker" />
+    </Helmet>
 
     <ProjectGroup isFullWidth={false}>
         <ProjectItem

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import AnyLink from '../AnyLink/AnyLink'
 import ContentPage from '../../Components/ContentPage/ContentPage'
 import Preloader from '../../Components/Preloader/Preloader'
@@ -12,8 +13,9 @@ class Post extends React.Component {
         this.state = {
             slug: props.location.pathname,
             content: '',
-            date: '',
+            subtitle: '',
             title: '',
+            description: '',
             metaLoadingError: false,
             contentLoadingError: false,
             contentLoaded: false
@@ -26,7 +28,7 @@ class Post extends React.Component {
             const json = await res.json()
             this.setState({ ...this.state, ...json })
         } catch (error) {
-            this.setState({ ...this.state, metaLoadingError: true, date: "Page not found", title: "404" })
+            this.setState({ ...this.state, metaLoadingError: true, subtitle: "Page not found", title: "404" })
             console.error('failed to load post meta')
         }
 
@@ -44,7 +46,15 @@ class Post extends React.Component {
 
     render() {
         return <div className="Post">
-            <ContentPage title={this.state.title || '...'} subtitle={this.state.date || 'loading'}>
+            <ContentPage title={this.state.title || '...'} subtitle={this.state.subtitle || 'loading'}>
+                {
+                    !this.state.contentLoaded
+                        ? <Helmet>
+                            <title>{this.state.title} | Nabeel Valley</title>
+                            <meta name="description" content={this.state.description} />
+                        </Helmet>
+                        : null
+                }
                 {
                     !this.state.contentLoaded
                         ? <Preloader />
