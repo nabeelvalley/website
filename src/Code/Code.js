@@ -26,13 +26,6 @@ const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
             linkText="Go to GitHub"
         />
         <ProjectItem
-            title="Hangman.js"
-            tech={['node.js']}
-            description="Basic Implementation of Hangman using node.js, worked through while teaching the Introduction to Web Development weekend-classes at Al Ghazali College"
-            link="https://github.com/nabeelvalley/hangman-js"
-            linkText="Go to GitHub"
-        />
-        <ProjectItem
             title="Twit List"
             tech={['node.js', 'express', 'twitter', 'mongo-db']}
             description="Application that allows you to bookmark Tweets and save them to your account simply by sharing that tweet with an app host user's account, works in tandem with the Webhooks Project"
@@ -40,11 +33,18 @@ const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
             linkText="Go to GitHub"
         />
         <ProjectItem
-            title="Webhooks"
-            tech={['node.js', 'express', 'twitter']}
-            description="A repository for testing and developing Webhooks for different applications such as Twitter, Facebook, and Twillio. At the moment it's mostly just a Twitter bot with some FUNctionality backed by the Twit List application"
-            link="https://github.com/nabeelvalley/Webhooks"
-            linkText="Go to GitHub"
+            title="Machine Learning Web Service"
+            tech={['python', 'machine learning', 'docker', 'cloud foundry']}
+            description="Get data and train a model to deploy as a web service on Cloud Foundry"
+            link="https://developer.ibm.com/tutorials/deploy-a-python-machine-learning-model-as-a-web-service/"
+            linkText="Go to Article"
+        />
+        <ProjectItem
+            title="Angular Continuous Deployment"
+            tech={['node.js', 'angular', 'ibm cloud', 'cloud', 'cloud foundry']}
+            description="Deploy an Angular app to Cloud Foundry with a Continuous Delivery Pipeline and Node.js custom builds"
+            link="https://developer.ibm.com/tutorials/deploy-angular-apps-cloud-foundry-devops/"
+            linkText="Go to Article"
         />
     </ProjectGroup>
 </ContentPage>
