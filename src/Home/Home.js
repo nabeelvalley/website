@@ -18,7 +18,7 @@ const Home = () => <div className="Home">
     <Landing />
     <FeaturedPost
         image="content/blog/2019/30-10/header.jpg"
-        title="Intro to F# Web APIs"
+        title="Introduction to F# Web APIs"
         date="30 October 2019"
         description="The basics of building a Web API with .NET Core and F#"
         link="/blog/2019/30-10/fsharp-webapi"

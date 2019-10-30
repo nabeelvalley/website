@@ -21,10 +21,19 @@ const ContentPage = ({ title, subtitle, children, location }) => console.log(loc
                 location.pathname !== '/blog'
                     ? <Sidebar title="Blog">
                         <SidebarItem
+                            title="Introduction to F# Web APIs"
+                            tech={['F#', '.NET Core', 'APIs']}
+                            date="30 October 2019"
+                            description="The basics of building a Web API with .NET Core and F#"
+                            link="/blog/2019/30-10/fsharp-webapi"
+                            linkText="Read More"
+                        />
+                        <SidebarItem
                             title="Looky, a wild HTML!"
                             date="13 October 2019"
                             description="The first blog post, A quick journey through my design and development process"
                             link="/blog/2019/12-10/looky-a-wild-html"
+                            linkText="Read More"
                         />
                         <SidebarItem
                             title="Zwartkops Gallery"
