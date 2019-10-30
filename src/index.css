@@ -63,6 +63,8 @@ body {
     --color-dark: #ffffff;
     --color-light: rgb(39, 39, 39);
     --color-light-transparent: rgba(36, 36, 36, 0.9);
+
+    --color-code-2: var(--color-code-4);
   }
 }
 

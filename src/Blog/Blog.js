@@ -8,7 +8,13 @@ const Blog = () => <ContentPage title="Blog" subtitle="Rants and Ramblings">
         <title>Blog | Nabeel Valley</title>
         <meta name="description" content="Rants and Ramblings. Random thoughts on Web Development, Photography, Design, and Life" />
     </Helmet>
-
+    <PostListing
+        image="content/blog/2019/30-10/header.jpg"
+        title="Intro to F# Web APIs"
+        date="30 October 2019"
+        description="The basics of building a Web API with .NET Core and F#"
+        link="/blog/2019/30-10/fsharp-webapi"
+    />
     <PostListing
         image="/content/blog/2019/12-10/header.jpg"
         title="Looky, a wild HTML!"
