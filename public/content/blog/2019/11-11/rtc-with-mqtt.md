@@ -10,9 +10,9 @@ If you'd like to follow along with the completed code you can get it [here](http
 
 # Broker
 
-> Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers. ([Eclipse Mosquitto](https://mosquitto.org/))
+> Eclipse Mosquitto is an open-source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers. ([Eclipse Mosquitto](https://mosquitto.org/))
 
-Message brokers are a method of intra-application communication, MQTT makes use of a publish/subscribe model for application communication. In this model different applications, or clients, are able to publish messages to a topic which can then be picked up and operated on by any other applications that are subscribed to the topic
+Message brokers are a method of intra-application communication, MQTT makes use of a publish/subscribe model for application communication. In this model different applications, or clients, can publish messages to a topic which can then be picked up and operated on by any other applications that are subscribed to the topic
 
 ## Setting Up the Broker
 
@@ -39,7 +39,7 @@ We can get more information by running either of the above commands with the `--
 
 We can see from the above that the message broker is running on our local port `1883`
 
-2. In a new shell we can create a client which is subscribed to a topic. We'll name this topic `messages` but it can be pretty much anything you want, to start the subscriber client we can run `mosquitto_sub -t "messages" -v`, you won't see any output in the subscriber shell as yet, but looking at the broker shell you should logging which says that a client was connected
+2. In a new shell, we can create a client which is subscribed to a topic. We'll name this topic `messages` but it can be pretty much anything you want, to start the subscriber client we can run `mosquitto_sub -t "messages" -v`, you won't see any output in the subscriber shell as yet, but looking at the broker shell you should logging which says that a client was connected
 
 ```raw
 1573494642: New connection from ::1 on port 1883.
@@ -73,11 +73,11 @@ And in the broker we'll see the following:
 1573494844: Client mosq-MWbaa2TpZGV0FrTmcF disconnected.
 ```
 
-When you're done with this you can close the shell windows that were open
+When you're done with this you can close the open shell windows
 
 ## Broker with WebSockets
 
-For our usecase we will make use of WebSockets so we can communicate directly from the browser. When starting up the message broker we have the option to pass in a configuration file. Let's create one that states the port and the protocol we would like to use. Create a new directory called `mqtt`, and in it create a new file called `mosquitto.conf` and place the following contents which simply tell it to listen on port `9001` and use the `websockets` protocol
+For our usecase, we will make use of WebSockets so we can communicate directly from the browser. When starting up the message broker we have the option to pass in a configuration file. Let's create one that states the port and the protocol we would like to use. Create a new directory called `mqtt`, and in it create a new file called `mosquitto.conf` and place the following contents which simply tell it to listen on port `9001` and use the `websockets` protocol
 
 `mosquitto.conf`
 
@@ -104,13 +104,13 @@ We'll be using [MQTT.js](https://github.com/mqttjs/MQTT.js) to connect to our me
 
 ## HTML
 
-Let's first lay out the `index.html`. It consists of a two column layout with the following:
+Let's first setup the `index.html`. It consists of a two-column layout with the following:
 
 - Main Heading with a badge to indicate if we successfully connected to the broker
 - Inputs to Publish Message
 - Table of all received messages
 - Materialize and MQTT.js files via CDN
-- Script tag for all our JavaScript, because we really don't need two files for this
+- Script tag for all our JavaScript, because we don't need two files for this
 
 `index.html`
 
@@ -211,7 +211,7 @@ Now that we're up and running we can connect to the broker that we set up previo
 const client = mqtt.connect('mqtt://127.0.0.1:9001')
 ```
 
-This gives us a `client` object that is the MQTT Client connected to our broker. Next we need to set a handler for the `connect` event which is when the client successfully connects to the message broker, we do this with the following code:
+This gives us a `client` object that is the MQTT Client connected to our broker. Next, we need to set a handler for the `connect` event which is when the client successfully connects to the message broker, we do this with the following code:
 
 ```js
 client.on('connect', function() {
@@ -232,7 +232,7 @@ Since we have successfully subscribed the client to the broker we should be able
 
 ## Publishing Messages
 
-Create a handler for the `Publish Message` button called `handleSubmit`, we've already referenced this in our button's html. The handler simply needs to read the values from the input fields and call `client.publish` with a stringified form of the data
+Create a handler for the `Publish Message` button called `handleSubmit`, we've already referenced this in our button's HTML. The handler simply needs to read the values from the input fields and call `client.publish` with a stringified form of the data
 
 ```js
 function handleSubmit() {
@@ -259,7 +259,7 @@ Refreshing the page, entering some text into the fields and clicking the `Publis
 1573506416: Sending PUBLISH to mqttjs_d5cdbc8e (d0, q0, r0, m0, 'messages', ... (34 bytes))
 ```
 
-Now that we are able to publish messages to the topic, we will need to create a handler for the `message` event which is triggered every time one of our subscribed topics has something published to it. We can do this again with the `client.on` function:
+Now that we can publish messages to the topic, we will need to create a handler for the `message` event which is triggered every time one of our subscribed topics has something published to it. We can do this again with the `client.on` function:
 
 ```js
 client.on('message', function(topic, message) {
@@ -277,15 +277,15 @@ You should be able to open a few different windows of the web page and they shou
 
 # What Next?
 
-If you're not familiar with message brokers this could be a lot to take in and that's okay. I think playing around with the `mosquitto_pub` and `mosquitto_sub` tools can be really helpful to get a more interactive feel for the way everything works. You can also just play with the MQTT.js code we used via your browser console and looking at the documentation on the website
+If you're not familiar with message brokers this could be a lot to take in and that's okay. I think playing around with the `mosquitto_pub` and `mosquitto_sub` tools can be helpful to get a more interactive feel for the way everything works. You can also just play with the MQTT.js code we used via your browser console and looking at the documentation on the website
 
-If you want to take a look at a free instance of an MQTT Broker that you can play around with take a look at [Cloud MQTT](https://www.cloudmqtt.com/), and if you want to look at how you can take the concepts covered here today and and play around with some IoT concepts as well then it may also be worth taking a look at this [IBM Developer Tutorial](https://developer.ibm.com/tutorials/iot-mobile-phone-iot-device-bluemix-apps-trs/) using IBM Cloud and Watson IoT
+If you want to take a look at a free instance of an MQTT Broker that you can play around with take a look at [Cloud MQTT](https://www.cloudmqtt.com/), and if you want to look at how you can take the concepts covered here today and play around with some IoT concepts as well then it may also be worth taking a look at this [IBM Developer Tutorial](https://developer.ibm.com/tutorials/iot-mobile-phone-iot-device-bluemix-apps-trs/) using IBM Cloud and Watson IoT
 
-If you're interested in spinning up your own MQTT broker with your own functionality you can take a look at [Mosca](http://www.mosca.io/) or get an even deeper understanding of the MQTT Protocol [on IBM Developer](https://developer.ibm.com/articles/iot-mqtt-why-good-for-iot/)
+If you're interested in spinning up your own MQTT broker with custom functionality you can take a look at [Mosca](http://www.mosca.io/) or get an even deeper understanding of the MQTT Protocol [on IBM Developer](https://developer.ibm.com/articles/iot-mqtt-why-good-for-iot/)
 
 # Conclusion
 
-We've used a couple of different technologies and depending on your background you may not be familiar with everything here. The best thing I'd say to get to really understand what we've covered would be to play around with the code as well as look at some of the other services and usecases for message brokers and get a feel for what's out there
+We've used a couple of different technologies and depending on your background you may not be familiar with everything here. The best thing I'd say to get to understand what we've covered would be to play around with the code as well as look at some of the other services and use-cases for message brokers and get a feel for what's out there
 
 Good luck
 
