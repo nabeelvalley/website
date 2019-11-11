@@ -8,6 +8,7 @@ const GridImage = ({ image, alt, gridColumn, gridRow, useAutoHeight }) =>
         src={image}
         alt={alt}
         style={{ gridColumn, gridRow, height: useAutoHeight ? 'auto' : null }}
+        loading="lazy"
     />
 
 export default GridImage

@@ -1,10 +1,14 @@
+![](/content/blog/2019/11-11/header.jpg =100%x100%)
+
 # Overview
 
 MQTT is an open standard for communication and is especially useful for communication between IoT devices due to its low bandwidth requirements
 
 Today we're going to be taking a look at using MQTT to easily communicate between multiple applications. We'll look at using a static website and Eclipse Mosquitto as a message broker to enable communication between two instances of the application, but the same principles can be extended to other programming languages and MQTT clients. For our clients we'll be using `MQTT.js` which runs in the browser via CDN and we interact with it using JavaScript, but can also be added from `npm`
 
-# Mosquitto
+If you'd like to follow along with the completed code you can get it [here](https://github.com/nabeelvalley/RTCWithMQTT)
+
+# Broker
 
 > Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers. ([Eclipse Mosquitto](https://mosquitto.org/))
 
@@ -94,7 +98,7 @@ We can start the broker again from the `mqtt` directory using `mosquitto -c mosq
 
 Now that we have configured the broker to use Web Sockets we can start connecting to it from a web page and publish some messages
 
-# Website
+# Client
 
 We'll be using [MQTT.js](https://github.com/mqttjs/MQTT.js) to connect to our message broker. MQTT.js is a simple MQTT Client Library for connecting to message brokers, we'll be using it via CDN for the sake of simplicity and will also be using [Materialize](https://materializecss.com/) for our CSS because I'm not going to write a bunch of CSS and I don't want this to look completely terrible
 
@@ -275,9 +279,9 @@ You should be able to open a few different windows of the web page and they shou
 
 If you're not familiar with message brokers this could be a lot to take in and that's okay. I think playing around with the `mosquitto_pub` and `mosquitto_sub` tools can be really helpful to get a more interactive feel for the way everything works. You can also just play with the MQTT.js code we used via your browser console and looking at the documentation on the website
 
-If you want to take a look at a free instance of an MQTT Broker that you can play around with take a look at [Cloud MQTT](https://www.cloudmqtt.com/), and if you want to look at how you can take the concepts covered here today and and play around with some IoT concepts as well then it may also be worth taking a look at this [IBM Developer Tutorial](https://developer.ibm.com/tutorials/iot-mobile-phone-iot-device-bluemix-apps-trs/)
+If you want to take a look at a free instance of an MQTT Broker that you can play around with take a look at [Cloud MQTT](https://www.cloudmqtt.com/), and if you want to look at how you can take the concepts covered here today and and play around with some IoT concepts as well then it may also be worth taking a look at this [IBM Developer Tutorial](https://developer.ibm.com/tutorials/iot-mobile-phone-iot-device-bluemix-apps-trs/) using IBM Cloud and Watson IoT
 
-If you're interested in spinning up your own MQTT broker with your own functionality you can take a look at [Mosca](http://www.mosca.io/)
+If you're interested in spinning up your own MQTT broker with your own functionality you can take a look at [Mosca](http://www.mosca.io/) or get an even deeper understanding of the MQTT Protocol [on IBM Developer](https://developer.ibm.com/articles/iot-mqtt-why-good-for-iot/)
 
 # Conclusion
 

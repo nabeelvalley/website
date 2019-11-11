@@ -21,6 +21,14 @@ const ContentPage = ({ title, subtitle, children, location }) => console.log(loc
                 location.pathname !== '/blog'
                     ? <Sidebar title="Blog">
                         <SidebarItem
+                            title="Real-time Communication with MQTT"
+                            tech={['JS', 'MQTT', 'Mosquitto', 'WS']}
+                            date="11 November 2019"
+                            description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
+                            link="/blog/2019/11-11/rtc-with-mqtt"
+                            linkText="Read More"
+                        />
+                        <SidebarItem
                             title="Introduction to F# Web APIs"
                             tech={['F#', '.NET Core', 'APIs']}
                             date="30 October 2019"

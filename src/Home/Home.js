@@ -17,11 +17,11 @@ const Home = () => <div className="Home">
 
     <Landing />
     <FeaturedPost
-        image="content/blog/2019/30-10/header.jpg"
-        title="Introduction to F# Web APIs"
-        date="30 October 2019"
-        description="The basics of building a Web API with .NET Core and F#"
-        link="/blog/2019/30-10/fsharp-webapi"
+        image="content/blog/2019/11-11/header.jpg"
+        title="Real-time Communication with MQTT"
+        date="11 November 2019"
+        description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
+        link="/blog/2019/11-11/rtc-with-mqtt"
     />
     <SectionDivider title="What's New?" />
     <ProjectGroup isFullWidth={true}>
@@ -42,22 +42,30 @@ const Home = () => <div className="Home">
     </ProjectGroup>
     <DenseGrid>
         <GridSummary
-            title="Looky, a wild HTML!"
-            date="13 October 2019"
-            description="The first blog post, a quick journey through my design and development process"
-            link="/blog/2019/12-10/looky-a-wild-html"
+            title="Introduction to F# Web APIs"
+            date="30 October 2019"
+            description="The basics of building a Web API with .NET Core and F#"
+            link="/blog/2019/30-10/fsharp-webapi"
             gridColumn="span 4"
             gridRow="span 2"
+        />
+        <GridImage
+            image="/content/blog/2019/30-10/header.jpg"
+            gridColumn="span 4"
+            gridRow="span 3"
         />
         <GridImage
             image="/content/blog/2019/12-10/header.jpg"
             gridColumn="span 4"
             gridRow="span 3"
         />
-        <GridImage
-            image="/images/zwartkops/image12.jpg"
+        <GridSummary
+            title="Looky, a wild HTML!"
+            date="13 October 2019"
+            description="The first blog post, a quick journey through my design and development process"
+            link="/blog/2019/12-10/looky-a-wild-html"
             gridColumn="span 4"
-            gridRow="span 3"
+            gridRow="span 2"
         />
         <GridSummary
             title="Zwartkops Gallery"
@@ -67,6 +75,16 @@ const Home = () => <div className="Home">
             linkText="View Gallery"
             gridColumn="span 4"
             gridRow="span 2"
+        />
+        <GridImage
+            image="/images/zwartkops/image12.jpg"
+            gridColumn="span 4"
+            gridRow="span 3"
+        />
+        <GridImage
+            image="/images/zwartkops/image2.jpg"
+            gridColumn="span 4"
+            gridRow="span 3"
         />
     </DenseGrid>
 </div>

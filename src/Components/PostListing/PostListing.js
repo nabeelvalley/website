@@ -5,7 +5,7 @@ import './PostListing.css'
 
 const PostListing = ({ image, title, date, description, link, textAlignRight = false, linkText = "Read More" }) =>
     <div className={'PostListing grid text-' + (textAlignRight === true ? 'right' : 'left')}>
-        <img src={image} className="image fill" alt="" />
+        <img src={image} className="image fill" alt="" loading="lazy" />
         <div className="text">
             <h2 className="title">{title}</h2>
             <div className="date">{date}</div>
