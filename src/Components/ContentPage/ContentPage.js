@@ -22,10 +22,10 @@ const ContentPage = ({ title, subtitle, children, location }) => console.log(loc
                     ? <Sidebar title="Blog">
                         <SidebarItem
                             title="Real-time Communication with MQTT"
-                            tech={['JS', 'MQTT', 'Mosquitto', 'WS']}
-                            date="11 November 2019"
+                            tech={['JS', 'MQTT', 'WS', 'Mosquitto']}
+                            date="12 November 2019"
                             description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
-                            link="/blog/2019/11-11/rtc-with-mqtt"
+                            link="/blog/2019/12-11/rtc-with-mqtt"
                             linkText="Read More"
                         />
                         <SidebarItem

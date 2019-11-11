@@ -17,11 +17,11 @@ const Home = () => <div className="Home">
 
     <Landing />
     <FeaturedPost
-        image="content/blog/2019/11-11/header.jpg"
+        image="content/blog/2019/12-11/header.jpg"
         title="Real-time Communication with MQTT"
-        date="11 November 2019"
+        date="12 November 2019"
         description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
-        link="/blog/2019/11-11/rtc-with-mqtt"
+        link="/blog/2019/12-11/rtc-with-mqtt"
     />
     <SectionDivider title="What's New?" />
     <ProjectGroup isFullWidth={true}>

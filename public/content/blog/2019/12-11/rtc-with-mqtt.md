@@ -1,4 +1,4 @@
-![](/content/blog/2019/11-11/header.jpg =100%x100%)
+![](/content/blog/2019/12-11/header.jpg =100%x100%)
 
 # Overview
 

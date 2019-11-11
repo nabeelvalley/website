@@ -33,7 +33,14 @@ const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
             linkText="Go to GitHub"
         />
         <ProjectItem
-            title="Machine Learning Web Service"
+            title="Real-Time Communication with MQTT"
+            tech={['JS', 'MQTT', 'WS', 'Mosquitto']}
+            description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
+            link="https://github.com/nabeelvalley/RTCWithMQTT"
+            linkText="Go to GitHub"
+        />
+        <ProjectItem
+            title="Machine Learning Web Services"
             tech={['python', 'machine learning', 'docker', 'cloud foundry']}
             description="Get data and train a model to deploy as a web service on Cloud Foundry"
             link="https://developer.ibm.com/tutorials/deploy-a-python-machine-learning-model-as-a-web-service/"
