@@ -11,10 +11,15 @@
   font-family: var(--font-primary);
   font-weight: 100;
   white-space: pre-wrap;
-  font-size: 14px;
+  font-size: calc(var(--size-s) - 3px);
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
+}
+
+.Markdown pre {
+  border: solid 1px var(--color-primary);
+  padding: var(--text-spacing);
 }
 
 /* remove hljs default padding */
