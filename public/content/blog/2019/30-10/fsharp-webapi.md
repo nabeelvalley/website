@@ -142,7 +142,7 @@ type WeatherForecast =
         32 + (int (float this.TemperatureC / 0.5556))
 ```
 
-Next up, we can see the controller which contains a single `GET` endpoint which delivers a random array of weather forecasts. Here we can see a few different things. First, the namespace is `FSharpWebApi.Controllers`, this pretty much follows the .NET standard of the Namespace being related to the Folder name, we can also see the `ApiController` attribute that adds [some useful functionality](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.0#apicontroller-attribute) for basic API handling and the `Route` attribute that states the controller route
+Next up, we can see the controller which contains a single `GET` endpoint which delivers a random array of weather forecasts. Here we can see a few different things. First, the namespace is `FSharpWebApi.Controllers`, this pretty much follows the .NET standard of the Namespace being related to the Folder name, we can also see the `ApiController` attribute that adds <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.0#apicontroller-attribute" target="_blank">some useful functionality</a> for basic API handling and the `Route` attribute that states the controller route
 
 The `WeatherForecastController` type defines the controller and that it inherits from `ControllerBase`, additionally the constructor requires the `ILogger` service which will be provided by DependencyInjection
 
