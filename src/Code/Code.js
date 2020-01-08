@@ -12,6 +12,13 @@ const Code = () => <ContentPage title="Code" subtitle="Endeavours in Monospace">
 
     <ProjectGroup isFullWidth={false}>
         <ProjectItem
+            title="Docs"
+            tech={['literally everything']}
+            description="Documentation and notes on pretty much everything programming and software development related"
+            link="/docs/index"
+            linkText="View Docs"
+        />
+        <ProjectItem
             title="Rak'ah"
             tech={['svelte', 'js', 'netlify']}
             description="Information on the number of Rak'ah for different Salaat. Essentially a fork of 'Form and Structure' with different content"
