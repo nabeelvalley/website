@@ -36,7 +36,7 @@ const Home = () => <div className="Home">
             title="Rak'ah"
             tech={['svelte', 'js', 'netlify']}
             description="Information on the number of Rak'ah for different Salaat. Essentially a fork of 'Form and Structure' with different content"
-            link="https://rakaah.netlify.com"
+            link="https://rakah.netlify.com"
             linkText="Go to Site"
         />
     </ProjectGroup>
