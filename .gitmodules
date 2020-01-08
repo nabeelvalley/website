@@ -1,0 +1,3 @@
+[submodule "public/content/docs"]
+	path = public/content/docs
+	url = https://github.com/nabeelvalley/Docs.git
