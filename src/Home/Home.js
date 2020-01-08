@@ -26,17 +26,17 @@ const Home = () => <div className="Home">
     <SectionDivider title="What's New?" />
     <ProjectGroup isFullWidth={true}>
         <ProjectItem
-            title="Salaah Times"
-            tech={['react', 'strapi', 'docker', 'mongo-db']}
-            description="Web App to enable Masaajid to manage and publish their Salaah Times for a given area. Built with StrapiCMS, Mongo and React and an unnecessarily complicated Docker build"
-            link="https://github.com/nabeelvalley/SalaahTimesApp"
-            linkText="Go to GitHub"
+            title="Docs"
+            tech={['literally everything']}
+            description="I'm migrating all my dev notes over from GitHub Pages, you can take a look at what's there so far:"
+            link="/docs/index"
+            linkText="View Docs"
         />
         <ProjectItem
-            title="Form and Structure"
+            title="Rak'ah"
             tech={['svelte', 'js', 'netlify']}
-            description="Website about Poetic Form and Structure built with Svelte, one of those 'always-a-work-in-progress' kind of things"
-            link="https://formandstructure.netlify.com"
+            description="Information on the number of Rak'ah for different Salaat. Essentially a fork of 'Form and Structure' with different content"
+            link="https://rakaah.netlify.com"
             linkText="Go to Site"
         />
     </ProjectGroup>
