@@ -22,6 +22,36 @@
   padding: var(--text-spacing);
 }
 
+/* Table Styling */
+
+.Markdown table {
+    margin: 0px 15px 15px 0px;
+    border-spacing: 10px 5px;
+    border-collapse: collapse;
+    width: 100%;
+    --table-padding: 3px;
+}
+
+.Markdown thead,
+.Markdown tbody {
+    border-bottom: solid 1px var(--color-primary-l);
+}
+
+.Markdown th {
+    text-align: left;
+    padding: var(--table-padding);
+}
+
+.Markdown tr:nth-child(even) {
+    background-color: var(--color-primary-l);
+}
+
+.Markdown td {
+    vertical-align: top;
+    padding: var(--table-padding);
+    min-width: 50px;
+}
+
 /* remove hljs default padding */
 .Markdown .hljs {
   padding: 0px;

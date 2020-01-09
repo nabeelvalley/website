@@ -24,21 +24,20 @@ class Post extends React.Component {
 
     async componentDidMount() {
         try {
-            const res = await fetch(`/content${this.state.slug}.json`)
-            const json = await res.json()
-            this.setState({ ...this.state, ...json })
+            const jsonResPromise = fetch(`/content${this.state.slug}.json`)
+            const contentResPromise = fetch(`/content${this.state.slug}.md`)
+
+            const jsonRes = await jsonResPromise
+            const contentRes = await contentResPromise
+
+            const metaJson = await jsonRes.json()
+            const contentText = await contentRes.text()
+
+            this.setState({ ...this.state, ...metaJson, content: contentText })
+
         } catch (error) {
             this.setState({ ...this.state, metaLoadingError: true, subtitle: "Page not found", title: "404" })
-            console.error('failed to load post meta')
-        }
-
-        try {
-            const res = await fetch(`/content${this.state.slug}.md`)
-            const content = await res.text()
-            this.setState({ ...this.state, content })
-        } catch (error) {
-            this.setState({ ...this.state, contentLoadingError: true })
-            console.error('failed to load post content')
+            console.error('failed to load data')
         } finally {
             this.setState({ ...this.state, contentLoaded: true })
         }
