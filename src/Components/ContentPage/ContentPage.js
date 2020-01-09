@@ -6,7 +6,7 @@ import './ContentPage.css'
 import Sidebar from '../Sidebar/Sidebar'
 import SidebarItem from '../Sidebar/SidebarItem'
 
-const ContentPage = ({ title, subtitle, children, location }) => console.log(location) || <div className="ContentPage">
+const ContentPage = ({ title, subtitle, children, location }) => <div className="ContentPage">
     <div className="header">
         <h1 className="heading">{title}</h1>
         <p className="subheading">{subtitle}</p>
@@ -56,19 +56,20 @@ const ContentPage = ({ title, subtitle, children, location }) => console.log(loc
             {
                 location.pathname !== '/code'
                     ? <Sidebar title="Code">
+
                         <SidebarItem
-                            title="Form and Structure"
-                            tech={['svelte', 'js', 'netlify']}
-                            description="Website about Poetic Form and Structure built with Svelte, one of those 'always-a-work-in-progress' kind of things"
-                            link="https://formandstructure.netlify.com"
-                            linkText="Go to Site"
+                            title="Docs"
+                            tech={['literally everything']}
+                            description="Documentation and notes on pretty much everything programming and software development related"
+                            link="/docs/index"
+                            linkText="View Docs"
                         />
                         <SidebarItem
-                            title="Salaah Times"
-                            tech={['react', 'strapi', 'docker', 'mongo-db']}
-                            description="Web App to enable Masaajid to manage and publish their Salaah Times for a given area. Built with StrapiCMS, Mongo and React and an unnecessarily complicated Docker build"
-                            link="https://github.com/nabeelvalley/SalaahTimesApp"
-                            linkText="Go to GitHub"
+                            title="Rak'ah"
+                            tech={['svelte', 'js', 'netlify']}
+                            description="Information on the number of Rak'ah for different Salaat. Essentially a fork of 'Form and Structure' with different content"
+                            link="https://rakah.netlify.com"
+                            linkText="Go to Site"
                         />
                     </Sidebar>
                     : null

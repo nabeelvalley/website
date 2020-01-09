@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 import React, { Suspense, lazy } from 'react';
 import Preloader from './Components/Preloader/Preloader';
 import Footer from './Components/Footer/Footer'
@@ -30,7 +31,8 @@ const App = (props) => (
           <Route exact path="/code" component={Code} />
           <Route exact path="/about" component={About} />
 
-          <Route exact path="*" component={Post} />
+          {/* Manually passing key as NOW in to force remount on route change */}
+          <Route exact path="*" component={(props) => <Post location={props.location} key={Date.now()} />} />
 
           <Redirect to="/home" />
 
