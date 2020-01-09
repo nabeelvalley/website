@@ -47,6 +47,8 @@ body {
   --main-margin: 5%;
   --top-margin: calc(65px + 10vh);
   --main-width: calc(100% - var(--main-margin) * 2);
+
+  --scrollbar-width: 10px;
 }
 
 /* Dark mode */
@@ -150,7 +152,8 @@ a:hover {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
 }
 
 /* track */
@@ -161,7 +164,7 @@ a:hover {
 /* handle */
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary-l);
-  border-radius: 10px;
+  border-radius: var(--scrollbar-width);
 }
 
 /* handle on hover */

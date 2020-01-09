@@ -22,13 +22,15 @@ class Post extends React.Component {
         }
     }
 
+    scrollTop = () => window.scrollTo(0, 0)
+
     getPostContent = async () => {
         try {
             const res = await fetch(`/content${this.state.slug}.json`)
             const json = await res.json()
-            this.setState({ ...this.state, ...json })
+            this.setState({ ...this.state, ...json }, this.scrollTop)
         } catch (error) {
-            this.setState({ ...this.state, metaLoadingError: true, subtitle: "Page not found", title: "404" })
+            this.setState({ ...this.state, metaLoadingError: true, subtitle: "Page not found", title: "404" }, this.scrollTop)
             console.error('failed to load post meta')
         }
 
@@ -37,10 +39,10 @@ class Post extends React.Component {
             const content = await res.text()
             this.setState({ ...this.state, content })
         } catch (error) {
-            this.setState({ ...this.state, contentLoadingError: true })
+            this.setState({ ...this.state, contentLoadingError: true }, this.scrollTop)
             console.error('failed to load post content')
         } finally {
-            this.setState({ ...this.state, contentLoaded: true })
+            this.setState({ ...this.state, contentLoaded: true }, this.scrollTop)
         }
     }
 

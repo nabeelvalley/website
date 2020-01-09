@@ -10,19 +10,24 @@
 .Markdown code {
   font-family: var(--font-primary);
   font-weight: 100;
-  white-space: pre-wrap;
   font-size: calc(var(--size-s) - 3px);
+  /* white-space: pre-wrap;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  word-break: break-word;
+  word-break: break-word; */
 }
 
 .Markdown pre {
   border: solid 1px var(--color-primary);
   padding: var(--text-spacing);
+  overflow-x: scroll;
 }
 
 /* Table Styling */
+
+.Markdown .scrollable {
+  overflow-x: scroll;
+}
 
 .Markdown table {
     margin: 0px 15px 15px 0px;

@@ -16,11 +16,17 @@ const externalLinksInNewWindow = {
     }
 }
 
+const scrollableTables = {
+    type: 'output',
+    regex: /<table[^>]*>(?:.|\n)*?<\/table>/,
+    replace: (text) => `<div class="scrollable">${text}</div>`
+}
+
 const convertMarkdownToHtml = (text) => {
     const converter = new Converter({
         headerLevelStart: 2,
         parseImgDimensions: true,
-        extensions: [showdownHighlighter, externalLinksInNewWindow],
+        extensions: [showdownHighlighter, externalLinksInNewWindow, scrollableTables],
         simplifiedAutoLink: true,
         tables: true,
         ghCompatibleHeaderId: true,
