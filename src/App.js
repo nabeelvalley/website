@@ -31,8 +31,8 @@ const App = (props) => (
           <Route exact path="/code" component={Code} />
           <Route exact path="/about" component={About} />
 
-          {/* Manually passing key as NOW in to force remount on route change */}
-          <Route exact path="*" component={(props) => <Post location={props.location} key={Date.now()} />} />
+          {/* Manually passing key as current pathname to force remount on route change */}
+          <Route exact path="*" component={(props) => <Post location={props.location} key={props.location.pathname} />} />
 
           <Redirect to="/home" />
 
