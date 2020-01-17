@@ -1,6 +1,7 @@
 .Markdown {
   font-family: var(--font-secondary);
   font-size: var(--size-s);
+  --code-border: solid 1px var(--color-primary);
 }
 
 .Markdown > * {
@@ -17,8 +18,22 @@
   word-break: break-word; */
 }
 
+.Markdown .code-tab code {
+    position: relative;
+    background-color: var(--color-light);
+    padding: 10px var(--text-spacing) 0px var(--text-spacing);
+    border-top: var(--code-border);
+    border-left: var(--code-border);
+    border-right: var(--code-border);
+}
+
+.Markdown .code-tab {
+    margin-bottom: calc(-1 * var(--text-spacing));
+    z-index: 1000;
+}
+
 .Markdown pre {
-  border: solid 1px var(--color-primary);
+  border: var(--code-border);
   padding: var(--text-spacing);
   overflow-x: scroll;
 }

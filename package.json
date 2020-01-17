@@ -27,6 +27,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

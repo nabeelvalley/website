@@ -42,7 +42,8 @@ body {
   --large-breakpoint: 1200px;
 
   --block-spacing: 65px;
-  --text-spacing: 15px;
+  --text-spacing: 25px;
+  --line-height: 15px;
 
   --main-margin: 5%;
   --top-margin: calc(65px + 10vh);
@@ -115,6 +116,12 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+/* test */
+
+p {
+  line-height: 1.5;
 }
 
 /* heading */

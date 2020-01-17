@@ -19,11 +19,19 @@ const scrollableTables = {
     replace: (text) => `<div class="scrollable">${text}</div>`
 }
 
+
+const codeTab = {
+    type: 'lang',
+    regex : /^`([^`]*)`$/gm,
+    replace: (text) => `<p class="code-tab"><code>${text.slice(1,-1)}</code></p>`
+}
+
+
 const convertMarkdownToHtml = (text) => {
     const converter = new Converter({
         headerLevelStart: 2,
         parseImgDimensions: true,
-        extensions: [showdownHighlighter, externalLinksInNewWindow, scrollableTables],
+        extensions: [codeTab, showdownHighlighter, externalLinksInNewWindow, scrollableTables],
         simplifiedAutoLink: true,
         tables: true,
         ghCompatibleHeaderId: true,
