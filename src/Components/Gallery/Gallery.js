@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './Gallery.css'
 
 const Gallery = ({ items, baseHeight, styles }) => {
@@ -9,4 +9,4 @@ const Gallery = ({ items, baseHeight, styles }) => {
     </div>
 }
 
-export default Gallery;
+export default Gallery

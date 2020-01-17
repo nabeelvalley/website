@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap");
 
 html,
 body {
@@ -14,8 +14,8 @@ body {
 }
 
 :root {
-  --font-primary: 'Nova Mono', monospace;
-  --font-secondary: 'Montserrat Alternates', sans-serif;
+  --font-primary: "Nova Mono", monospace;
+  --font-secondary: "Montserrat Alternates", sans-serif;
 
   --color-primary: #e44d90;
   --color-primary-l: #e44d9181;
@@ -56,6 +56,10 @@ body {
 body {
   background-color: var(--color-light);
   color: var(--color-dark);
+}
+
+.App {
+  margin: var(--top-margin) var(--main-margin) 0 var(--main-margin);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,12 +1,11 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 import SocialIcons from '../SocialIcons/SocialIcons'
 
 import './ContentPage.css'
 import Sidebar from '../Sidebar/Sidebar'
 import SidebarItem from '../Sidebar/SidebarItem'
 
-const ContentPage = ({ title, subtitle, children, location }) => <div className="ContentPage">
+const ContentPage = ({ title, subtitle, children }) => <div className="ContentPage">
     <div className="header">
         <h1 className="heading">{title}</h1>
         <p className="subheading">{subtitle}</p>
@@ -18,7 +17,7 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
         </main>
         <div className="links">
             {
-                location.pathname !== '/blog'
+                window.location.pathname !== '/blog'
                     ? <Sidebar title="Blog">
                         <SidebarItem
                             title="Real-time Communication with MQTT"
@@ -54,7 +53,7 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
                     : null
             }
             {
-                location.pathname !== '/code'
+                window.location.pathname !== '/code'
                     ? <Sidebar title="Code">
 
                         <SidebarItem
@@ -78,4 +77,4 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
     </div>
 </div>
 
-export default withRouter(ContentPage)
+export default ContentPage

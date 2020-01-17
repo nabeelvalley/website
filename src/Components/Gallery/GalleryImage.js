@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import VanillaTilt from 'vanilla-tilt';
+import React, { Component } from 'react'
+import VanillaTilt from 'vanilla-tilt'
 
 class GalleryImage extends Component {
     componentDidMount() {

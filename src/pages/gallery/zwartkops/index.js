@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
-import Gallery from './Components/Gallery/Gallery';
-import GalleryImage from './Components/Gallery/GalleryImage'
-import Title from './Components/Title/Title'
+import Gallery from '../../../Components/Gallery/Gallery'
+import GalleryImage from '../../../Components/Gallery/GalleryImage'
+import Title from '../../../Components/Title/Title'
 import './Zwartkops.css'
 
 import sal from 'sal.js'
-import 'sal.js/dist/sal.css';
+import '../../../../node_modules/sal.js/dist/sal.css'
+import Layout from '../../../Layout'
 
 class Zwartkops extends Component {
     componentDidMount() {
         sal({
             threshold: 0.1,
             once: true,
-        });
+        })
     }
 
     render() {
@@ -58,16 +59,18 @@ class Zwartkops extends Component {
         ]
 
         return (
-            <div className="Zwartkops">
+            <Layout>
+                <div className="Zwartkops">
                     <Helmet>
                         <title>Zwartkops Gallery | Nabeel Valley</title>
                         <meta name="description" content="Photo Gallery of the Extreme Racing Festival in July 2019 at Zwartkops Raceway, Centurion" />
                     </Helmet>
 
-                <Gallery items={items} />
-            </div>
-        );
+                    <Gallery items={items} />
+                </div>
+            </Layout>
+        )
     }
 }
 
-export default Zwartkops;
+export default Zwartkops

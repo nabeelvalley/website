@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "aos": "^2.3.4",
+    "gatsby": "^2.18.24",
+    "gatsby-plugin-nprogress": "^2.1.18",
+    "gatsby-plugin-postcss": "^2.1.19",
+    "gatsby-source-filesystem": "^2.1.46",
+    "postcss-preset-env": "^6.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",

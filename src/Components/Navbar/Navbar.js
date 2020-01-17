@@ -1,17 +1,21 @@
 import React from 'react'
 import './Navbar.css'
-import { NavLink, withRouter } from 'react-router-dom'
+import { Link } from 'gatsby'
 
-const Navbar = (props) => (
+const Navbar = (props) => (console.log(window.location.pathname) ||
     <nav className="Navbar">
-        <div className="logo" style={props.location.pathname === '/home' ? { visibility: 'hidden', width: 0, height: 0 } : {}}><NavLink activeClassName="active" to="/home">Nabeel Valley</NavLink></div>
+        <div className="logo" style={window.location.pathname === '/home' ? { visibility: 'hidden', width: 0, height: 0 } : {}}><Link activeClassName="active" to="/home">Nabeel Valley</Link></div>
         <ul className="linkGroup">
-            <li className="link"><NavLink activeClassName="active" to="/home">Home</NavLink></li>
-            <li className="link"><NavLink activeClassName="active" to="/blog">Blog</NavLink></li>
-            <li className="link"><NavLink activeClassName="active" to="/code">Code</NavLink></li>
-            <li className="link"><NavLink activeClassName="active" to="/about">About</NavLink></li>
+            <li className="link"><Link activeClassName="active"
+                partiallyActive={true} to="/home">Home</Link></li>
+            <li className="link"><Link activeClassName="active"
+                partiallyActive={true} to="/blog">Blog</Link></li>
+            <li className="link"><Link activeClassName="active"
+                partiallyActive={true} to="/code">Code</Link></li>
+            <li className="link"><Link activeClassName="active"
+                partiallyActive={true} to="/about">About</Link></li>
         </ul>
     </nav>
 )
 
-export default withRouter(Navbar)
+export default Navbar

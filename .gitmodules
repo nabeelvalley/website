@@ -1,3 +1,3 @@
-[submodule "public/content/docs"]
-	path = public/content/docs
+[submodule "static/content/docs"]
+	path = static/content/docs
 	url = https://github.com/nabeelvalley/Docs.git

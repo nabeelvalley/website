@@ -1,5 +1,5 @@
-import React from 'react';
-import './Title.css';
+import React from 'react'
+import './Title.css'
 
 const Title = ({ height, width, heading, subheading, date }) => {
     return <div className="Title" style={{ gridColumn: `span ${width}`, gridRow: `span ${height}` }}>
@@ -18,4 +18,4 @@ const Title = ({ height, width, heading, subheading, date }) => {
     </div>
 }
 
-export default Title;
+export default Title
