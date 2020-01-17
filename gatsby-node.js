@@ -83,7 +83,6 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
     result.data.allRenderedMarkdownPost.edges.forEach(({ node }) => {
-        console.log(node)
         createPage({
             path: node.slug,
             component: path.resolve(`./src/Post/Post.js`),

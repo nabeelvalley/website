@@ -11,7 +11,7 @@ const Blog = ({ location }) => <Layout>
             <meta name="description" content="Rants and Ramblings. Random thoughts on Web Development, Photography, Design, and Life" />
         </Helmet>
         <PostListing
-            image="content/blog/2019/12-11/header.jpg"
+            image="/content/blog/2019/12-11/header.jpg"
             title="Real-time Communication with MQTT"
             date="12 November 2019"
             description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
@@ -19,7 +19,7 @@ const Blog = ({ location }) => <Layout>
             textAlignRight
         />
         <PostListing
-            image="content/blog/2019/30-10/header.jpg"
+            image="/content/blog/2019/30-10/header.jpg"
             title="Introduction to F# Web APIs"
             date="30 October 2019"
             description="The basics of building a Web API with .NET Core and F#"
