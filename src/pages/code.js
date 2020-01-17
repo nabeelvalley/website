@@ -5,8 +5,8 @@ import ProjectGroup from '../Components/ProjectGroup/ProjectGroup'
 import ProjectItem from '../Components/ProjectGroup/ProjectItem'
 import Layout from '../Layout'
 
-const Code = () => <Layout>
-    <ContentPage title="Code" subtitle="Endeavours in Monospace">
+const Code = ({ location }) => <Layout>
+    <ContentPage location={location} title="Code" subtitle="Endeavours in Monospace">
         <Helmet>
             <title>Code | Nabeel Valley</title>
             <meta name="description" content="Projects I'm currently working on. Pretty much everything from React and MongoDB to Jenkins and Docker" />

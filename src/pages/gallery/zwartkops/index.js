@@ -59,7 +59,7 @@ class Zwartkops extends Component {
         ]
 
         return (
-            <Layout>
+            <Layout location={this.props.location}>
                 <div className="Zwartkops">
                     <Helmet>
                         <title>Zwartkops Gallery | Nabeel Valley</title>

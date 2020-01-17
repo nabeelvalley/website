@@ -10,7 +10,7 @@ import GridSummary from '../Components/DenseGrid/GridSummary'
 import GridImage from '../Components/DenseGrid/GridImage'
 import Layout from '../Layout'
 
-const Home = () => <Layout>
+const Home = ({ location }) => <Layout>
     <div className="Home">
         <Helmet>
             <title>Home | Nabeel Valley</title>

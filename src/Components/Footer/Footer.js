@@ -12,7 +12,7 @@ const Footer = () => <div className="Footer grid">
         </div>
     </div>
     <ol className="linkGroup">
-        <li className="link"><AnyLink to="/home">Home</AnyLink></li>
+        <li className="link"><AnyLink to="/">Home</AnyLink></li>
         <li className="link"><AnyLink to="/blog">Blog</AnyLink></li>
         <li className="link"><AnyLink to="/code">Code</AnyLink></li>
         <li className="link"><AnyLink to="/about">About</AnyLink></li>

@@ -25,8 +25,8 @@
   },
   "homepage": "https://nabeelvalley.netlify.com",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

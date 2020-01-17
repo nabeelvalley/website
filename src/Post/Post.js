@@ -1,9 +1,9 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import AnyLink from '../AnyLink/AnyLink'
-import ContentPage from '../../Components/ContentPage/ContentPage'
-import Preloader from '../../Components/Preloader/Preloader'
-import Markdown from '../Markdown/Markdown'
+import AnyLink from '../Components/AnyLink/AnyLink'
+import ContentPage from '../Components/ContentPage/ContentPage'
+import Preloader from '../Components/Preloader/Preloader'
+import Markdown from '../Components/Markdown/Markdown'
 
 import './Post.css'
 
@@ -51,25 +51,28 @@ class Post extends React.Component {
     }
 
     render() {
-        return <div className="Post">
-            <ContentPage title={this.state.title || '...'} subtitle={this.state.subtitle || 'loading'}>
-                {
-                    !this.state.contentLoaded
-                        ? <Helmet>
-                            <title>{this.state.title} | Nabeel Valley</title>
-                            <meta name="description" content={this.state.description} />
-                        </Helmet>
-                        : null
-                }
-                {
-                    !this.state.contentLoaded
-                        ? <Preloader />
-                        : !this.state.contentLoadingError && !this.state.metaLoadingError
-                            ? < Markdown text={this.state.content} />
-                            : <p>I can't seem to find the page you're looking for, but you may as well <AnyLink to="/home">take a look around</AnyLink> since you're here anyway right?</p>
-                }
-            </ContentPage>
-        </div>
+        return
+        <Layout>
+            <div className="Post">
+                <ContentPage location={location} title={this.state.title || '...'} subtitle={this.state.subtitle || 'loading'}>
+                    {
+                        !this.state.contentLoaded
+                            ? <Helmet>
+                                <title>{this.state.title} | Nabeel Valley</title>
+                                <meta name="description" content={this.state.description} />
+                            </Helmet>
+                            : null
+                    }
+                    {
+                        !this.state.contentLoaded
+                            ? <Preloader />
+                            : !this.state.contentLoadingError && !this.state.metaLoadingError
+                                ? < Markdown text={this.state.content} />
+                                : <p>I can't seem to find the page you're looking for, but you may as well <AnyLink to="/">take a look around</AnyLink> since you're here anyway right?</p>
+                    }
+                </ContentPage>
+            </div>
+        </Layout>
     }
 }
 

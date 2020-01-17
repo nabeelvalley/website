@@ -12,6 +12,13 @@ module.exports = {
                 color: '#e44d90',
                 showSpinner: false,
             }
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'content',
+                path: `${__dirname}/static/content`,
+            },
         }
     ]
 }

@@ -5,7 +5,7 @@ import './ContentPage.css'
 import Sidebar from '../Sidebar/Sidebar'
 import SidebarItem from '../Sidebar/SidebarItem'
 
-const ContentPage = ({ title, subtitle, children }) => <div className="ContentPage">
+const ContentPage = ({ title, subtitle, children, location }) => <div className="ContentPage">
     <div className="header">
         <h1 className="heading">{title}</h1>
         <p className="subheading">{subtitle}</p>
@@ -17,7 +17,7 @@ const ContentPage = ({ title, subtitle, children }) => <div className="ContentPa
         </main>
         <div className="links">
             {
-                window.location.pathname !== '/blog'
+                location.pathname !== '/blog'
                     ? <Sidebar title="Blog">
                         <SidebarItem
                             title="Real-time Communication with MQTT"
@@ -53,7 +53,7 @@ const ContentPage = ({ title, subtitle, children }) => <div className="ContentPa
                     : null
             }
             {
-                window.location.pathname !== '/code'
+                location.pathname !== '/code'
                     ? <Sidebar title="Code">
 
                         <SidebarItem

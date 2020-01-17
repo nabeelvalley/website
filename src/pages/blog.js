@@ -4,8 +4,8 @@ import ContentPage from '../Components/ContentPage/ContentPage'
 import PostListing from '../Components/PostListing/PostListing'
 import Layout from '../Layout'
 
-const Blog = () => <Layout>
-    <ContentPage title="Blog" subtitle="Rants and Ramblings">
+const Blog = ({ location }) => <Layout>
+    <ContentPage location={location} title="Blog" subtitle="Rants and Ramblings">
         <Helmet>
             <title>Blog | Nabeel Valley</title>
             <meta name="description" content="Rants and Ramblings. Random thoughts on Web Development, Photography, Design, and Life" />

@@ -5,8 +5,8 @@ import InfoBlock from '../Components/InfoBlock/InfoBlock'
 import SectionDivider from '../Components/SectionDivider/SectionDivider'
 import Layout from '../Layout'
 
-const About = () => <Layout>
-    <ContentPage title="About" subtitle="Software Developer, Student">
+const About = ({ location }) => <Layout>
+    <ContentPage location={location} title="About" subtitle="Software Developer, Student">
         <Helmet>
             <title>About Me | Nabeel Valley</title>
             <meta name="description" content="A little bit about my work and education experiences" />
