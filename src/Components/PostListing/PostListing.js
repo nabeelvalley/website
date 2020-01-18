@@ -6,7 +6,7 @@ import { getImageSources } from "../Helpers/imageQueryBuilder"
 import './PostListing.css'
 
 const PostListing = ({ imageSources, image, title, date, description, link, textAlignRight = false, linkText = "Read More" }) =>
-    console.log(imageSources) || <div className={'PostListing grid text-' + (textAlignRight === true ? 'right' : 'left')}>
+    <div className={'PostListing grid text-' + (textAlignRight === true ? 'right' : 'left')}>
         {
             imageSources
                 ? <Img fluid={getImageSources(imageSources)} className="image fill" alt="" loading="lazy" />

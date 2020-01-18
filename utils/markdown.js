@@ -22,8 +22,17 @@ const scrollableTables = {
 
 const codeTab = {
     type: 'lang',
-    regex : /^`([^`]*)`$/gm,
-    replace: (text) => `<p class="code-tab"><code>${text.slice(1,-1)}</code></p>`
+    regex: /^`([^`]*)`$/gm,
+    replace: (text) => `<p class="code-tab"><code>${text.slice(1, -1)}</code></p>`
+}
+
+const codeSummary = {
+    type: 'output',
+    regex: /<summary>`([^`]*)`<\/summary>/gm,
+    replace: (text) =>
+        `${text.replace('`', '<code>')
+            .replace('`', '</code>')
+        }`
 }
 
 
@@ -31,7 +40,7 @@ const convertMarkdownToHtml = (text) => {
     const converter = new Converter({
         headerLevelStart: 2,
         parseImgDimensions: true,
-        extensions: [codeTab, showdownHighlighter, externalLinksInNewWindow, scrollableTables],
+        extensions: [codeTab, showdownHighlighter, externalLinksInNewWindow, scrollableTables, codeSummary],
         simplifiedAutoLink: true,
         tables: true,
         ghCompatibleHeaderId: true,

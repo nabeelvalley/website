@@ -28,7 +28,7 @@
   },
   "homepage": "https://nabeelvalley.netlify.com",
   "scripts": {
-    "start": "gatsby develop",
+    "start": "gatsby clean && gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "test": "react-scripts test",
