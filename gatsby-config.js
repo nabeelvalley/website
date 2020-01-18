@@ -1,24 +1,32 @@
 module.exports = {
     plugins: [
         {
-            resolve: 'gatsby-plugin-postcss',
+            resolve: `gatsby-plugin-postcss`,
             options: {
-                postCssPlugins: [require('postcss-preset-env')({ stage: 0 })]
+                postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })]
             }
         },
         {
-            resolve: 'gatsby-plugin-nprogress',
+            resolve: `gatsby-plugin-nprogress`,
             options: {
-                color: '#e44d90',
+                color: `#e44d90`,
                 showSpinner: false,
             }
         },
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: `gatsby-source-filesystem`,
             options: {
-                name: 'content',
+                name: `content`,
                 path: `${__dirname}/static/content`,
             },
-        }
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/static/images`,
+            },
+        },
+        `gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
     ]
 }

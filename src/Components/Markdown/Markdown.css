@@ -18,18 +18,19 @@
   word-break: break-word; */
 }
 
-.Markdown .code-tab code {
-    position: relative;
-    background-color: var(--color-light);
-    padding: 10px var(--text-spacing) 0px var(--text-spacing);
-    border-top: var(--code-border);
-    border-left: var(--code-border);
-    border-right: var(--code-border);
+.Markdown .code-tab {
+  margin-bottom: calc(-1 * var(--text-spacing));
+  margin-top: calc(2 * var(--text-spacing));
+  z-index: 1000;
 }
 
-.Markdown .code-tab {
-    margin-bottom: calc(-1 * var(--text-spacing));
-    z-index: 1000;
+.Markdown .code-tab code {
+  position: relative;
+  background-color: var(--color-light);
+  padding: 10px var(--text-spacing) 0px var(--text-spacing);
+  border-top: var(--code-border);
+  border-left: var(--code-border);
+  border-right: var(--code-border);
 }
 
 .Markdown pre {
@@ -45,31 +46,31 @@
 }
 
 .Markdown table {
-    margin: 0px 15px 15px 0px;
-    border-spacing: 10px 5px;
-    border-collapse: collapse;
-    width: 100%;
-    --table-padding: 3px;
+  margin: 0px 15px 15px 0px;
+  border-spacing: 10px 5px;
+  border-collapse: collapse;
+  width: 100%;
+  --table-padding: 3px;
 }
 
 .Markdown thead,
 .Markdown tbody {
-    border-bottom: solid 1px var(--color-primary-l);
+  border-bottom: solid 1px var(--color-primary-l);
 }
 
 .Markdown th {
-    text-align: left;
-    padding: var(--table-padding);
+  text-align: left;
+  padding: var(--table-padding);
 }
 
 .Markdown tr:nth-child(even) {
-    background-color: var(--color-primary-l);
+  background-color: var(--color-primary-l);
 }
 
 .Markdown td {
-    vertical-align: top;
-    padding: var(--table-padding);
-    min-width: 50px;
+  vertical-align: top;
+  padding: var(--table-padding);
+  min-width: 50px;
 }
 
 /* remove hljs default padding */

@@ -5,9 +5,12 @@
   "dependencies": {
     "aos": "^2.3.4",
     "gatsby": "^2.18.24",
+    "gatsby-image": "^2.2.39",
     "gatsby-plugin-nprogress": "^2.1.18",
     "gatsby-plugin-postcss": "^2.1.19",
+    "gatsby-plugin-sharp": "^2.3.13",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-sharp": "^2.3.13",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

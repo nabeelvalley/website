@@ -9,8 +9,9 @@ import DenseGrid from '../Components/DenseGrid/DenseGrid'
 import GridSummary from '../Components/DenseGrid/GridSummary'
 import GridImage from '../Components/DenseGrid/GridImage'
 import Layout from '../Layout'
+import { graphql } from 'gatsby'
 
-const Home = ({ location }) => <Layout>
+const Home = ({ location, data }) => <Layout>
     <div className="Home">
         <Helmet>
             <title>Home | Nabeel Valley</title>
@@ -52,11 +53,21 @@ const Home = ({ location }) => <Layout>
                 gridRow="span 2"
             />
             <GridImage
+                imageSources={{
+                    mobileImage: data.mqtt_mobileImage,
+                    desktopImage: data.mqtt_desktopImage,
+                    largeDesktopImage: data.mqtt_largeDesktopImage
+                }}
                 image="/content/blog/2019/30-10/header.jpg"
                 gridColumn="span 4"
                 gridRow="span 3"
             />
             <GridImage
+                imageSources={{
+                    mobileImage: data.wild_mobileImage,
+                    desktopImage: data.wild_desktopImage,
+                    largeDesktopImage: data.wild_largeDesktopImage
+                }}
                 image="/content/blog/2019/12-10/header.jpg"
                 gridColumn="span 4"
                 gridRow="span 3"
@@ -79,11 +90,21 @@ const Home = ({ location }) => <Layout>
                 gridRow="span 2"
             />
             <GridImage
+                imageSources={{
+                    mobileImage: data.zwk1_mobileImage,
+                    desktopImage: data.zwk1_desktopImage,
+                    largeDesktopImage: data.zwk1_largeDesktopImage
+                }}
                 image="/images/zwartkops/image12.jpg"
                 gridColumn="span 4"
                 gridRow="span 3"
             />
             <GridImage
+                imageSources={{
+                    mobileImage: data.zwk2_mobileImage,
+                    desktopImage: data.zwk2_desktopImage,
+                    largeDesktopImage: data.zwk2_largeDesktopImage
+                }}
                 image="/images/zwartkops/image2.jpg"
                 gridColumn="span 4"
                 gridRow="span 3"
@@ -93,3 +114,118 @@ const Home = ({ location }) => <Layout>
 </Layout>
 
 export default Home
+
+
+export const query = graphql`
+{
+    mqtt_mobileImage: file(relativePath: {eq: "blog/2019/12-11/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    mqtt_desktopImage: file(relativePath: {eq: "blog/2019/12-11/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    mqtt_largeDesktopImage: file(relativePath: {eq: "blog/2019/12-11/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    
+    fsweb_mobileImage: file(relativePath: {eq: "blog/2019/30-10/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    fsweb_desktopImage: file(relativePath: {eq: "blog/2019/30-10/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    fsweb_largeDesktopImage: file(relativePath: {eq: "blog/2019/30-10/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    
+    wild_mobileImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    wild_desktopImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    wild_largeDesktopImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+
+    zwk1_mobileImage: file(relativePath: {eq: "zwartkops/image12.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk1_desktopImage: file(relativePath: {eq: "zwartkops/image12.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk1_largeDesktopImage: file(relativePath: {eq: "zwartkops/image12.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+
+    zwk2_mobileImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk2_desktopImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk2_largeDesktopImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+}
+`
