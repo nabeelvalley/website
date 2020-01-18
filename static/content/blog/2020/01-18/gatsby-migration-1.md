@@ -1,3 +1,16 @@
+<details>
+<summary>Contents</summary>
+
+- [Introduction](#introduction)
+- [The React App](#the-react-app)
+- [Create React App](#create-react-app)
+- [Hard Coded Pages](#hard-coded-pages)
+- [Dynamic Post Page](#dynamic-post-page)
+- [App Layout and Routes](#app-layout-and-routes)
+  - [Summary](#summary)
+
+</details>
+
 # Introduction
 
 <!-- NEED TO CLARIFY INTENT OF THE POST -->
@@ -10,9 +23,14 @@ What if we could have all that _live_ content baked right into the initial HTML 
 
 I've been hearing about [Gatsby.js](https://www.gatsbyjs.org/) for quite some time and thought it may be worth giving a shot on my current site as it's based on a combination of React and Markdown stitched together with [Showdown.js](http://www.showdownjs.com/) which seemed like a potential fit, the process was a bit more complicated that I'd have liked but there was a lot to be learnt from the process
 
-And so begins the process of turning a React App into a Gatsby Site
+For the sake of being complete, this series will be broken into four posts:
 
-# The Sample App
+1. Creating the initial React App (This post)
+2. [Rendering the "Dumb" pages with Gatsby](./road-to-gatsby-2.md)
+3. [Rendering the "Smart" page with Gatsby](./road-to-gatsby-3.md)
+4. [Image optimization and lazy loading](./road-to-gatsby-1.md)
+
+# The React App
 
 I initially tried to write this by using my personal website as a reference point but thought it would be more beneficial for readers to follow if I used something more standard
 
@@ -22,7 +40,7 @@ For this example we'll use a basic React site that has the following:
 2. A dynamic page with an API call to retrieve data
 3. Overall app layout with child routes for `1` - `3`
 
-## Create App
+# Create React App
 
 To get started, we'll create a fresh React App:
 
@@ -38,7 +56,7 @@ yarn add react-router-dom
 
 Running this command should set up the application, if you don't know much about React I'd suggest taking a look at [the documentation](https://create-react-app.dev/docs/getting-started)
 
-## Hard Coded Pages
+# Hard Coded Pages
 
 We will create the following three hard-coded pages in the `src/pages` directory:
 
@@ -53,10 +71,10 @@ const Blog = () => (
     <h1>Blog</h1>
     <p>This is the Blog page</p>
     <div>
-      <Link to="/post/post-1">Post 1</Link>
+      <Link to="/blog/post-1">Post 1</Link>
     </div>
     <div>
-      <Link to="/post/post-2">Post 2</Link>
+      <Link to="/blog/post-2">Post 2</Link>
     </div>
   </div>
 )
@@ -102,9 +120,11 @@ export default NotFound
 
 </details>
 
-## Dynamic Post Page
+# Dynamic Post Page
 
 We will use the `Post` component which utilizes the `useEffect` hook to load content from `json` files in the `public` directory
+
+The `useState` hook is used to initialize the state the component, in this case using the `hasError` and `data` variables, as well as providing the functions necessary for updating those in the form of `setHasError` and `setData` respectively
 
 `Post.js`
 
@@ -130,7 +150,7 @@ const Post = ({ match }) => {
     }
 
     fetchData()
-  })
+  }, [])
 
   return (
     <div className="Post">
@@ -158,7 +178,15 @@ const Post = ({ match }) => {
 export default Post
 ```
 
-Also note the way we are rendering the `Post` component with a route parameter for `slug`, this allows us to use the `slug` to retrieve the content in the `useEffect` hook with the route information which will be passed in by the Router
+In the above component we are making use of the following pattern to decide what to render:
+
+1. If the data is loaded then show the data
+2. Else if there is an error then show the error data
+3. Otherwise show a loading message
+
+The way we are rendering the `Post` component with a parameter for `match`. The `match` parameter will be passed in as a `prop` from the `Router` that we will configure next, this allows us to use the `slug` from the URL to retrieve the content for the page
+
+We use `fetch` in the `useEffect` hook to retrieve the data from the `public` directory. The `useEffect` hook allows us to pass a function that will be called to allow us to update side effects. The second input, in our case `[]` is the array of objects that when are changed we want our hook to run - since we only want it to run once and don't care about any other state changes we pass in an empty array for this value
 
 The two data files we have to pull content from in the `public/posts` directory are `post-1.json` and `post-2.json`
 
@@ -190,92 +218,56 @@ The two data files we have to pull content from in the `public/posts` directory 
 
 </details>
 
-## App Layout and Routes
+# App Layout and Routes
 
-Next, we'll specify out application layout with the relevant routes in the `App.js` file, referencing the components we will be creating, we do this using the `BrowserRouter`
+Next, we'll specify our application layout with the relevant routes in the `App.js` file, referencing the components we have created, we do this using the `BrowserRouter`. When we switch the project over to a Gatsby one, the `App.js` file will be converted into our `Layout` component to wrap our different pages
 
-# Let's Get Moving
-
-I sort of followed [the documentation](https://www.gatsbyjs.org/docs/porting-from-create-react-app-to-gatsby/) on porting from a `create-react-app` app to a Gatsby one. The first step was to Install Gatsby
-
-```
-yarn add gatsby
-```
-
-Next, before doing anything else, rename the `public` directory of the CRA app to `static`. This is because Gatsby builds output to the `public` and you're just going to end up in a really annoying place if you don't do that - learnt that the hard way
-
-> you may also want to update your `.gitignore` and clean your repo's cached files to work align with what Gatsby Uses
-
-# Setting up a Test Page
-
-To create a page in Gatsby we simply need to set up a React component with the page name and add it to the `src/pages` directory, this is a lot like how we would place HTML files if it was a static site
-
-In a traditional CRA we have our routes mapped to components, for example we can see the route to the `Home` and `About` componentss below:
-
-`App.js`
+Fow now, our `App.js` file is as follows:
 
 ```js
-const App = props => (
-  <div className="App">
-    <Router>
-      <Navbar />
-      <ScrollToTop />
-      <Suspense fallback={<Preloader />}>
+import React from "react"
+import "./App.css"
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Blog from "./pages/Blog"
+import Post from "./pages/Post"
+import NotFound from "./pages/NotFound"
+
+const App = () => (
+  <Router>
+    <div className="App">
+      <header>
+        <nav>
+          <h1>My Website Title</h1>
+          <Link to="/">Home</Link>
+          <Link to="/blog">Blog</Link>
+        </nav>
+      </header>
+      <main>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/" component={Home}></Route>
+
+          <Route exact path="/blog" component={Blog}></Route>
+
+          <Route exact path="/blog/:slug" component={Post}></Route>
+
+          <Route path="/*" component={NotFound}></Route>
         </Switch>
-      </Suspense>
-      <Footer />
-    </Router>
-  </div>
+      </main>
+    </div>
+  </Router>
 )
+
 export default App
 ```
 
-Going off the above structure I added the `index.js` file to the `pages` directory with my basic home page content. The simplest way to create a page was to just copy my `Home` component that I use in my app's router
+## Summary
 
-`index.js`
+We have built a fairly simple application that makes use of both static and data-based pages, we have also tied all of these together using the `App` component and a `Router` with the following routes:
 
-```js
-const Home = ({ location, data }) => (
-  <div className="Home">
-    <Helmet>
-      <title>Home | Nabeel Valley</title>
-      <meta
-        name="description"
-        content="Nabeel Valley's Portfolio and Blog. Web Development, Photography, and Design"
-      />
-    </Helmet>
+1. `/` which will render the `Home` component
+2. `/blog` which will render the `Blog` component
+3. `/blog/:slug` which will render the `Post` component with the given `slug`
+4. `/*` which will match any other routes and render the `NotFound` component
 
-    <Landing />
-    <FeaturedPost
-      image="/content/blog/2019/12-11/header.jpg"
-      title="Real-time Communication with MQTT"
-      date="12 November 2019"
-      description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
-      link="/blog/2019/12-11/rtc-with-mqtt"
-    />
-    <SectionDivider title="What's New?" />
-    <ProjectGroup isFullWidth={true}>
-      <ProjectItem
-        title="Docs"
-        tech={["literally everything"]}
-        description="I'm migrating all my dev notes over from GitHub Pages, you can take a look at what's there so far:"
-        link="/docs/index"
-        linkText="View Docs"
-      />
-    </ProjectGroup>
-  </div>
-)
-
-export default Home
-```
-
-# Gatsbyfication
-
-In order to actually `Gatsbyify` the application, there were still a couple of more things I could do before my _copy and paste_ current page could work at all
-
-1. Create the necessary Gatsby Config files
-2. Include the PostCSS Plugin
-3. Fix `window` references in 3rd party libraries
+In the next part we will learn how to take what we have so far and transform this application into a Gatsby one
