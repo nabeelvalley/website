@@ -77,11 +77,11 @@ To process and render the Markdown I'm using a library that I fell in love with 
 I've then simply rendered the content by `fetch`ing it from the _Folder-cms_ and passing it through a Markdown Component
 
 ```js
-import React from 'react'
-import { Converter } from 'showdown'
-import * as showdownHighlighter from 'showdown-highlight'
+import React from "react"
+import { Converter } from "showdown"
+import * as showdownHighlighter from "showdown-highlight"
 
-import './Markdown.css'
+import "./Markdown.css"
 
 const convertMarkdownToHtml = text => {
   const converter = new Converter({
@@ -94,7 +94,7 @@ const convertMarkdownToHtml = text => {
 }
 const Markdown = ({ text }) => (
   <div
-    className='Markdown'
+    className="Markdown"
     dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(text) }}
   ></div>
 )

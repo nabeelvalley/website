@@ -35,7 +35,6 @@ const codeSummary = {
         }`
 }
 
-
 const convertMarkdownToHtml = (text) => {
     const converter = new Converter({
         headerLevelStart: 2,

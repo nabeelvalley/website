@@ -208,19 +208,19 @@ A list of quick one-line web servers can be found on this <a href="https://gist.
 Now that we're up and running we can connect to the broker that we set up previously. The Mosquitto Broker should be running on `127.0.0.1:9001`, using the `mqtt` object that is exposed in the global space by `MQTT.js` we can simply create an instance of the client in our `<script>` section with:
 
 ```js
-const client = mqtt.connect('mqtt://127.0.0.1:9001')
+const client = mqtt.connect("mqtt://127.0.0.1:9001")
 ```
 
 This gives us a `client` object that is the MQTT Client connected to our broker. Next, we need to set a handler for the `connect` event which is when the client successfully connects to the message broker, we do this with the following code:
 
 ```js
-client.on('connect', function() {
-  client.subscribe('messages', function(err) {
+client.on("connect", function() {
+  client.subscribe("messages", function(err) {
     if (!err) {
-      const badge = document.getElementById('connect-badge')
-      badge.innerText = 'connected'
-      badge.classList.remove('orange')
-      badge.classList.add('green')
+      const badge = document.getElementById("connect-badge")
+      badge.innerText = "connected"
+      badge.classList.remove("orange")
+      badge.classList.add("green")
     }
   })
 })
@@ -236,8 +236,8 @@ Create a handler for the `Publish Message` button called `handleSubmit`, we've a
 
 ```js
 function handleSubmit() {
-  const nameInput = document.getElementById('name')
-  const messageInput = document.getElementById('message')
+  const nameInput = document.getElementById("name")
+  const messageInput = document.getElementById("message")
 
   const data = {
     name: nameInput.value,
@@ -246,7 +246,7 @@ function handleSubmit() {
 
   const payload = JSON.stringify(data)
 
-  client.publish('messages', payload)
+  client.publish("messages", payload)
 }
 ```
 
@@ -262,12 +262,12 @@ Refreshing the page, entering some text into the fields and clicking the `Publis
 Now that we can publish messages to the topic, we will need to create a handler for the `message` event which is triggered every time one of our subscribed topics has something published to it. We can do this again with the `client.on` function:
 
 ```js
-client.on('message', function(topic, message) {
+client.on("message", function(topic, message) {
   const data = JSON.parse(message)
 
-  document.getElementById('messages').innerHTML += `<tr><td>${
+  document.getElementById("messages").innerHTML += `<tr><td>${
     data.name
-  }</td><td>${data.message.replace(/\n/g, '<br>')}</td></tr>`
+  }</td><td>${data.message.replace(/\n/g, "<br>")}</td></tr>`
 })
 ```
 

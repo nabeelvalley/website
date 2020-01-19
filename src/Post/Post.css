@@ -1,6 +1,11 @@
-.Post .main p {
+.Post .main p,
+.Post .main a {
   font-family: var(--font-secondary);
   font-size: var(--size-s);
+}
+
+.Post .post-nav {
+  text-align: center;
 }
 
 .Post .main h2,
@@ -12,16 +17,16 @@
 }
 
 .Post .main h2::before {
-  content: '# ';
+  content: "# ";
   color: var(--color-primary);
 }
 
 .Post .main h3::before {
-  content: '## ';
+  content: "## ";
   color: var(--color-primary);
 }
 
 .Post .main h4::before {
-  content: '### ';
+  content: "### ";
   color: var(--color-primary);
 }

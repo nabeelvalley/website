@@ -21,7 +21,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     }
 }
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+exports.onCreateNode = async ({ node, getNode, actions }) => {
 
     const { createNodeField, createNode } = actions
 
@@ -30,6 +30,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         const metaPath = `${node.absolutePath.slice(0, -2)}json`
 
         if (fs.existsSync(metaPath)) {
+
             const slug = createFilePath({ node, getNode, basePath: `pages` })
 
             const content = fs.readFileSync(node.absolutePath, 'utf-8')

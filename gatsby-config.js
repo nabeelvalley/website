@@ -27,6 +27,6 @@ module.exports = {
                 path: `${__dirname}/static/images`,
             },
         },
-        `gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`, `gatsby-plugin-sharp`, `gatsby-plugin-catch-links`
     ]
 }
