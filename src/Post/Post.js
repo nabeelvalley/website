@@ -43,7 +43,7 @@ const Post = ({ data, location }) => {
         </nav>
 
         else if ((postIndex === posts.length - 1) && (posts.length > 1)) Nav = <nav className="post-nav">
-            <a href={posts[posts.length - 1]}>Previous</a>
+            <a href={posts[postIndex - 1]}>Previous</a>
         </nav>
 
         else Nav = <nav className="post-nav">

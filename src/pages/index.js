@@ -43,6 +43,7 @@ const Home = ({ location, data }) => <Layout>
                 linkText="Go to Site"
             />
         </ProjectGroup>
+        <SectionDivider title="From the Blog" />
         <DenseGrid>
             <GridSummary
                 title="Introduction to F# Web APIs"
