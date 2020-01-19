@@ -12,9 +12,9 @@
 
 # Introduction
 
-Lately I've spent a lot of time looking at and playing with Static Site Generators, and for the sake of transparency - they're all a lot more complicated than I was anticipating
+Lately I've been a little concerned with my current SPA approach on my personal site as well as a few others. More specifically the high initial load time and just the sheer bundle size are larger than necessary
 
-My primary concern with the current SPA approach I've been using is the added delay due to the number of calls to the backend which hold up any meaningful content load
+With the aim of solving this problem I've spent a lot of time looking at and playing with Static Site Generators, and for the sake of transparency - they're all a lot more complicated than I was anticipating
 
 The idea with a static generator is that the "static" content only changes so often, based on this idea we can pre-load the content onto the page, or generate pages based on the data that we're planning to load in - that's what we're going to try to do
 
@@ -23,9 +23,9 @@ Now we'll be starting off with a React app generated with `create-react-app` so 
 For the sake of going through the complete process this series will be broken into four posts covering the following:
 
 1. Creating the initial React App (This post)
-2. [Rendering the "Dumb" pages with Gatsby](./road-to-gatsby-2.md)
-3. [Rendering the "Smart" page with Gatsby](./road-to-gatsby-3.md)
-4. [Image optimization and lazy loading](./road-to-gatsby-1.md)
+2. [Rendering the "Dumb" pages with Gatsby](./road-to-gatsby-2)
+3. [Rendering the "Smart" page with Gatsby](./road-to-gatsby-3)
+4. [Image optimization and lazy loading](./road-to-gatsby-4)
 
 # The React App
 
