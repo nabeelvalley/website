@@ -73,14 +73,14 @@ export const query = graphql`
     }
     mqtt_desktopImage: file(relativePath: {eq: "blog/2019/12-11/header.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1080, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     mqtt_largeDesktopImage: file(relativePath: {eq: "blog/2019/12-11/header.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1200, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
@@ -95,14 +95,14 @@ export const query = graphql`
     }
     fsweb_desktopImage: file(relativePath: {eq: "blog/2019/30-10/header.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1080, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     fsweb_largeDesktopImage: file(relativePath: {eq: "blog/2019/30-10/header.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1200, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
@@ -117,14 +117,14 @@ export const query = graphql`
     }
     wild_desktopImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1080, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     wild_largeDesktopImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1200, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
@@ -139,14 +139,14 @@ export const query = graphql`
     }
     zwk_desktopImage: file(relativePath: {eq: "zwartkops/image12.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1080, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     zwk_largeDesktopImage: file(relativePath: {eq: "zwartkops/image12.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 1200, quality: 100) {
+            fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
