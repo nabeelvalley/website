@@ -33,8 +33,6 @@ const Post = ({ data, location }) => {
             .sort((a, b) => a.year - b.year)
             .map(el => el.slug)
 
-        console.log(posts)
-
         var postIndex = posts.indexOf(data.renderedMarkdownPost.slug)
 
         if (postIndex === 0) Nav = <nav className="post-nav">
