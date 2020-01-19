@@ -14,6 +14,7 @@ const Post = ({ data, location }) => {
 
     try {
         const posts = data.allRenderedMarkdownPost.edges.map(el => {
+
             const slug = el.node.slug
 
             const year = slug.match(/\d\d\d\d/)[0]
@@ -35,7 +36,9 @@ const Post = ({ data, location }) => {
 
         var postIndex = posts.indexOf(data.renderedMarkdownPost.slug)
 
-        if (postIndex === 0) Nav = <nav className="post-nav">
+        if (postIndex < 0) Nav = null
+
+        else if (postIndex === 0) Nav = <nav className="post-nav">
             <a href={posts[1]}>Next</a>
         </nav>
 
@@ -48,7 +51,7 @@ const Post = ({ data, location }) => {
         </nav>
 
     } catch (error) {
-        console.error(error)
+        console.log('Cannot add navigation items', error)
     }
 
 

@@ -30,7 +30,7 @@
   "homepage": "https://nabeelvalley.netlify.com",
   "scripts": {
     "start": "gatsby clean && gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "clean": "gatsby clean",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

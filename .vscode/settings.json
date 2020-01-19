@@ -6,5 +6,21 @@
         "floopy",
         "hljs",
         "scrolly"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#eb79ac",
+        "activityBar.activeBorder": "#cbf3ac",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#cbf3ac",
+        "activityBarBadge.foreground": "#15202b",
+        "titleBar.activeBackground": "#e44d90",
+        "titleBar.inactiveBackground": "#e44d9099",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveForeground": "#15202b99",
+        "statusBar.background": "#e44d90",
+        "statusBarItem.hoverBackground": "#dd2174",
+        "statusBar.foreground": "#15202b"
+    },
+    "peacock.color": "#e44d90"
 }
