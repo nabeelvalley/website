@@ -20,6 +20,14 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
                 location.pathname !== '/blog'
                     ? <Sidebar title="Blog">
                         <SidebarItem
+                            title="The Gatsby Migration, pt.1 - Setting the Scene"
+                            tech={['React', 'Gatsby', 'GraphQL']}
+                            date="21 January 2020"
+                            description="Transforming a React site into a statically rendered one? Sure - leggo"
+                            link="/blog/2020/21-01/gatsby-migration-1"
+                            linkText="Read More"
+                        />
+                        <SidebarItem
                             title="Real-time Communication with MQTT"
                             tech={['JS', 'MQTT', 'WS', 'Mosquitto']}
                             date="12 November 2019"
@@ -41,13 +49,6 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
                             description="The first blog post, A quick journey through my design and development process"
                             link="/blog/2019/12-10/looky-a-wild-html"
                             linkText="Read More"
-                        />
-                        <SidebarItem
-                            title="Zwartkops Gallery"
-                            date="27 July 2019"
-                            description="A photo gallery of the Extreme Racing Festival at Zwartkops Raceway in Centurion"
-                            link="/gallery/zwartkops"
-                            linkText="View Gallery"
                         />
                     </Sidebar>
                     : null

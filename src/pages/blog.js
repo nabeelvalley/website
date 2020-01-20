@@ -13,6 +13,17 @@ const Blog = ({ location, data }) => <Layout>
         </Helmet>
         <PostListing
             imageSources={{
+                mobileImage: data.zwk2_mobileImage,
+                desktopImage: data.zwk2_desktopImage,
+                largeDesktopImage: data.zwk2_largeDesktopImage
+            }}
+            title="The Gatsby Migration, pt.1 - Setting the Scene"
+            date="21 January 2020"
+            description="Transforming a React site into a statically rendered one? Sure - leggo"
+            link="/blog/2020/21-01/gatsby-migration-1"
+        />
+        <PostListing
+            imageSources={{
                 mobileImage: data.mqtt_mobileImage,
                 desktopImage: data.mqtt_desktopImage,
                 largeDesktopImage: data.mqtt_largeDesktopImage
@@ -145,6 +156,28 @@ export const query = graphql`
         }
     }
     zwk_largeDesktopImage: file(relativePath: {eq: "zwartkops/image12.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+
+    zwk2_mobileImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk2_desktopImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk2_largeDesktopImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
         childImageSharp {
             fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG

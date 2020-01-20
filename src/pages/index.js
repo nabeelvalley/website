@@ -20,11 +20,15 @@ const Home = ({ location, data }) => <Layout>
 
         <Landing />
         <FeaturedPost
-            image="/content/blog/2019/12-11/header.jpg"
-            title="Real-time Communication with MQTT"
-            date="12 November 2019"
-            description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
-            link="/blog/2019/12-11/rtc-with-mqtt"
+            imageSources={{
+                mobileImage: data.zwk2_mobileImage,
+                desktopImage: data.zwk2_desktopImage,
+                largeDesktopImage: data.zwk2_largeDesktopImage
+            }}
+            title="The Gatsby Migration, pt.1 - Setting the Scene"
+            date="21 January 2020"
+            description="Transforming a React site into a statically rendered one? Sure - leggo"
+            link="/blog/2020/21-01/gatsby-migration-1"
         />
         <SectionDivider title="What's New?" />
         <ProjectGroup isFullWidth={true}>
@@ -45,6 +49,24 @@ const Home = ({ location, data }) => <Layout>
         </ProjectGroup>
         <SectionDivider title="From the Blog" />
         <DenseGrid>
+            <GridImage
+                imageSources={{
+                    mobileImage: data.mqtt_mobileImage,
+                    desktopImage: data.mqtt_desktopImage,
+                    largeDesktopImage: data.mqtt_largeDesktopImage
+                }}
+                image="/content/blog/2019/30-10/header.jpg"
+                gridColumn="span 4"
+                gridRow="span 4"
+            />
+            <GridSummary
+                title="Real-time Communication with MQTT"
+                date="12 November 2019"
+                description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
+                link="/blog/2019/12-11/rtc-with-mqtt"
+                gridColumn="span 4"
+                gridRow="span 2"
+            />
             <GridSummary
                 title="Introduction to F# Web APIs"
                 date="30 October 2019"
@@ -55,23 +77,12 @@ const Home = ({ location, data }) => <Layout>
             />
             <GridImage
                 imageSources={{
-                    mobileImage: data.mqtt_mobileImage,
-                    desktopImage: data.mqtt_desktopImage,
-                    largeDesktopImage: data.mqtt_largeDesktopImage
-                }}
-                image="/content/blog/2019/30-10/header.jpg"
-                gridColumn="span 4"
-                gridRow="span 3"
-            />
-            <GridImage
-                imageSources={{
                     mobileImage: data.wild_mobileImage,
                     desktopImage: data.wild_desktopImage,
                     largeDesktopImage: data.wild_largeDesktopImage
                 }}
-                image="/content/blog/2019/12-10/header.jpg"
-                gridColumn="span 4"
-                gridRow="span 3"
+                gridColumn="span 8"
+                gridRow="span 2"
             />
             <GridSummary
                 title="Looky, a wild HTML!"
@@ -81,6 +92,15 @@ const Home = ({ location, data }) => <Layout>
                 gridColumn="span 4"
                 gridRow="span 2"
             />
+            <GridImage
+                imageSources={{
+                    mobileImage: data.zwk1_mobileImage,
+                    desktopImage: data.zwk1_desktopImage,
+                    largeDesktopImage: data.zwk1_largeDesktopImage
+                }}
+                gridColumn="span 4"
+                gridRow="span 4"
+            />
             <GridSummary
                 title="Zwartkops Gallery"
                 date="27 July 2019"
@@ -89,26 +109,6 @@ const Home = ({ location, data }) => <Layout>
                 linkText="View Gallery"
                 gridColumn="span 4"
                 gridRow="span 2"
-            />
-            <GridImage
-                imageSources={{
-                    mobileImage: data.zwk1_mobileImage,
-                    desktopImage: data.zwk1_desktopImage,
-                    largeDesktopImage: data.zwk1_largeDesktopImage
-                }}
-                image="/images/zwartkops/image12.jpg"
-                gridColumn="span 4"
-                gridRow="span 3"
-            />
-            <GridImage
-                imageSources={{
-                    mobileImage: data.zwk2_mobileImage,
-                    desktopImage: data.zwk2_desktopImage,
-                    largeDesktopImage: data.zwk2_largeDesktopImage
-                }}
-                image="/images/zwartkops/image2.jpg"
-                gridColumn="span 4"
-                gridRow="span 3"
             />
         </DenseGrid>
     </div>
@@ -163,23 +163,23 @@ export const query = graphql`
         }
     }
     
-    wild_mobileImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
+    wild_mobileImage: file(relativePath: {eq: "home/landing/slide.jpg"}) {
         childImageSharp {
             fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
-    wild_desktopImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
+    wild_desktopImage: file(relativePath: {eq: "home/landing/slide.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 690, quality: 100) {
+            fluid(maxWidth: 1080, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
-    wild_largeDesktopImage: file(relativePath: {eq: "blog/2019/12-10/header.jpg"}) {
+    wild_largeDesktopImage: file(relativePath: {eq: "home/landing/slide.jpg"}) {
         childImageSharp {
-            fluid(maxWidth: 690, quality: 100) {
+            fluid(maxWidth: 1200, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }

@@ -18,11 +18,11 @@
 
 # Introduction
 
-In the [last post](../18-01/gatsby-migration-1) we looked setting up an application with a few basic routes. These routes were all assigned to Components in the `src/pages` directory.
+In the [last post](../21-01/gatsby-migration-1) we looked setting up an application with a few basic routes. These routes were all assigned to Components in the `src/pages` directory.
 
 This post will be going throught the Gatsby Setup necessary in order to migrate our current site to Gatsby, we will be looking at the second step in the process that was outlined in the last post:
 
-1. [Creating the initial React App](../18-01/gatsby-migration-1)
+1. [Creating the initial React App](../21-01/gatsby-migration-1)
 2. **Rendering the "Dumb" pages with Gatsby** (This post)
 3. Rendering the "Smart" page with Gatsby
 4. Image optimization and lazy loading
@@ -387,6 +387,6 @@ By now we have completed the first part of the migration process - converting ou
 5. Use a shared layout component
 6. Fixing the CSS to work with Gatsby
 
-In the [next part](../18-01/gatsby-migration-3) we'll look at how we can go about providing the data needed for our `Post` component using GraphQL and show our posts. We'll also look at how we can pre-process the data that we provide to our component so that we can enhance our content while improving our content creation process
+In the [next part](../21-01/gatsby-migration-3) we'll look at how we can go about providing the data needed for our `Post` component using GraphQL and show our posts. We'll also look at how we can pre-process the data that we provide to our component so that we can enhance our content while improving our content creation process
 
 > Nabeel Valley
