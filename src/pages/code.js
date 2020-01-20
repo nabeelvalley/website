@@ -3,23 +3,33 @@ import { Helmet } from 'react-helmet'
 import ContentPage from '../Components/ContentPage/ContentPage'
 import ProjectGroup from '../Components/ProjectGroup/ProjectGroup'
 import ProjectItem from '../Components/ProjectGroup/ProjectItem'
+import SectionDivider from "../Components/SectionDivider/SectionDivider"
+import PostListing from "../Components/PostListing/PostListing"
 import Layout from '../Layout'
+import { graphql } from "gatsby"
 
-const Code = ({ location }) => <Layout>
+const Code = ({ location, data }) => <Layout>
     <ContentPage location={location} title="Code" subtitle="Endeavours in Monospace">
         <Helmet>
             <title>Code | Nabeel Valley</title>
             <meta name="description" content="Projects I'm currently working on. Pretty much everything from React and MongoDB to Jenkins and Docker" />
         </Helmet>
 
+        <PostListing
+            imageSources={{
+                mobileImage: data.mobileImage,
+                desktopImage: data.desktopImage,
+                largeDesktopImage: data.largeDesktopImage
+            }}
+            title="Docs"
+            date="From GitHub"
+            description="Notes on software development, languages, frameworks, and technology"
+            link="/docs"
+        />
+
+        <SectionDivider title="Projects" />
+
         <ProjectGroup isFullWidth={false}>
-            <ProjectItem
-                title="Docs"
-                tech={['literally everything']}
-                description="Documentation and notes on pretty much everything programming and software development related"
-                link="/docs"
-                linkText="View Docs"
-            />
             <ProjectItem
                 title="Rak'ah"
                 tech={['svelte', 'js', 'netlify']}
@@ -74,3 +84,30 @@ const Code = ({ location }) => <Layout>
 </Layout>
 
 export default Code
+
+
+export const query = graphql`
+{
+    mobileImage: file(relativePath: {eq: "pages/code.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    desktopImage: file(relativePath: {eq: "pages/code.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    largeDesktopImage: file(relativePath: {eq: "pages/code.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+}
+`

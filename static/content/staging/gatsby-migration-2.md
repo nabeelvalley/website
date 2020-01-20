@@ -7,7 +7,7 @@
   - [Install Gatsby](#install-gatsby)
   - [Create Config Files](#create-config-files)
 - [Page Setup](#page-setup)
-  - [Fx the `Blog` Error Message](#fx-the-blog-error-message)
+  - [Fx the Blog Error Message](#fx-the-blog-error-message)
   - [Fix the Routes](#fix-the-routes)
   - [Fix the Layout](#fix-the-layout)
   - [Use the Layout](#use-the-layout)
@@ -193,7 +193,7 @@ From the Development 404 Page we can see that Gatsby has piked up our previously
 
 These are, for the most part, easy problems to solve
 
-## Fx the `Blog` Error Message
+## Fx the Blog Error Message
 
 If we look at the `Blog` page we will see that there is an issue with the Page render, this is because we need to change the `Link` components to be imported from `gatsby` instead of `react-router-dom` because with Gatsby we are no longer using the React Router
 

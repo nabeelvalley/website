@@ -12,11 +12,9 @@ const _404 = ({ data, location }) => <Layout>
             <Helmet>
                 <title>404 | Nabeel Valley</title>
             </Helmet>
-            <main class="main">
-                <p>
-                    I can't seem to find the page you're looking for, but you may as well <AnyLink to="/">take a look around</AnyLink> since you're here anyway right?
+            <p>
+                I can't seem to find the page you're looking for, but you may as well <AnyLink to="/">take a look around</AnyLink> since you're here anyway right?
                 </p>
-            </main>
         </ContentPage>
     </div>
 </Layout >

@@ -29,14 +29,12 @@ const Docs = ({ data, location }) => {
 
     return <Layout>
         <div className="Post">
-            <ContentPage location={location} title="Docs Index" subtitle="Index for GitHub Docs">
+            <ContentPage location={location} title="Docs" subtitle="Index for GitHub Docs">
                 <Helmet>
                     <title>Docs | Nabeel Valley</title>
                     <meta name="description" content="Index for GitHub Docs" />
                 </Helmet>
-                <main>
-                    <Markdown children={Content} />
-                </main>
+                <Markdown children={Content} />
             </ContentPage>
         </div>
     </Layout >
