@@ -6,6 +6,7 @@ import Preloader from '../Components/Preloader/Preloader'
 import Markdown from '../Components/Markdown/Markdown'
 import Layout from '../../src/Layout'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
 import './Post.css'
 
@@ -39,15 +40,15 @@ const Post = ({ data, location }) => {
         if (postIndex < 0) Nav = null
 
         else if (postIndex === 0) Nav = <nav className="post-nav">
-            <a href={posts[1]}>Next</a>
+            <Link to={posts[1]}>Next</Link>
         </nav>
 
         else if ((postIndex === posts.length - 1) && (posts.length > 1)) Nav = <nav className="post-nav">
-            <a href={posts[postIndex - 1]}>Previous</a>
+            <Link to={posts[postIndex - 1]}>Previous</Link>
         </nav>
 
         else Nav = <nav className="post-nav">
-            <a href={posts[postIndex - 1]}>Previous</a> | <a href={posts[postIndex + 1]}>Next</a>
+            <Link to={posts[postIndex - 1]}>Previous</Link> | <Link to={posts[postIndex + 1]}>Next</Link>
         </nav>
 
     } catch (error) {

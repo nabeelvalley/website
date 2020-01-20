@@ -12,15 +12,15 @@
 
 # Introduction
 
-Lately I've been a little concerned with my current SPA approach on my personal site as well as a few others. More specifically the high initial load time and just the sheer bundle size are larger than necessary
+Lately I've been a little concerned with my current SPA approach on my personal site as well as a few others. More specifically the high initial load time due to the calls to the backend to retrieve content
 
-With the aim of solving this problem I've spent a lot of time looking at and playing with Static Site Generators, and for the sake of transparency - they're all a lot more complicated than I was anticipating
+With the aim of solving this problem I've spent a lot of time looking at and playing with Static Site Generators.Foreword: they're all a lot more complicated than one would think
 
-The idea with a static generator is that the "static" content only changes so often, based on this idea we can pre-load the content onto the page, or generate pages based on the data that we're planning to load in - that's what we're going to try to do
+So for a static site the "static" content only changes so often, based on this we can generate page content with the data we're planning to load in - that's what we're going to try to do
 
 Now we'll be starting off with a React app generated with `create-react-app` so that we can have a starting point for our Gatsby site as well as understanding how we can approach some of the challenges when switching over to a site generator like Gatsby
 
-For the sake of going through the complete process this series will be broken into four posts covering the following:
+For the sake of completeness, this series will be broken into four posts covering the following:
 
 1. **Creating the initial React App** (This post)
 2. Rendering the "Dumb" pages with Gatsby
@@ -29,9 +29,9 @@ For the sake of going through the complete process this series will be broken in
 
 # The React App
 
-First we're going to be starting off with a new React app that we will later convert into a Gatsby one
+First we're going to be starting off with a new React app that we will work on changing into a Gatsby one parts `2` and `3`, we'll then focus on using plugins to enhance our content in `4`
 
-For this example we'll use a basic React app that has the following:
+For this part we'll build a basic React app that has the following:
 
 1. Two "hard-coded" pages and a 404 page
 2. A dynamic page with an API call to retrieve data
@@ -53,7 +53,7 @@ Running this command should set up the application, if you don't know much about
 
 Next `cd gatsby-to-be` and run `yarn start`, you should be able to visit the application in your browser at `http://localhost:3000/`
 
-Looking at the generated files we have a `public` directory with some icons and an `index.html` file into which our React application will run once built, and a `src` directory that has the application code. The `index.js` file is what loads the application into the DOM and the `App.js` file which is the main component for our application
+Looking at the generated files we have a `public` directory with some icons, an `index.html` file into which our React application will run once built, and a `src` directory that has the application code. The `index.js` file is what loads the application into the DOM and the `App.js` file which is the main component for our application
 
 # Hard Coded Pages
 
@@ -193,7 +193,7 @@ const Post = ({ match }) => {
 export default Post
 ```
 
-In the above component we are making use of the following pattern to decide what to render conditionally:
+In the above component we're making use of the following pattern to decide what to render conditionally:
 
 1. If the data is loaded then show the data
 2. Else if there is an error then show the error data
@@ -286,9 +286,9 @@ We have built a fairly simple application that makes use of both static and data
 
 1. `/` which will render the `Home` component
 2. `/blog` which will render the `Blog` component
-3. `/blog/:slug` which will render the `Post` component with the given `slug`
+3. `/blog/:slug` which will render the `Post` component and retrieve the data based on the given `slug`
 4. `/*` which will match any other routes and render the `NotFound` component
 
-In the [next post](../18-01/gatsby-migration-2) we're going to look at how to take what we have so far and transform this application into a Gatsby one
+In the next post we're going to look at how to take what we have so far and transform this application into a Gatsby one, but for now it may be useful to think about what kind of steps we may need to take if we'd like to make this a static website based on the way our current routes work
 
 > Nabeel Valley
