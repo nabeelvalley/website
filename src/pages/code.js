@@ -17,7 +17,7 @@ const Code = ({ location }) => <Layout>
                 title="Docs"
                 tech={['literally everything']}
                 description="Documentation and notes on pretty much everything programming and software development related"
-                link="/docs/index"
+                link="/docs"
                 linkText="View Docs"
             />
             <ProjectItem

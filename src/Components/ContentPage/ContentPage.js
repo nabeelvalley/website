@@ -60,7 +60,7 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
                             title="Docs"
                             tech={['literally everything']}
                             description="Documentation and notes on pretty much everything programming and software development related"
-                            link="/docs/index"
+                            link="/docs"
                             linkText="View Docs"
                         />
                         <SidebarItem

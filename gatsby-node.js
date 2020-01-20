@@ -29,6 +29,8 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
         const metaPath = `${node.absolutePath.slice(0, -2)}json`
 
+        const dir = path.basename(path.dirname(metaPath))
+
         if (fs.existsSync(metaPath)) {
 
             const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -42,7 +44,8 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
             const fieldData = {
                 ...meta,
                 html,
-                slug
+                slug,
+                dir
             }
 
             createNode({

@@ -5,7 +5,7 @@ import Markdown from '../Components/Markdown/Markdown'
 import Layout from '../Layout'
 import { graphql, Link } from 'gatsby'
 
-import '../../Post/Post.css'
+import '../Post/Post.css'
 
 const Docs = ({ data, location }) => {
     const titleCase = (title) => {
@@ -26,8 +26,6 @@ const Docs = ({ data, location }) => {
         </ul>
     </div>
     )
-
-    console.log(Content)
 
     return <Layout>
         <div className="Post">
@@ -55,7 +53,6 @@ export const query = graphql`{
           slug
           title
           subtitle
-          cover
           dir
         }
       }

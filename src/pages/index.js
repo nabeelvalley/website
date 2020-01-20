@@ -32,7 +32,7 @@ const Home = ({ location, data }) => <Layout>
                 title="Docs"
                 tech={['literally everything']}
                 description="I'm migrating all my dev notes over from GitHub Pages, you can take a look at what's there so far:"
-                link="/docs/index"
+                link="/docs"
                 linkText="View Docs"
             />
             <ProjectItem
