@@ -7,7 +7,7 @@
   - [Install Gatsby](#install-gatsby)
   - [Create Config Files](#create-config-files)
 - [Page Setup](#page-setup)
-  - [Fx the Blog Error Message](#fx-the-blog-error-message)
+  - [Fix the Blog Error Message](#fix-the-blog-error-message)
   - [Fix the Routes](#fix-the-routes)
   - [Fix the Layout](#fix-the-layout)
   - [Use the Layout](#use-the-layout)
@@ -29,7 +29,7 @@ This post will be going throught the Gatsby Setup necessary in order to migrate 
 
 # Getting Ready
 
-In order to `Gatsbyify` the application, there are a two (potentially three) steps that we will need to carry before we can start updating our pages to work with the new system
+In order to `Gatsbyify` the application, there are three steps that we will need to take before we can start updating our pages to work with the new system
 
 1. Update folder structure
 2. Install Gatsby
@@ -37,11 +37,9 @@ In order to `Gatsbyify` the application, there are a two (potentially three) ste
 
 ## Update Folder Structure
 
-Gatsby Builds are placed into the `public` directory. This currently has the files get copied into our final Build if we are doing a standard React Build
+Gatsby Builds are placed into the `public` directory. This currently is the output directory of a React build if we are using the standard React configuration
 
 Before we do anything more we should rename our `public` directory to `static` as this is what Gatsby uses for static files, and then make a `git commit` before we add the `public` directory to our `.gitignore`
-
-> We need to make the commit here otherwise our `public` directory will end up being tracked and we don't want that
 
 Now we need to add the following lines to the end of our `.gitignore` file so that we do not track the gatsby build files:
 
@@ -76,7 +74,7 @@ Next we'll add/update the following commands in our `package.json` file so that 
 
 ## Create Config Files
 
-First we need to add the `gatsby-config.js` file to our root directory, we can use the starter file with the following content:
+In order to enable gatsby we need to add the `gatsby-config.js` file to our root directory, we can use the starter file with the following content, as it currently stands this doesn't do anything
 
 `gatsby-config.js`
 
@@ -86,7 +84,7 @@ module.exports = {
 }
 ```
 
-Next we'll create a `index.js` file in the `src` directory with any relevant content from your `index.html` file if any of it has been updated. Also be sure to remove the `%PUBLIC_URL%` stuff from the file content
+Next we'll create an `index.js` file in the `src` directory with any relevant content from your `index.html` file if any of it has been updated. Also be sure to remove the `%PUBLIC_URL%` stuff from the file content
 
 The `index.js` file needs to be a React Component with the following basic structure for a standard CRA app
 
@@ -183,7 +181,7 @@ Search:
 
 # Page Setup
 
-From the Development 404 Page we can see that Gatsby has piked up our previously created pages - this is because Gatsby looks for pages in the `pages` directory, however when we click on a the links we will notice the following:
+From the Development 404 Page we can see that Gatsby has found our previously created pages - this is because Gatsby looks for pages in the `pages` directory, however when we click on a the links we will notice the following:
 
 1. `Home` and `404` render correctly
 2. `Blog` results in an error message
@@ -193,7 +191,7 @@ From the Development 404 Page we can see that Gatsby has piked up our previously
 
 These are, for the most part, easy problems to solve
 
-## Fx the Blog Error Message
+## Fix the Blog Error Message
 
 If we look at the `Blog` page we will see that there is an issue with the Page render, this is because we need to change the `Link` components to be imported from `gatsby` instead of `react-router-dom` because with Gatsby we are no longer using the React Router
 
@@ -357,7 +355,7 @@ module.exports = {
 }
 ```
 
-If you start the application now you'll notice that the font is not correct, this is because we specify the font styles in the `index.css` file. In order to fix this we need to import the `index.css` file into our application, in the default React application this is done via the `src/index.js` file, but since we don't use that to load up the application anymore we need to create another file to do that
+If you start the application now you'll notice that the font is not correct, this is because we specify the font styles in the `index.css` file. In order to fix this we need to import the `index.css` file into our application, in the default React application this is done via the `src/index.js` file, but since we don't use that to load up the application anymore we need to create another file to do that with Gatsby
 
 In the root directory create a file called `gatsby-browser.js`, in this we just need to import the `index.css` file:
 
@@ -387,6 +385,6 @@ By now we have completed the first part of the migration process - converting ou
 5. Use a shared layout component
 6. Fixing the CSS to work with Gatsby
 
-In the [next part](../21-01/gatsby-migration-3) we'll look at how we can go about providing the data needed for our `Post` component using GraphQL and show our posts. We'll also look at how we can pre-process the data that we provide to our component so that we can enhance our content while improving our content creation process
+In the next part we'll look at how we can go about providing the data needed for our `Post` component using GraphQL and show our posts. We'll also look at how we can pre-process the data that we provide to our component so that we can enhance our content while improving our content creation process
 
 > Nabeel Valley
