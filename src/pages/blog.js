@@ -13,13 +13,25 @@ const Blog = ({ location, data }) => <Layout>
         </Helmet>
         <PostListing
             imageSources={{
+                mobileImage: data.zwk3_mobileImage,
+                desktopImage: data.zwk3_desktopImage,
+                largeDesktopImage: data.zwk3_largeDesktopImage
+            }}
+            title="The Gatsby Migration, pt.2 - Dumb Pages"
+            date="01 February 2020"
+            description="Transforming a React site into a statically rendered one? Let's get started"
+            link="/blog/2020/01-02/gatsby-migration-2"
+            textAlignRight
+        />
+        <PostListing
+            imageSources={{
                 mobileImage: data.zwk2_mobileImage,
                 desktopImage: data.zwk2_desktopImage,
                 largeDesktopImage: data.zwk2_largeDesktopImage
             }}
             title="The Gatsby Migration, pt.1 - Setting the Scene"
             date="21 January 2020"
-            description="Transforming a React site into a statically rendered one? Sure - leggo"
+            description="Assembling a pretty standard React site, first step on the road to converting it to a Gatsby one"
             link="/blog/2020/21-01/gatsby-migration-1"
         />
         <PostListing
@@ -63,6 +75,8 @@ const Blog = ({ location, data }) => <Layout>
                 desktopImage: data.zwk_desktopImage,
                 largeDesktopImage: data.zwk_largeDesktopImage
             }}
+            title="Zwartkops Gallery"
+            date="27 July 2019"
             image="/images/zwartkops/image12.jpgJuly 2019"
             description="A photo gallery of the Extreme Racing Festival at Zwartkops Raceway in Centurion"
             link="/gallery/zwartkops"
@@ -178,6 +192,28 @@ export const query = graphql`
         }
     }
     zwk2_largeDesktopImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+
+    zwk3_mobileImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk3_desktopImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk3_largeDesktopImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
         childImageSharp {
             fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG

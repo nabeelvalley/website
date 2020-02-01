@@ -21,14 +21,14 @@ const Home = ({ location, data }) => <Layout>
         <Landing />
         <FeaturedPost
             imageSources={{
-                mobileImage: data.zwk2_mobileImage,
-                desktopImage: data.zwk2_desktopImage,
-                largeDesktopImage: data.zwk2_largeDesktopImage
+                mobileImage: data.zwk3_mobileImage,
+                desktopImage: data.zwk3_desktopImage,
+                largeDesktopImage: data.zwk3_largeDesktopImage
             }}
-            title="The Gatsby Migration, pt.1 - Setting the Scene"
-            date="21 January 2020"
-            description="Transforming a React site into a statically rendered one? Sure - leggo"
-            link="/blog/2020/21-01/gatsby-migration-1"
+            title="The Gatsby Migration, pt.2 - Dumb Pages"
+            date="01 February 2020"
+            description="Transforming a React site into a statically rendered one? Let's get started"
+            link="/blog/2020/01-02/gatsby-migration-2"
         />
         <SectionDivider title="What's New?" />
         <ProjectGroup isFullWidth={true}>
@@ -49,13 +49,29 @@ const Home = ({ location, data }) => <Layout>
         </ProjectGroup>
         <SectionDivider title="From the Blog" />
         <DenseGrid>
+            <GridSummary
+                title="The Gatsby Migration, pt.1 - Setting the Scene"
+                date="21 January 2020"
+                description="Assembling a pretty standard React site, first step on the road to converting it to a Gatsby one"
+                link="/blog/2020/21-01/gatsby-migration-1"
+                gridColumn="span 4"
+                gridRow="span 2"
+            />
+            <GridImage
+                imageSources={{
+                    mobileImage: data.zwk2_mobileImage,
+                    desktopImage: data.zwk2_desktopImage,
+                    largeDesktopImage: data.zwk2_largeDesktopImage
+                }}
+                gridColumn="span 4"
+                gridRow="span 2"
+            />
             <GridImage
                 imageSources={{
                     mobileImage: data.mqtt_mobileImage,
                     desktopImage: data.mqtt_desktopImage,
                     largeDesktopImage: data.mqtt_largeDesktopImage
                 }}
-                image="/content/blog/2019/30-10/header.jpg"
                 gridColumn="span 4"
                 gridRow="span 4"
             />
@@ -222,6 +238,28 @@ export const query = graphql`
         }
     }
     zwk2_largeDesktopImage: file(relativePath: {eq: "zwartkops/image2.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+
+    zwk3_mobileImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk3_desktopImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk3_largeDesktopImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
         childImageSharp {
             fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
