@@ -42,7 +42,7 @@
 /* Table Styling */
 
 .Markdown .scrollable {
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .Markdown table {
