@@ -36,7 +36,7 @@
 .Markdown pre {
   border: var(--code-border);
   padding: var(--text-spacing);
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 /* Table Styling */
