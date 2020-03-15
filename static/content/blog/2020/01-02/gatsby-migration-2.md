@@ -86,11 +86,11 @@ module.exports = {
 }
 ```
 
-Next we'll create an `index.js` file in the `src` directory with any relevant content from your `index.html` file if any of it has been updated. Also be sure to remove the `%PUBLIC_URL%` stuff from the file content
+Next we'll create an `html.js` file in the `src` directory with any relevant content from your `index.html` file if any of it has been updated. Also be sure to remove the `%PUBLIC_URL%` stuff from the file content
 
-The `index.js` file needs to be a React Component with the following basic structure for a standard CRA app
+The `html.js` file needs to be a React Component with the following basic structure for a standard CRA app
 
-`index.js`
+`src/html.js`
 
 ```js
 import React from "react"
