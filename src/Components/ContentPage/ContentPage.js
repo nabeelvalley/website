@@ -20,6 +20,14 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
                 location.pathname !== '/blog'
                     ? <Sidebar title="Blog">
                         <SidebarItem
+                            title="The Gatsby Migration, pt.3 - Smart Pages"
+                            tech={['React', 'Gatsby', 'GraphQL']}
+                            date="15 March 2020"
+                            description="Adding dynamic pages to a Gatsby site"
+                            link="/blog/2020/15-03/gatsby-migration-3"
+                            linkText="Read More"
+                        />
+                        <SidebarItem
                             title="The Gatsby Migration, pt.2 - Dumb Pages"
                             tech={['React', 'Gatsby', 'GraphQL']}
                             date="01 February 2020"
@@ -31,7 +39,7 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
                             title="The Gatsby Migration, pt.1 - Setting the Scene"
                             tech={['React', 'Gatsby', 'GraphQL']}
                             date="21 January 2020"
-                            description="Transforming a React site into a statically rendered one? Sure - leggo"
+                            description="Let's build a react site"
                             link="/blog/2020/21-01/gatsby-migration-1"
                             linkText="Read More"
                         />
@@ -43,21 +51,12 @@ const ContentPage = ({ title, subtitle, children, location }) => <div className=
                             link="/blog/2019/12-11/rtc-with-mqtt"
                             linkText="Read More"
                         />
-                        <SidebarItem
-                            title="Introduction to F# Web APIs"
-                            tech={['F#', '.NET Core', 'APIs']}
-                            date="30 October 2019"
-                            description="The basics of building a Web API with .NET Core and F#"
-                            link="/blog/2019/30-10/fsharp-webapi"
-                            linkText="Read More"
-                        />
                     </Sidebar>
                     : null
             }
             {
                 location.pathname !== '/code'
                     ? <Sidebar title="Code">
-
                         <SidebarItem
                             title="Docs"
                             tech={['literally everything']}

@@ -26,8 +26,7 @@ This post will be going throught the Gatsby Setup necessary in order to migrate 
 
 1. [Creating the initial React App](../21-01/gatsby-migration-1)
 2. **Rendering the "Dumb" pages with Gatsby** (This post)
-3. Rendering the "Smart" page with Gatsby
-4. Image optimization and lazy loading
+3. [Rendering the "Smart" page with Gatsby](../15-03/gatsby-migration-3)
 
 # Getting Ready
 

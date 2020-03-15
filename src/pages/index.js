@@ -21,21 +21,21 @@ const Home = ({ location, data }) => <Layout>
         <Landing />
         <FeaturedPost
             imageSources={{
-                mobileImage: data.zwk3_mobileImage,
-                desktopImage: data.zwk3_desktopImage,
-                largeDesktopImage: data.zwk3_largeDesktopImage
+                mobileImage: data.zwk4_mobileImage,
+                desktopImage: data.zwk4_desktopImage,
+                largeDesktopImage: data.zwk4_largeDesktopImage
             }}
-            title="The Gatsby Migration, pt.2 - Dumb Pages"
-            date="01 February 2020"
-            description="Transforming a React site into a statically rendered one? Let's get started"
-            link="/blog/2020/01-02/gatsby-migration-2"
+            title="The Gatsby Migration, pt.3 - Smart Pages"
+            date="15 March 2020"
+            description="Adding dynamic pages to a Gatsby site"
+            link="/blog/2020/15-03/gatsby-migration-3"
         />
         <SectionDivider title="What's New?" />
         <ProjectGroup isFullWidth={true}>
             <ProjectItem
                 title="Docs"
                 tech={['literally everything']}
-                description="I'm migrating all my dev notes over from GitHub Pages, you can take a look at what's there so far:"
+                description="I'm migrating all my dev notes over from GitHub Pages, you can take a look at what's there so far"
                 link="/docs"
                 linkText="View Docs"
             />
@@ -49,6 +49,23 @@ const Home = ({ location, data }) => <Layout>
         </ProjectGroup>
         <SectionDivider title="From the Blog" />
         <DenseGrid>
+            <GridImage
+                imageSources={{
+                    mobileImage: data.zwk2_mobileImage,
+                    desktopImage: data.zwk2_desktopImage,
+                    largeDesktopImage: data.zwk2_largeDesktopImage
+                }}
+                gridColumn="span 4"
+                gridRow="span 4"
+            />
+            <GridSummary
+                title="The Gatsby Migration, pt.2 - Dumb Pages"
+                date="01 February 2020"
+                description="Transforming a React site into a statically rendered one? Let's get started"
+                link="/blog/2020/01-02/gatsby-migration-2"
+                gridColumn="span 4"
+                gridRow="span 2"
+            />
             <GridSummary
                 title="The Gatsby Migration, pt.1 - Setting the Scene"
                 date="21 January 2020"
@@ -57,12 +74,11 @@ const Home = ({ location, data }) => <Layout>
                 gridColumn="span 4"
                 gridRow="span 2"
             />
-            <GridImage
-                imageSources={{
-                    mobileImage: data.zwk2_mobileImage,
-                    desktopImage: data.zwk2_desktopImage,
-                    largeDesktopImage: data.zwk2_largeDesktopImage
-                }}
+            <GridSummary
+                title="Real-time Communication with MQTT"
+                date="12 November 2019"
+                description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
+                link="/blog/2019/12-11/rtc-with-mqtt"
                 gridColumn="span 4"
                 gridRow="span 2"
             />
@@ -74,14 +90,6 @@ const Home = ({ location, data }) => <Layout>
                 }}
                 gridColumn="span 4"
                 gridRow="span 4"
-            />
-            <GridSummary
-                title="Real-time Communication with MQTT"
-                date="12 November 2019"
-                description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
-                link="/blog/2019/12-11/rtc-with-mqtt"
-                gridColumn="span 4"
-                gridRow="span 2"
             />
             <GridSummary
                 title="Introduction to F# Web APIs"
@@ -260,6 +268,28 @@ export const query = graphql`
         }
     }
     zwk3_largeDesktopImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+
+    zwk4_mobileImage: file(relativePath: {eq: "zwartkops/image11.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk4_desktopImage: file(relativePath: {eq: "zwartkops/image11.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk4_largeDesktopImage: file(relativePath: {eq: "zwartkops/image11.jpg"}) {
         childImageSharp {
             fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG

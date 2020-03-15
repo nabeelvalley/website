@@ -13,6 +13,17 @@ const Blog = ({ location, data }) => <Layout>
         </Helmet>
         <PostListing
             imageSources={{
+                mobileImage: data.zwk4_mobileImage,
+                desktopImage: data.zwk4_desktopImage,
+                largeDesktopImage: data.zwk4_largeDesktopImage
+            }}
+            title="The Gatsby Migration, pt.3 - Smart Pages"
+            date="15 March 2020"
+            description="Adding dynamic pages to a Gatsby site"
+            link="/blog/2020/15-03/gatsby-migration-3"
+        />
+        <PostListing
+            imageSources={{
                 mobileImage: data.zwk3_mobileImage,
                 desktopImage: data.zwk3_desktopImage,
                 largeDesktopImage: data.zwk3_largeDesktopImage
@@ -214,6 +225,28 @@ export const query = graphql`
         }
     }
     zwk3_largeDesktopImage: file(relativePath: {eq: "zwartkops/image15.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+
+    zwk4_mobileImage: file(relativePath: {eq: "zwartkops/image11.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk4_desktopImage: file(relativePath: {eq: "zwartkops/image11.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 690, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+        }
+    }
+    zwk4_largeDesktopImage: file(relativePath: {eq: "zwartkops/image11.jpg"}) {
         childImageSharp {
             fluid(maxWidth: 690, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG

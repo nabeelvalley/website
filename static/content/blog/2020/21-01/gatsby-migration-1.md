@@ -25,9 +25,8 @@ Now we'll be starting off with a React app generated with `create-react-app` so 
 For the sake of completeness, this series will be broken into four posts covering the following:
 
 1. **Creating the initial React App** (This post)
-2. Rendering the "Dumb" pages with Gatsby
-3. Rendering the "Smart" page with Gatsby
-4. Image optimization and lazy loading
+2. [Rendering the "Dumb" pages with Gatsby](../01-02/gatsby-migration-2)
+3. [Rendering the "Smart" page with Gatsby](../15-03/gatsby-migration-3)
 
 # The React App
 
