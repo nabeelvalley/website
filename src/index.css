@@ -18,11 +18,11 @@ body {
   --font-primary: "Homemade Apple", monospace;
   --font-secondary: "Homemade Apple", serif;
 
-  --color-primary: #000000;
-  --color-primary-l: #000000;
+  --color-primary: #2a45dd;
+  --color-primary-l: #5369e9;
   --color-secondary: #000000;
-  --color-dark: #000000;
-  --color-light: #ffffff;
+  --color-dark: #2a45dd;
+  --color-light: #f6ff79;
   --color-light-transparent: rgba(255, 255, 255, 0.9);
 
   --color-code-1: var(--color-primary);
@@ -55,12 +55,6 @@ body {
 
 body {
   background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
-}
-
-.App {
-  margin: var(--top-margin) var(--main-margin) 0 var(--main-margin);
-  border-left: solid 2px rgba(255, 0, 0, 0.6);
-  padding-left: 15px;
 }
 
 /* @media (prefers-color-scheme: dark) {
