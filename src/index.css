@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Rokkitt:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
 
 html,
 body {
@@ -15,14 +15,14 @@ body {
 }
 
 :root {
-  --font-primary: "Monoton", monospace;
-  --font-secondary: "Rokkitt", serif;
+  --font-primary: "Homemade Apple", monospace;
+  --font-secondary: "Homemade Apple", serif;
 
   --color-primary: #000000;
   --color-primary-l: #000000;
   --color-secondary: #000000;
   --color-dark: #000000;
-  --color-light: #f6fa21;
+  --color-light: #ffffff;
   --color-light-transparent: rgba(255, 255, 255, 0.9);
 
   --color-code-1: var(--color-primary);
@@ -32,7 +32,7 @@ body {
 
   --size-s: 17px;
   --size-m: 20px;
-  --size-l: 30px;
+  --size-l: 23px;
   --size-h: 60px;
 
   --grid-gap: 15px;
@@ -42,9 +42,9 @@ body {
   --medium-breakpoint: 1080px;
   --large-breakpoint: 1200px;
 
-  --block-spacing: 65px;
-  --text-spacing: 25px;
-  --line-height: 15px;
+  --block-spacing: 75px;
+  --text-spacing: 2px;
+  --line-height: 25px;
 
   --main-margin: 5%;
   --top-margin: calc(65px + 10vh);
@@ -53,15 +53,14 @@ body {
   --scrollbar-width: 10px;
 }
 
-/* Dark mode */
-
 body {
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
 
 .App {
   margin: var(--top-margin) var(--main-margin) 0 var(--main-margin);
+  border-left: solid 2px rgba(255, 0, 0, 0.6);
+  padding-left: 15px;
 }
 
 /* @media (prefers-color-scheme: dark) {
