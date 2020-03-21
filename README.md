@@ -9,3 +9,4 @@ The site is built with `Create React App` and has the following scripts:
 - `deploy` to deploy to github pages
 
 Build artifacts can be found in the `build` folder once built
+

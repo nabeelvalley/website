@@ -1,6 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Raleway&family=Tangerine:wght@400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 html,
 body {
   margin: 0;
@@ -15,11 +14,11 @@ body {
 }
 
 :root {
-  --font-primary: "Tangerine", monospace;
-  --font-secondary: "Raleway", sans-serif;
+  --font-primary: "Major Mono Display", monospace;
+  --font-secondary: "Major Mono Display", sans-serif;
 
-  --color-primary: #4de4cb;
-  --color-primary-l: #4ddfe481;
+  --color-primary: #8f0000;
+  --color-primary-l: #770202;
   --color-secondary: #484848;
   --color-dark: #000000;
   --color-light: #ffffff;
@@ -64,8 +63,8 @@ body {
   margin: var(--top-margin) var(--main-margin) 0 var(--main-margin);
 }
 
-img {
-  border-radius: 100px;
+body picture {
+  box-shadow: inset 11px -3px 0px 16px rgba(0,0,0,1);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -142,6 +141,7 @@ h1,
 h2,
 h3 {
   font-weight: normal;
+  color: var(--color-primary);
 }
 
 /* unstyle links */
