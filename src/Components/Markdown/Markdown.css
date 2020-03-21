@@ -118,6 +118,12 @@
   width: 100%;
 }
 
+@media (prefers-color-scheme: dark) {
+  .Markdown .nb-image-output {
+    filter: invert(0.847);
+  }
+}
+
 .Markdown .nb-cell h1,
 .Markdown .nb-cell h2,
 .Markdown .nb-cell h3,
@@ -131,7 +137,7 @@
 }
 
 .Markdown .nb-text-output::before {
-  padding: calc(var(--text-spacing)/2) 0;
+  padding: calc(var(--text-spacing) / 2) 0;
   display: block;
   content: "OUT";
   position: relative;
