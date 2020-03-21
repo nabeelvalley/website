@@ -29,7 +29,7 @@
   display: inline;
   white-space: nowrap;
   font-family: var(--font-primary);
-  font-size: var(--size-s);
+  font-size: var(--size-l);
   padding-right: var(--size-s);
 }
 
