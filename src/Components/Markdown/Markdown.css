@@ -2,6 +2,8 @@
   font-family: var(--font-secondary);
   font-size: var(--size-s);
   --code-border: solid 1px var(--color-primary);
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .Markdown > * {
@@ -13,8 +15,8 @@
   font-family: var(--font-primary);
   font-weight: 100;
   font-size: calc(var(--size-s) - 3px);
-  /* white-space: pre-wrap;
   overflow-wrap: break-word;
+  /* white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-word; */
 }
@@ -143,4 +145,11 @@
   position: relative;
   top: calc(-0.6 * var(--text-spacing));
   border-bottom: var(--code-border);
+}
+
+.Markdown .katex-display {
+  display: block;
+  overflow-x: auto; 
+  overflow-y: hidden;
+  padding-bottom: 10px;
 }
