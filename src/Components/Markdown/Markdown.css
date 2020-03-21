@@ -10,6 +10,10 @@
   margin-bottom: var(--text-spacing);
 }
 
+.Markdown summary:focus {
+  outline-color: var(--color-dark);
+}
+
 .Markdown code,
 .Markdown .nb-text-output,
 .Markdown .nb-stdout {

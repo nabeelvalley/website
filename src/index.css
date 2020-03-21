@@ -150,6 +150,10 @@ a:hover {
   color: unset;
 }
 
+a:focus {
+  outline-color: var(--color-dark);
+}
+
 /* selection */
 
 *::selection {
