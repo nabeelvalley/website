@@ -20,7 +20,7 @@
 .Markdown .nb-stdout {
   font-family: var(--font-primary);
   font-weight: 100;
-  font-size: calc(var(--size-s) - 3px);
+  font-size: calc(var(--size-l) - 3px);
   overflow-wrap: break-word;
   /* white-space: pre-wrap;
   word-wrap: break-word;

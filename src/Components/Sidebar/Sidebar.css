@@ -1,6 +1,6 @@
 .Sidebar > .title {
   font-family: var(--font-primary);
-  font-size: var(--size-m);
+  font-size: var(--size-l);
   margin-bottom: var(--text-spacing);
   border-bottom: 1px solid var(--color-primary);
   padding-bottom: var(--text-spacing);

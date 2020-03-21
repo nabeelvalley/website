@@ -7,7 +7,7 @@
 .SectionDivider .title {
   margin: 0;
   font-family: var(--font-primary);
-  font-size: var(--size-l);
+  font-size: var(--size-h);
   text-transform: lowercase;
   position: relative;
   z-index: 1;

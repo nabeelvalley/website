@@ -23,7 +23,7 @@
   display: inline;
   white-space: nowrap;
   font-family: var(--font-primary);
-  font-size: var(--size-s);
+  font-size: var(--size-l);
   padding-right: var(--size-s);
 }
 
@@ -55,6 +55,6 @@
   display: inline-block;
   padding-bottom: 10px;
   font-family: var(--font-primary);
-  font-size: var(--size-s);
+  font-size: var(--size-l);
   text-transform: lowercase;
 }

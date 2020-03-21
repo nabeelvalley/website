@@ -79,7 +79,7 @@
 .InfoBlock .location {
   margin-bottom: calc(var(--text-spacing) / 4);
   font-family: var(--font-primary);
-  font-size: var(--size-s);
+  font-size: var(--size-l);
   color: var(--color-primary);
 }
 
