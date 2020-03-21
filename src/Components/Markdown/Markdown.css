@@ -104,3 +104,23 @@
   padding-left: var(--text-spacing);
   border-left: 2px solid var(--color-primary);
 }
+
+/* jupyter styling */
+
+
+.Markdown .nb-output {
+  overflow-x: auto;
+  margin: 0;
+}
+
+.Markdown .nb-image-output {
+  background-color: white;
+  width: 100%;
+}
+
+.Markdown .nb-cell h1,
+.Markdown .nb-cell h2,
+.Markdown .nb-cell h3,
+.Markdown .nb-cell h4 {
+  margin-top: var(--text-spacing);
+}

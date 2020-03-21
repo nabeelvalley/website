@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './Markdown.css'
+import 'katex/dist/katex.css'
 
 const Markdown = ({ children, html }) =>
     children

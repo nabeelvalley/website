@@ -10,7 +10,9 @@
 
 .Post .main h2,
 .Post .main h3,
-.Post .main h4 {
+.Post .main h4,
+.Post .main h5,
+.Post .main h6 {
   font-family: var(--font-secondary);
   margin-bottom: var(--text-spacing);
   font-weight: 600;
