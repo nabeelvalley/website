@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Rokkitt:wght@300&display=swap');
 
 html,
 body {
@@ -15,7 +15,7 @@ body {
 }
 
 :root {
-  --font-primary: "Lobster", monospace;
+  --font-primary: "Monoton", monospace;
   --font-secondary: "Rokkitt", serif;
 
   --color-primary: #000000;
