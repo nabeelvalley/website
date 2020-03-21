@@ -14,6 +14,8 @@ const Navbar = () => <nav className="Navbar">
         <li className="link"><Link activeClassName="active"
             partiallyActive={true} to="/code">Code</Link></li>
         <li className="link"><Link activeClassName="active"
+            partiallyActive={true} to="/docs">Docs</Link></li>
+        <li className="link"><Link activeClassName="active"
             partiallyActive={true} to="/about">About</Link></li>
     </ul>
 </nav>
