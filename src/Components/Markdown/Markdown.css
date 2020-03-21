@@ -8,7 +8,8 @@
   margin-bottom: var(--text-spacing);
 }
 
-.Markdown code {
+.Markdown code,
+.Markdown .nb-text-output {
   font-family: var(--font-primary);
   font-weight: 100;
   font-size: calc(var(--size-s) - 3px);
@@ -107,7 +108,6 @@
 
 /* jupyter styling */
 
-
 .Markdown .nb-output {
   overflow-x: auto;
   margin: 0;
@@ -123,4 +123,18 @@
 .Markdown .nb-cell h3,
 .Markdown .nb-cell h4 {
   margin-top: var(--text-spacing);
+}
+
+.Markdown .nb-text-output {
+  border: var(--code-border);
+  border-style: dashed;
+}
+
+.Markdown .nb-text-output::before {
+  padding: calc(var(--text-spacing)/2) 0;
+  display: block;
+  content: "OUT";
+  position: relative;
+  top: calc(-0.6 * var(--text-spacing));
+  border-bottom: var(--code-border);
 }
