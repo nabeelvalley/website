@@ -154,6 +154,10 @@
   border-bottom: var(--code-border);
 }
 
+.Markdown .nb-markdown-cell:first-of-type h1 {
+  display: none;
+}
+
 .Markdown .katex-display {
   display: block;
   overflow-x: auto; 
