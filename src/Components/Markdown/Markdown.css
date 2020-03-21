@@ -11,7 +11,8 @@
 }
 
 .Markdown code,
-.Markdown .nb-text-output {
+.Markdown .nb-text-output,
+.Markdown .nb-stdout {
   font-family: var(--font-primary);
   font-weight: 100;
   font-size: calc(var(--size-s) - 3px);
@@ -133,12 +134,14 @@
   margin-top: var(--text-spacing);
 }
 
-.Markdown .nb-text-output {
+.Markdown .nb-text-output,
+.Markdown .nb-stdout {
   border: var(--code-border);
   border-style: dashed;
 }
 
-.Markdown .nb-text-output::before {
+.Markdown .nb-text-output::before,
+.Markdown .nb-stdout::before {
   padding: calc(var(--text-spacing) / 2) 0;
   display: block;
   content: "OUT";
