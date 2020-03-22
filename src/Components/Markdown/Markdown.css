@@ -4,6 +4,9 @@
   --code-border: solid 1px var(--color-primary);
   max-width: 100vw;
   overflow-wrap: break-word;
+  border-left: solid 2px #ff000099;
+  padding-left: 10px ;
+  /* background-image: repeating-linear-gradient(white 0px, white 24px, teal 26px); */
 }
 
 .Markdown > * {
@@ -17,12 +20,12 @@
 .Markdown code,
 .Markdown .nb-text-output,
 .Markdown .nb-stdout {
-  font-family: var(--font-primary);
+  font-family: var(--font-monospace);
   font-weight: 100;
   font-size: calc(var(--size-s) - 3px);
   overflow-wrap: break-word;
-  /* white-space: pre-wrap;
   word-wrap: break-word;
+  /* white-space: pre-wrap;
   word-break: break-word; */
 }
 
@@ -35,7 +38,7 @@
 .Markdown .code-tab code {
   position: relative;
   background-color: var(--color-light);
-  padding: 10px var(--text-spacing) 0px var(--text-spacing);
+  padding: 10px var(--text-spacing) 15px var(--text-spacing);
   border-top: var(--code-border);
   border-left: var(--code-border);
   border-right: var(--code-border);

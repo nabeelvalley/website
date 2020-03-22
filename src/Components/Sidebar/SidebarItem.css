@@ -22,7 +22,7 @@
 .SidebarItem .tech .item {
   display: inline;
   white-space: nowrap;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   font-size: var(--size-s);
   padding-right: var(--size-s);
 }

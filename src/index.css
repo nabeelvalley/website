@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Indie+Flower&family=Share+Tech+Mono&display=swap");
 
 html,
 body {
@@ -15,14 +15,15 @@ body {
 }
 
 :root {
-  --font-primary: "Homemade Apple", monospace;
-  --font-secondary: "Homemade Apple", serif;
+  --font-primary: "Homemade Apple", serif;
+  --font-secondary: "Indie Flower", serif;
+  --font-monospace: "Share Tech Mono", monospace;
 
   --color-primary: #2a45dd;
-  --color-primary-l: #5369e9;
-  --color-secondary: #000000;
-  --color-dark: #2a45dd;
-  --color-light: #f6ff79;
+  --color-primary-l: #7d8de6;
+  --color-secondary: #f6ff79;
+  --color-dark: #000000;
+  --color-light: #ffffff;
   --color-light-transparent: rgba(255, 255, 255, 0.9);
 
   --color-code-1: var(--color-primary);
@@ -30,21 +31,21 @@ body {
   --color-code-3: #fc7753;
   --color-code-4: #66d7d1;
 
-  --size-s: 17px;
-  --size-m: 20px;
-  --size-l: 23px;
+  --size-s: 20px;
+  --size-m: 24px;
+  --size-l: 30px;
   --size-h: 60px;
 
-  --grid-gap: 15px;
+  --grid-gap: 16px;
 
   --xsmall-breakpoint: 400px;
   --small-breakpoint: 690px;
   --medium-breakpoint: 1080px;
   --large-breakpoint: 1200px;
 
-  --block-spacing: 75px;
-  --text-spacing: 2px;
-  --line-height: 25px;
+  --block-spacing: 65px;
+  --text-spacing: 16px;
+  --line-height: 15px;
 
   --main-margin: 5%;
   --top-margin: calc(65px + 10vh);
@@ -53,14 +54,17 @@ body {
   --scrollbar-width: 10px;
 }
 
+/* Dark mode */
+
 body {
-  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+  background-color: #ffffff;
+  color: var(--color-dark);
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #e44d90;
-    --color-primary-l: #e44d9181;
+    --color-primary: #566be2;
+    --color-primary-l: #7d8de6;
     --color-secondary: #ffffff;
     --color-dark: #ffffff;
     --color-light: rgb(39, 39, 39);
@@ -68,7 +72,12 @@ body {
 
     --color-code-2: var(--color-code-4);
   }
-} */
+
+  body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+}
 
 @media (min-width: 400px) {
   :root {

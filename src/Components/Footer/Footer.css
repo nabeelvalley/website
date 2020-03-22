@@ -17,7 +17,7 @@
 }
 
 .Footer a {
-  color: var(--color-secondary);
+  color: var(--color-dark);
 }
 
 @media (min-width: 690px) {
