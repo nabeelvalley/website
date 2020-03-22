@@ -4,7 +4,6 @@
   --code-border: solid 1px var(--color-primary);
   max-width: 100vw;
   overflow-wrap: break-word;
-  border-left: solid 2px #ff000099;
   padding-left: 10px ;
   /* background-image: repeating-linear-gradient(white 0px, white 24px, teal 26px); */
 }

@@ -27,6 +27,6 @@
   z-index: -1;
 }
 .SectionDivider .title .text {
-  background: var(--color-secondary);
+  background: var(--color-light);
   padding: 5px 15px;
 }

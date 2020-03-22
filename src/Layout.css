@@ -2,10 +2,3 @@
   margin: 0 var(--main-margin) 0 var(--main-margin);
   padding: 143px 15px 0 15px;
 }
-
-
-@media (prefers-color-scheme: dark) {
-  .App {
-    border-left: unset;
-  }
-}

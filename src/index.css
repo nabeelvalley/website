@@ -19,12 +19,12 @@ body {
   --font-secondary: "Indie Flower", serif;
   --font-monospace: "Share Tech Mono", monospace;
 
-  --color-primary: #2a45dd;
-  --color-primary-l: #7d8de6;
+  --color-primary: #f6ff79;
+  --color-primary-l: #f6ff79;
   --color-secondary: #f6ff79;
-  --color-dark: #000000;
-  --color-light: #ffffff;
-  --color-light-transparent: rgba(255, 255, 255, 0.9);
+  --color-dark: #ffffff;
+  --color-light: #2a45dd;
+  --color-light-transparent: #2a45ddaf;
 
   --color-code-1: var(--color-primary);
   --color-code-2: #2d4654;
@@ -57,7 +57,7 @@ body {
 /* Dark mode */
 
 body {
-  background-color: #ffffff;
+  background-color: #2a45dd;
   color: var(--color-dark);
 }
 
@@ -146,6 +146,7 @@ h3 {
 
 a {
   color: var(--color-primary);
+  font-weight: bold;
   text-decoration: unset;
 }
 

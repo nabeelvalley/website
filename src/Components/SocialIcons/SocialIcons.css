@@ -8,7 +8,7 @@
   height: 35px;
   width: 35px;
   margin: 0 5px;
-  background-color: var(--color-primary);
+  background-color: transparent;
   border-radius: 50%;
 }
 
