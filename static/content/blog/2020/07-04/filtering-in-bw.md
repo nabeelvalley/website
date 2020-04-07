@@ -32,7 +32,7 @@ Over the remainder of this post I'll be discussing a lot of this in the context 
 ![Colour Version of Discussion Image](/content/blog/2020/07-04/images/colour.jpg =60%x60%)
 </center>
 
-For our discussion there are two important aspects of this image to note:
+For our discussion there are a few important aspects of this image to note:
 
 1. The image is darkest in the background (top left) and transitions to being brighter in the foreground (bottom right)
 2. We primarily have the subject in **red** and the background element (leaves) in **green**
