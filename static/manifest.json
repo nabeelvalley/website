@@ -1,113 +1,113 @@
 {
-    "short_name": "Nabeel Valley",
-    "name": "Nabeel Valley | Web Developer & Photographer",
-    "icons": [
-        {
-            "src": "/manifest-assets/favicon.png",
-            "sizes": "64x64 32x32 24x24 16x16",
-            "type": "image/x-icon"
-        },
-        {
-            "src": "/manifest-assets/1db4f0c3-90df-7c96-b137-a4d08c6b7ce2.webPlatform.png",
-            "sizes": "44x44",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/cc70fbe6-1ba3-8872-eed9-b43d319774b8.webPlatform.png",
-            "sizes": "48x48",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/ce4cfdf3-eeee-ef0f-ad57-c709d7a9bf72.webPlatform.png",
-            "sizes": "1240x600",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/2478ea2c-3bb3-05f1-7d06-07c8fe0caf98.webPlatform.png",
-            "sizes": "300x300",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/2174de28-c07e-eb13-3749-8b0ca145dd67.webPlatform.png",
-            "sizes": "150x150",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/80679bea-e8f1-6c39-83c4-9cc064a3b1fd.webPlatform.png",
-            "sizes": "88x88",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/42474038-2b04-61ad-0258-fc8aef3c30ab.webPlatform.png",
-            "sizes": "24x24",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/580911f8-b0b2-990f-c6b0-2bda43cd45c6.webPlatform.png",
-            "sizes": "50x50",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/773d3bf6-9fd4-6d39-f319-12a48b4a3085.webPlatform.png",
-            "sizes": "620x300",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/d4d7a135-01e4-079f-e9b0-1b918d9b30bc.webPlatform.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/afaefb20-f480-9f6c-699f-377fa80a70df.webPlatform.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/14681010-33c3-6072-59a6-eb784a48575e.webPlatform.png",
-            "sizes": "96x96",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/2f9ba465-b052-3319-a5c8-6985bf5342b6.webPlatform.png",
-            "sizes": "72x72",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/2a7bed71-6bd4-65a7-6ae9-362ae70f24e5.webPlatform.png",
-            "sizes": "36x36",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/2cb1cc62-ccfb-e820-a009-18e38611ffc3.webPlatform.png",
-            "sizes": "1024x1024",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/3083b770-f066-01e4-1f3c-d97608ef82e9.webPlatform.png",
-            "sizes": "180x180",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/409d9ccb-0eef-1401-1479-11f0bb63fab0.webPlatform.png",
-            "sizes": "152x152",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/58108fc4-b144-88ed-13a4-97150712916f.webPlatform.png",
-            "sizes": "120x120",
-            "type": "image/png"
-        },
-        {
-            "src": "/manifest-assets/91a0e243-d711-17f2-831b-d092ce59275c.webPlatform.png",
-            "sizes": "76x76",
-            "type": "image/png"
-        }
-    ],
-    "start_url": "/",
-    "display": "standalone",
-    "theme_color": "#ffffff",
-    "background_color": "#e44d90",
-    "lang": "",
-    "screenshots": [],
-    "orientation": "portrait"
+  "short_name": "Nabeel Valley",
+  "name": "Nabeel Valley | Web Developer & Photographer",
+  "icons": [
+    {
+      "src": "/manifest-assets/favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/manifest-assets/1db4f0c3-90df-7c96-b137-a4d08c6b7ce2.webPlatform.png",
+      "sizes": "44x44",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/cc70fbe6-1ba3-8872-eed9-b43d319774b8.webPlatform.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/ce4cfdf3-eeee-ef0f-ad57-c709d7a9bf72.webPlatform.png",
+      "sizes": "1240x600",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/2478ea2c-3bb3-05f1-7d06-07c8fe0caf98.webPlatform.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/2174de28-c07e-eb13-3749-8b0ca145dd67.webPlatform.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/80679bea-e8f1-6c39-83c4-9cc064a3b1fd.webPlatform.png",
+      "sizes": "88x88",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/42474038-2b04-61ad-0258-fc8aef3c30ab.webPlatform.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/580911f8-b0b2-990f-c6b0-2bda43cd45c6.webPlatform.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/773d3bf6-9fd4-6d39-f319-12a48b4a3085.webPlatform.png",
+      "sizes": "620x300",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/d4d7a135-01e4-079f-e9b0-1b918d9b30bc.webPlatform.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/afaefb20-f480-9f6c-699f-377fa80a70df.webPlatform.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/14681010-33c3-6072-59a6-eb784a48575e.webPlatform.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/2f9ba465-b052-3319-a5c8-6985bf5342b6.webPlatform.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/2a7bed71-6bd4-65a7-6ae9-362ae70f24e5.webPlatform.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/2cb1cc62-ccfb-e820-a009-18e38611ffc3.webPlatform.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/3083b770-f066-01e4-1f3c-d97608ef82e9.webPlatform.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/409d9ccb-0eef-1401-1479-11f0bb63fab0.webPlatform.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/58108fc4-b144-88ed-13a4-97150712916f.webPlatform.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest-assets/91a0e243-d711-17f2-831b-d092ce59275c.webPlatform.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://nabeelvalley.netlify.app/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#e44d90",
+  "lang": "",
+  "screenshots": [],
+  "orientation": "portrait"
 }
