@@ -6,6 +6,7 @@ import Layout from "../Layout"
 import { graphql, Link } from "gatsby"
 
 import "../Post/Post.css"
+import Meta from "../Components/Meta/Meta"
 
 const Docs = ({ data, location }) => {
   const Content = data.allRenderedMarkdownPost.group.map((group) => (
@@ -29,10 +30,11 @@ const Docs = ({ data, location }) => {
           title="Docs"
           subtitle="Index for GitHub Docs"
         >
-          <Helmet>
-            <title>Docs | Nabeel Valley</title>
-            <meta name="description" content="Index for GitHub Docs" />
-          </Helmet>
+          <Meta
+            title="Docs | Nabeel Valley"
+            description="Index for Personal Docs"
+          />
+
           <Markdown children={Content} />
         </ContentPage>
       </div>
