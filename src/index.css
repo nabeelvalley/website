@@ -49,7 +49,7 @@ body {
   --top-margin: calc(65px + 10vh);
   --main-width: calc(100% - var(--main-margin) * 2);
 
-  --scrollbar-width: 10px;
+  --scrollbar-width: 5px;
 }
 
 /* Dark mode */
