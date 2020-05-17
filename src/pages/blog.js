@@ -50,6 +50,7 @@ const Blog = ({ location, data }) => {
   ]
 
   const sortedPosts = sortMarkdownPosts(data.allRenderedMarkdownPost)
+    .map(p => p.node)
     .reverse()
 
   const largePosts = sortedPosts.slice(0, imageSources.length)
@@ -70,10 +71,10 @@ const Blog = ({ location, data }) => {
           largePosts.map((p, i) => <PostListing
             key={i}
             imageSources={imageSources[i]}
-            title={p.node.title}
-            date={p.node.subtitle}
-            description={p.node.description}
-            link={p.node.slug}
+            title={p.title}
+            date={p.subtitle}
+            description={p.description}
+            link={p.slug}
             textAlignRight={i % 2 == 1}
           />)
         }
@@ -82,10 +83,10 @@ const Blog = ({ location, data }) => {
             smallPosts.map((p, i) =>
               <ProjectItem
                 key={i}
-                title={p.node.title}
-                subtitle={p.node.subtitle}
-                description={p.node.description}
-                link={p.node.slug}
+                title={p.title}
+                subtitle={p.subtitle}
+                description={p.description}
+                link={p.slug}
                 linkText="Read More"
               />
             )
