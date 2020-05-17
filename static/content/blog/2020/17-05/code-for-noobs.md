@@ -48,9 +48,9 @@ lllooonnnggg
 
 # 3. Variables
 
-If we want to keep our text for use at a later stage we need to store it somewhere. The programming language does this by creating a `reference` which is a little piece of storage on your device that stores the data, similar to how you save images and files. We can then create a `variable` that is essentially a label for the data you've got saved, similar to how a file name labels files we've got saved
+If we want to keep our data for use at a later stage we need to give it a name, otherwise how do we know what data we're trying to use right? To give a piece of data (or text, in our case) a name we create a `variable`
 
-We create a variable using `let` or `const` along with a variable name:
+We create a variable using `let` or `const` along with a variable name and the data that we want to give the name to  :
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-pt3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -69,7 +69,7 @@ const myOtherText = "Bye World"
 </details>
 
 
-We use `let` for data whose reference may change and `const` for data whose reference won't you can remember this like: `const = constant`
+We use `let` for data whose data may change and `const` for data whose data won't you can remember this like: `const = constant`
 
 > Note that it is also possible to use the keyword `var` to create a variable. This is something that is left over from older versions of JavaScript and can have some effects that are better to just avoid (if you're interested you can read [this article about how it impacts variable scope](https://medium.com/@josephcardillo/the-difference-between-function-and-block-scope-in-JavaScript-4296b2322abe) but it is a bit of a more challenging concept to understand)
 
