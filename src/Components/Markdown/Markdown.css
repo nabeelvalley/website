@@ -7,6 +7,11 @@
   overflow-wrap: break-word;
 }
 
+.Markdown img {
+  object-fit: cover;
+  object-position: center;
+}
+
 .Markdown > * {
   margin-bottom: var(--text-spacing);
 }

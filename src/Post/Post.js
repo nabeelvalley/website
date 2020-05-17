@@ -1,8 +1,5 @@
 import React from "react"
-import { Helmet } from "react-helmet"
-import AnyLink from "../Components/AnyLink/AnyLink"
 import ContentPage from "../Components/ContentPage/ContentPage"
-import Preloader from "../Components/Preloader/Preloader"
 import Markdown from "../Components/Markdown/Markdown"
 import Layout from "../../src/Layout"
 import { graphql } from "gatsby"
@@ -10,31 +7,15 @@ import { Link } from "gatsby"
 
 import "./Post.css"
 import Meta from "../Components/Meta/Meta"
+import sortMarkdownPosts from '../../utils/sortMarkdownPosts'
 
 const Post = ({ data, location }) => {
   let Nav = null
 
   try {
-    const posts = data.allRenderedMarkdownPost.edges
-      .map((el) => {
-        const slug = el.node.slug
+    const markdownData = data.allRenderedMarkdownPost
 
-        const year = slug.match(/\d\d\d\d/)[0]
-
-        const date = slug.match(/\d\d-\d\d/)[0]
-
-        const [day, month] = date.split("-").map((i) => +i)
-
-        return {
-          slug: slug,
-          year: +year,
-          month: +month,
-          day: +day,
-        }
-      })
-      .sort((a, b) => a.day - b.day)
-      .sort((a, b) => a.month - b.month)
-      .sort((a, b) => a.year - b.year)
+    const posts = sortMarkdownPosts(markdownData)
       .map((el) => el.slug)
 
     var postIndex = posts.indexOf(data.renderedMarkdownPost.slug)
@@ -106,3 +87,4 @@ export const query = graphql`
     }
   }
 `
+

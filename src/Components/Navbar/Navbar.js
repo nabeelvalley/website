@@ -35,11 +35,6 @@ const Navbar = () => (
         </Link>
       </li>
       <li className="link">
-        <Link activeClassName="active" partiallyActive={true} to="/reading">
-          Reading
-        </Link>
-      </li>
-      <li className="link">
         <Link activeClassName="active" partiallyActive={true} to="/about">
           About
         </Link>
