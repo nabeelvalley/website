@@ -4,11 +4,11 @@ Let's get into it
 
 # 0. What is Programming
 
-Programming our way of telling a computer to do things. This can be anything from checking our spelling to making trippy digital art
+Programming is our way of telling a computer to do things. This can be anything from checking our spelling to making trippy digital art
 
-The basics of programming are the same in most languages and does not really involve any maths or binary a like a lot of people seem to think. Programming languages _usually_ make use of a very small subset of words and concepts of a normal human language like English
+The basics of programming are the same in most languages and doesn't involve much math or binary (`0010101`) like a lot of people seem to think. Programming languages _usually_ make use of a very small subset of words and concepts of a normal human language like English
 
-The language I'm going to be using to explain a lot of this is called `JavaScript` but many of these concepts are the same in another language
+The language I'm going to be using is called `JavaScript` but many of these concepts are the same in most other programming languages
 
 # 1. What is JavaScript?
 
