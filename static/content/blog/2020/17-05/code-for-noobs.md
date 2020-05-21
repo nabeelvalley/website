@@ -35,11 +35,11 @@ When we store text we use a data type called `string`. In JavaScript a string is
 ```
 
 ```js
- `me too.`
+;`me too.`
 ```
 
 ```js
- `unlike the others,
+;`unlike the others,
   i can b
 multiple lines
 lllooonnnggg
@@ -50,7 +50,7 @@ lllooonnnggg
 
 If we want to keep our data for use at a later stage we need to give it a name, otherwise how do we know what data we're trying to use right? To give a piece of data (or text, in our case) a name we create a `variable`
 
-We create a variable using `let` or `const` along with a variable name and the data that we want to give the name to  :
+We create a variable using `let` or `const` along with a variable name and the data that we want to give the name to :
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-pt3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -68,7 +68,6 @@ const myOtherText = "Bye World"
 
 </details>
 
-
 We use `let` for data whose data may change and `const` for data whose data won't you can remember this like: `const = constant`
 
 > Note that it is also possible to use the keyword `var` to create a variable. This is something that is left over from older versions of JavaScript and can have some effects that are better to just avoid (if you're interested you can read [this article about how it impacts variable scope](https://medium.com/@josephcardillo/the-difference-between-function-and-block-scope-in-JavaScript-4296b2322abe) but it is a bit of a more challenging concept to understand)
@@ -85,7 +84,6 @@ When creating a variable, there are a few rules we need to follow:
 Languages have ways we can show data to a user (or programmer). In JavaScript this is the "console.log" function. We'll discuss functions later on but for now know that when we give them data, and they do stuff
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-pt4?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
 
 <details>
   <summary>View Code</summary>
@@ -130,12 +128,9 @@ console.log(myWeightAfterRunnin) // print -> 80
 
 </details>
 
-
 But, JavaScript lets us add do maths with anything. so maybe like - don't do this:
 
-
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-pt5-1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
 
 <details>
   <summary>View Code</summary>
@@ -150,7 +145,7 @@ console.log(dontDoThis) // print -> NaN (Not a Number)
 
 # 6. Arrays
 
-Arrays are how we store a set of data. an array can have different data types in it, but usually, we want to be storing the same stuff in an array. we make an array by wrapping our items in `[ ]` and separating each item  with a comma (`,`) 
+Arrays are how we store a set of data. an array can have different data types in it, but usually, we want to be storing the same stuff in an array. we make an array by wrapping our items in `[ ]` and separating each item with a comma (`,`)
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-pt6?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -163,11 +158,12 @@ const myFriends = ["i", "don't", "have", "any"]
 const thingsToRemember = ["uhmm", 42, 12, "idk, i guess i forgot"]
 
 const multipleLines = [
-  "arrays don't have to be",
-  "on a single",
-  "line"
+"arrays don't have to be",
+"on a single",
+"line"
 ]
-```
+
+````
 
 </details>
 
@@ -181,9 +177,9 @@ If we want to get a specific element in an array we can use the variable name wi
 
 ```js
   const myData = [
-  "zeroeth index", 
-  "first index", 
-  "second index", 
+  "zeroeth index",
+  "first index",
+  "second index",
   "third index"
 ]
 
@@ -195,14 +191,13 @@ console.log(myData[3]) // print -> third index
 // indexes that do not exist in our array
 console.log(myData[-1]) // print -> undefined
 console.log(myData[100]) // print -> undefined
-```
+````
 
 </details>
 
-
 # 7. Booleans
 
-So far we've looked at strings and numbers, we have an even more basic data type called a boolean. a boolean is a value that can either be true or false. when creating a variable for a boolean we do not wrap the value in quotes 
+So far we've looked at strings and numbers, we have an even more basic data type called a boolean. a boolean is a value that can either be true or false. when creating a variable for a boolean we do not wrap the value in quotes
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-pt7?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -237,8 +232,8 @@ const jenny = {
   age: "idk, can't ask a woman that",
   favouriteBooks: [
     "To not kill a Mockingbird",
-    "Why are books so voilent, yoh"
-  ]
+    "Why are books so voilent, yoh",
+  ],
 }
 
 // we can get specific values using their keys
@@ -258,11 +253,11 @@ the values `undefined` and `null` have a special meaning.
 For example:
 
 - What's wrong with chocolate? `null`
-- What's a flobuir? `undefined` 
+- What's a flobuir? `undefined`
 
 # 10. Functions
 
-Functions are a way we can group code for a specific set of instructions, usually with some end purpose. In JavaScript we define a function in one of two ways: using the word `function` or with the `fat arrow syntax` 
+Functions are a way we can group code for a specific set of instructions, usually with some end purpose. In JavaScript we define a function in one of two ways: using the word `function` or with the `fat arrow syntax`
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-pt10?lite=false" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -272,14 +267,14 @@ Functions are a way we can group code for a specific set of instructions, usuall
 ```js
 // using the "function" keyword
 // this creates a variable called "myFunc1"
-function myFunc(){
+function myFunc() {
   const stuff = "I am Function"
   console.log(stuff)
 }
 
 // we can also create the variable using
 // "let" or "const" like we do for other variables
-const myLetFunc = function(){
+const myLetFunc = function () {
   const stuff = "I am another Function"
   console.log(stuff)
 }
@@ -299,7 +294,26 @@ To use a function we simply write the name of the function and then add `()` at 
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-10-1?lite=false" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Remember earlier I said that functions take data and do stuff? For us to give a function data we need to tell it what variables to store that data as when we call it. We do this by having the data in the `()` when we create (or 'declare') our function 
+<details>
+  <summary>View Code</summary>
+
+```js
+const sayHello = function () {
+  console.log("Hello")
+}
+
+// "call" the function
+sayHello() // prints -> Hello
+
+const sayBye = () => console.log("BYEE")
+
+// "call" the function
+sayBye() // prints -> BYEE
+```
+
+</details>
+
+Remember earlier I said that functions take data and do stuff? For us to give a function data we need to tell it what variables to store that data as when we call it. We do this by having the data in the `()` when we create (or 'declare') our function
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-10-2?lite=false" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -309,7 +323,7 @@ Remember earlier I said that functions take data and do stuff? For us to give a 
 ```js
 function sayHello(name) {
   console.log("Hello " + name)
-} 
+}
 
 // use the function
 sayHello("Bob") // print -> Hello Bob
@@ -320,18 +334,16 @@ const sayBye = (name) => console.log("Bye " + name)
 const name = "Jenny"
 sayBye(name) // print -> Bye Jenny
 ```
+
 </details>
 
 When computers are following our code they do so from the top down, so the first line is handled by the computer before the second. the second before the third, etc. functions are a way for us to reuse code that was written on a line higher up in our code. You may notice that we use the variable `name` in a lot of different places above. this uses `scope` and broadly means any variable name created in a function (or pretty much anywhere between `{ }`) is only available within that section
 
-
-> Scope complicated, you can read more about it [here](https://scotch.io/tutorials/understanding-scope-in-JavaScript) 
+> Scope complicated, you can read more about it [here](https://scotch.io/tutorials/understanding-scope-in-JavaScript)
 
 Functions can also take multiple parameters, this is done by listing the parameters between the () and separating them by commas. the order that we list them when we create our function is the same as the order we need to put them when using the function
 
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-10-3?lite=false" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-Functions are also able to give us back a value after doing some stuff. They do this by using the `return` keyword which tells it what to give back. A function stops processing when it sees the keyword `return` - anything after it in a function is ignored
 
 <details>
   <summary>View Code</summary>
@@ -349,7 +361,25 @@ sayBye(jennyName, jennySurname) // print -> Bye Jenny Smith
 
 </details>
 
+Functions are also able to give us back a value after doing some stuff. They do this by using the `return` keyword which tells it what to give back. A function stops processing when it sees the keyword `return` - anything after it in a function is ignored
+
 <iframe height="400px" width="100%" src="https://repl.it/@nabeelvalley/twitter-10-4?lite=false" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<details>
+  <summary>View Code</summary>
+
+```js
+const addNumbers = (num1, num2) => {
+  const result = num1 + num2
+  return result
+}
+
+const mySum = addNumbers(1, 2)
+
+console.log(mySum) // print -> 3
+```
+
+</details>
 
 # Summary
 
