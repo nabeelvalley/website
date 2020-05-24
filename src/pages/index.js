@@ -48,7 +48,7 @@ const Home = ({ location, data }) => {
           <ProjectItem
             title="Docs"
             tech={[`Updated: ${day} ${month} ${year}`]}
-            description="Pretty much all my notes on software development in one place"
+            description="My personal notes on software development and related topics"
             link="/docs"
             linkText="View Docs"
           />

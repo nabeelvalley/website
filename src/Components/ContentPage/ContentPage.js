@@ -5,7 +5,7 @@ import './ContentPage.css'
 import Sidebar from '../Sidebar/Sidebar'
 import SidebarItem from '../Sidebar/SidebarItem'
 import sortMarkdownPosts from '../../../utils/sortMarkdownPosts'
-import { useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const ContentPage = ({ title, subtitle, children, location }) => {
 
