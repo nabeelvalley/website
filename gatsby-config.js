@@ -1,3 +1,9 @@
+require("dotenv").config({
+  path: ".env",
+})
+
+console.log(process.env.COMMENTS_REPO_URL)
+
 module.exports = {
   siteMetadata: {
     buildTimeUnix: Date.now(),
@@ -6,15 +12,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })]
-      }
+        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+      },
     },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         color: `#e44d90`,
         showSpinner: false,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -30,6 +36,8 @@ module.exports = {
         path: `${__dirname}/static/images`,
       },
     },
-    `gatsby-transformer-sharp`, `gatsby-plugin-sharp`, `gatsby-plugin-catch-links`
-  ]
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-catch-links`,
+  ],
 }

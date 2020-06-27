@@ -12,6 +12,7 @@
     "gatsby-plugin-sharp": "^2.3.13",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
+    "gitalk": "^1.6.2",
     "ipynb2html": "^0.1.0",
     "jsdom": "^16.2.1",
     "katex": "^0.11.1",
