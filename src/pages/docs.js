@@ -1,6 +1,7 @@
 import React from "react"
 import ContentPage from "../Components/ContentPage/ContentPage"
 import Markdown from "../Components/Markdown/Markdown"
+import Comments from "../Components/Comments/Comments"
 import Layout from "../Layout"
 import { graphql, Link } from "gatsby"
 
@@ -8,12 +9,20 @@ import "../Post/Post.css"
 import Meta from "../Components/Meta/Meta"
 
 const Docs = ({ data, location }) => {
-
-  const preContent = <blockquote>
-    These are my personal notes, they may be terrible, contain loads of typos and not make any sense.
-    If you come accross an error you think I should fix, drop an issue on&nbsp;
-    <a href="https://github.com/nabeelvalley/docs" target="_blank" rel="noopener noreferrer">this repo</a>
-  </blockquote>
+  const preContent = (
+    <blockquote>
+      These are my personal notes, they may be terrible, contain loads of typos
+      and not make any sense. If you come accross an error you think I should
+      fix, drop an issue on&nbsp;
+      <a
+        href="https://github.com/nabeelvalley/docs"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        this repo
+      </a>
+    </blockquote>
+  )
 
   const content = data.allRenderedMarkdownPost.group.map((group) => (
     <div key={group.edges[0].node.dir}>
@@ -42,6 +51,7 @@ const Docs = ({ data, location }) => {
           />
 
           <Markdown children={[preContent, ...content]} />
+          <Comments />
         </ContentPage>
       </div>
     </Layout>

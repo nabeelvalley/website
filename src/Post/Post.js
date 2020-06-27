@@ -1,13 +1,14 @@
 import React from "react"
 import ContentPage from "../Components/ContentPage/ContentPage"
 import Markdown from "../Components/Markdown/Markdown"
+import Comments from "../Components/Comments/Comments"
 import Layout from "../../src/Layout"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import "./Post.css"
 import Meta from "../Components/Meta/Meta"
-import sortMarkdownPosts from '../../utils/sortMarkdownPosts'
+import sortMarkdownPosts from "../../utils/sortMarkdownPosts"
 
 const Post = ({ data, location }) => {
   let Nav = null
@@ -15,8 +16,7 @@ const Post = ({ data, location }) => {
   try {
     const markdownData = data.allRenderedMarkdownPost
 
-    const posts = sortMarkdownPosts(markdownData)
-      .map((el) => el.slug)
+    const posts = sortMarkdownPosts(markdownData).map((el) => el.slug)
 
     var postIndex = posts.indexOf(data.renderedMarkdownPost.slug)
 
@@ -59,6 +59,7 @@ const Post = ({ data, location }) => {
 
           <Markdown html={data.renderedMarkdownPost.html} />
           {Nav}
+          <Comments />
         </ContentPage>
       </div>
     </Layout>
@@ -87,4 +88,3 @@ export const query = graphql`
     }
   }
 `
-
