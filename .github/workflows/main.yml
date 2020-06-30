@@ -27,6 +27,6 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install Dependencies
-      run: npm install
+      run: yarn install
     - name: Build
-      run: npm build --if-present
+      run: yarn build --if-present
