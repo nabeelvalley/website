@@ -7,6 +7,7 @@
     "gatsby": "^2.18.24",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-catch-links": "^2.1.24",
+    "gatsby-plugin-feed": "^2.5.11",
     "gatsby-plugin-nprogress": "^2.1.18",
     "gatsby-plugin-postcss": "^2.1.19",
     "gatsby-plugin-sharp": "^2.3.13",
@@ -34,8 +35,8 @@
   },
   "homepage": "https://nabeelvalley.netlify.com",
   "scripts": {
-    "start": "gatsby clean && gatsby develop",
-    "build": "gatsby clean && gatsby build",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "clean": "gatsby clean",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

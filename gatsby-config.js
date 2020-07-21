@@ -1,12 +1,11 @@
 require("dotenv").config({
   path: ".env",
-})
-
-console.log(process.env.COMMENTS_REPO_URL)
+});
 
 module.exports = {
   siteMetadata: {
     buildTimeUnix: Date.now(),
+    siteUrl: "https://nabeelvalley.netlify.app",
   },
   plugins: [
     {
@@ -39,5 +38,64 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({query}) => {
+              return query.allRenderedMarkdownPost.edges.map((edge) => {
+                const {
+                  id,
+                  description,
+                  slug,
+                  subtitle,
+                  title,
+                  html,
+                } = edge.node;
+
+                const date = new Date(subtitle);
+
+                return {
+                  title,
+                  date,
+                  description,
+                  url: query.site.siteMetadata.siteUrl + slug,
+                  guid: id,
+                  custom_elements: [{ "content:encoded": html }],
+                };
+              });
+            },
+            query: `
+            {
+              allRenderedMarkdownPost(filter: {slug: {regex: "/\\/blog/g"}}) {
+                edges {
+                  node {
+                    id
+                    description
+                    slug
+                    subtitle
+                    title
+                    html
+                  }
+                }
+              }
+            }            
+            `,
+            output: "/rss.xml",
+            title: "Nabeel Valley's Blog",
+          },
+        ],
+      },
+    },
   ],
-}
+};
