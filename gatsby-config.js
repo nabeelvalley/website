@@ -77,7 +77,7 @@ module.exports = {
             },
             query: `
             {
-              allRenderedMarkdownPost(filter: {slug: {regex: "/\\/blog/g"}}) {
+              allRenderedMarkdownPost(filter: {slug: {regex: "/\/blog/"}}) {
                 edges {
                   node {
                     id
@@ -89,7 +89,7 @@ module.exports = {
                   }
                 }
               }
-            }            
+            }                     
             `,
             output: "/rss.xml",
             title: "Nabeel Valley's Blog",
