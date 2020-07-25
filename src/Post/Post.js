@@ -59,7 +59,8 @@ const Post = ({ data, location }) => {
             description={data?.renderedMarkdownPost?.description}
             image={
               data?.site?.siteMetadata?.siteUrl +
-              data?.mobileImage?.childImageSharp?.fluid?.src
+              (data?.mobileImage?.childImageSharp?.fluid?.src ||
+                data?.placeholderImage?.childImageSharp?.fluid?.src)
             }
           />
 
@@ -99,6 +100,14 @@ export const query = graphql`
     site {
       siteMetadata {
         siteUrl
+      }
+    }
+
+    placeholderImage: file(relativePath: { eq: "home/landing/landing.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
       }
     }
 

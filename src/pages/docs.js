@@ -1,12 +1,12 @@
-import React from "react"
-import ContentPage from "../Components/ContentPage/ContentPage"
-import Markdown from "../Components/Markdown/Markdown"
-import Comments from "../Components/Comments/Comments"
-import Layout from "../Layout"
-import { graphql, Link } from "gatsby"
+import React from 'react'
+import ContentPage from '../Components/ContentPage/ContentPage'
+import Markdown from '../Components/Markdown/Markdown'
+import Comments from '../Components/Comments/Comments'
+import Layout from '../Layout'
+import { graphql, Link } from 'gatsby'
 
-import "../Post/Post.css"
-import Meta from "../Components/Meta/Meta"
+import '../Post/Post.css'
+import Meta from '../Components/Meta/Meta'
 
 const Docs = ({ data, location }) => {
   const preContent = (
@@ -48,6 +48,10 @@ const Docs = ({ data, location }) => {
           <Meta
             title="Docs | Nabeel Valley"
             description="Index for Personal Docs"
+            image={
+              data?.site?.siteMetadata?.siteUrl +
+              data?.coverImage?.childImageSharp?.fluid?.src
+            }
           />
 
           <Markdown children={[preContent, ...content]} />
@@ -62,6 +66,20 @@ export default Docs
 
 export const query = graphql`
   {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+
+    coverImage: file(relativePath: { eq: "home/landing/landing.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+
     allRenderedMarkdownPost(
       filter: { slug: { regex: "/^/docs/" } }
       sort: { fields: dir }

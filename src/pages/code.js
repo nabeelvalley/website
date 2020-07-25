@@ -1,5 +1,4 @@
 import React from "react"
-import { Helmet } from "react-helmet"
 import ContentPage from "../Components/ContentPage/ContentPage"
 import ProjectGroup from "../Components/ProjectGroup/ProjectGroup"
 import ProjectItem from "../Components/ProjectGroup/ProjectItem"
@@ -19,6 +18,10 @@ const Code = ({ location, data }) => (
       <Meta
         title="Code | Nabeel Valley"
         description="Projects I'm currently working on"
+        image={
+          data?.site?.siteMetadata?.siteUrl +
+          data?.mobileImage?.childImageSharp?.fluid?.src
+        }
       />
 
       <PostListing
@@ -94,6 +97,12 @@ export default Code
 
 export const query = graphql`
   {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+
     mobileImage: file(relativePath: { eq: "pages/code.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {

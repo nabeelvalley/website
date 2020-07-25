@@ -1,12 +1,12 @@
 import React from "react"
-import { Helmet } from "react-helmet"
 import ContentPage from "../Components/ContentPage/ContentPage"
 import InfoBlock from "../Components/InfoBlock/InfoBlock"
 import SectionDivider from "../Components/SectionDivider/SectionDivider"
 import Layout from "../Layout"
 import Meta from "../Components/Meta/Meta"
+import { graphql } from 'gatsby'
 
-const About = ({ location }) => (
+const About = ({ location, data }) => (
   <Layout>
     <ContentPage
       location={location}
@@ -14,8 +14,12 @@ const About = ({ location }) => (
       subtitle="Software Developer, Student"
     >
       <Meta
-        title="About Me| Nabeel Valley"
+        title="About Me | Nabeel Valley"
         description="A little bit about my work and education experiences"
+        image={
+          data?.site?.siteMetadata?.siteUrl +
+          data?.coverImage?.childImageSharp?.fluid?.src
+        }
       />
 
       <InfoBlock
@@ -76,3 +80,22 @@ const About = ({ location }) => (
 )
 
 export default About
+
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+
+    coverImage: file(relativePath: { eq: "home/landing/landing.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`

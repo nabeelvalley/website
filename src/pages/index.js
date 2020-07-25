@@ -1,27 +1,33 @@
-import React from "react"
-import Landing from "../Components/Landing/Landing"
-import FeaturedPost from "../Components/FeaturedPost/FeaturedPost"
-import SectionDivider from "../Components/SectionDivider/SectionDivider"
-import ProjectGroup from "../Components/ProjectGroup/ProjectGroup"
-import ProjectItem from "../Components/ProjectGroup/ProjectItem"
-import DenseGrid from "../Components/DenseGrid/DenseGrid"
-import GridSummary from "../Components/DenseGrid/GridSummary"
-import GridImage from "../Components/DenseGrid/GridImage"
-import Layout from "../Layout"
-import { graphql } from "gatsby"
-import Meta from "../Components/Meta/Meta"
+import React from 'react'
+import Landing from '../Components/Landing/Landing'
+import FeaturedPost from '../Components/FeaturedPost/FeaturedPost'
+import SectionDivider from '../Components/SectionDivider/SectionDivider'
+import ProjectGroup from '../Components/ProjectGroup/ProjectGroup'
+import ProjectItem from '../Components/ProjectGroup/ProjectItem'
+import DenseGrid from '../Components/DenseGrid/DenseGrid'
+import GridSummary from '../Components/DenseGrid/GridSummary'
+import GridImage from '../Components/DenseGrid/GridImage'
+import Layout from '../Layout'
+import { graphql } from 'gatsby'
+import Meta from '../Components/Meta/Meta'
 import sortMarkdownPosts from '../../utils/sortMarkdownPosts'
 
 const Home = ({ location, data }) => {
   const date = new Date(data.site.buildTime)
 
-  var dateParts = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: 'numeric' }).formatToParts(date)
+  var dateParts = new Intl.DateTimeFormat('en', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).formatToParts(date)
 
-  const day = dateParts.filter(p => p.type == 'day')[0].value
-  const month = dateParts.filter(p => p.type == 'month')[0].value
-  const year = dateParts.filter(p => p.type == 'year')[0].value
+  const day = dateParts.filter((p) => p.type == 'day')[0].value
+  const month = dateParts.filter((p) => p.type == 'month')[0].value
+  const year = dateParts.filter((p) => p.type == 'year')[0].value
 
-  const sortedPosts = sortMarkdownPosts(data.allRenderedMarkdownPost).map(p => p.node).reverse()
+  const sortedPosts = sortMarkdownPosts(data.allRenderedMarkdownPost)
+    .map((p) => p.node)
+    .reverse()
 
   return (
     <Layout>
@@ -29,6 +35,10 @@ const Home = ({ location, data }) => {
         <Meta
           title="Home | Nabeel Valley"
           description="Nabeel Valley's Portfolio and Blog. Web Development, Photography, and Design"
+          image={
+            data?.site?.siteMetadata?.siteUrl +
+            data?.coverImage?.childImageSharp?.fluid?.src
+          }
         />
 
         <Landing />
@@ -54,7 +64,7 @@ const Home = ({ location, data }) => {
           />
           <ProjectItem
             title="Rak'ah"
-            tech={["svelte", "js", "netlify"]}
+            tech={['svelte', 'js', 'netlify']}
             description="Information on the number of Rak'ah for different Salaat. Essentially a fork of 'Form and Structure' with different content"
             link="https://rakah.netlify.com"
             linkText="Go to Site"
@@ -157,6 +167,9 @@ export const query = graphql`
   {
     site {
       buildTime
+      siteMetadata {
+        siteUrl
+      }
     }
     mqtt_mobileImage: file(relativePath: { eq: "blog/2019/12-11/header.jpg" }) {
       childImageSharp {
@@ -323,6 +336,14 @@ export const query = graphql`
     zwk4_largeDesktopImage: file(
       relativePath: { eq: "zwartkops/image11.jpg" }
     ) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+
+    coverImage: file(relativePath: { eq: "home/landing/landing.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
