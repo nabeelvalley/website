@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     buildTimeUnix: Date.now(),
-    siteUrl: "https://nabeelvalley.netlify.app",
+    siteUrl: process.env.URL || "https://nabeelvalley.netlify.app",
   },
   plugins: [
     {
