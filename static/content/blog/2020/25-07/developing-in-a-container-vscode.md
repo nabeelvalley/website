@@ -10,16 +10,16 @@ In this post, I'll take a look at what a Docker container is, why we would want 
 - [Prerequisites](#prerequisites)
 - [Docker Containers](#docker-containers)
 - [Docker Images](#docker-images)
-	- [Create an Application](#create-an-application)
-	- [Create a Dockerfile](#create-a-dockerfile)
+  - [Create an Application](#create-an-application)
+  - [Create a Dockerfile](#create-a-dockerfile)
 - [Development Containers](#development-containers)
-	- [Why Develop in a Container](#why-develop-in-a-container)
-	- [How to Develop in a Container](#how-to-develop-in-a-container)
-		- [Use an Existing Dockerfile](#use-an-existing-dockerfile)
-		- [Using a Preconfigured Dockerfile](#using-a-preconfigured-dockerfile)
-	- [Which Method to Use](#which-method-to-use)
+  - [Why Develop in a Container](#why-develop-in-a-container)
+  - [How to Develop in a Container](#how-to-develop-in-a-container)
+    - [Use an Existing Dockerfile](#use-an-existing-dockerfile)
+    - [Using a Preconfigured Dockerfile](#using-a-preconfigured-dockerfile)
+  - [Which Method to Use](#which-method-to-use)
 - [Summary](#summary)
-	- [Further Reading](#further-reading)
+  - [Further Reading](#further-reading)
 
 </details>
 
@@ -396,6 +396,7 @@ For some more in-depth information on Docker and VSCode Development Containers y
 
 1. [My General Docker Notes](/docs/)
     - [Docker Basics](/docs/Containers_and_Microservices/docker/)
-    - [Multi-stage Builds](/docs/Containers_and_Microservices/docker-multi-stage/)
     - [Express Application with MongoDB](/docs/Containers_and_Microservices/build-an-express-app-with-mongo/)
+    - [Multi-stage Builds](/docs/Containers_and_Microservices/docker-multi-stage/)
 2. [Docker's Documentation](https://docs.docker.com/)
+3. [VSCode's Remote Containers Documentation](https://code.visualstudio.com/docs/remote/containers)
