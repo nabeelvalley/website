@@ -1,5 +1,3 @@
-![Colour Version of Discussion Image](/content/blog/2020/07-04/images/main.jpg =100%x100%)
-
 Let's talk about black and white shall we?. As a first-time monochromer there are a couple of aspects of shooting and editing a black and white picture that isn't immediately apparent
 
 When shooting in Black and White (henceforth B&W) there are some things we need to be aware especially aware of, namely:

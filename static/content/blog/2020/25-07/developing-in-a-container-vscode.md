@@ -1,5 +1,3 @@
-![](/images/zwartkops/image16.jpg =100%x100%)
-
 Recently I'd started using Visual Studio Code's _Remote Containers_ functionality for development and it's been really useful
 
 The Remote Containers extension allows us to write code and develop applications within a virtualized environment that makes it easier for us to manage our development environment as well as more closely resemble our target deployment environment (if we're deploying to Docker or Kubernetes)

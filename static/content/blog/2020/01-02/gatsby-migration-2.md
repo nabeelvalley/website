@@ -1,5 +1,3 @@
-![](/images/zwartkops/image15.jpg =100%x100%)
-
 <details>
 <summary>Contents</summary>
 
