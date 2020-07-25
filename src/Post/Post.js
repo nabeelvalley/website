@@ -1,14 +1,16 @@
-import React from "react"
-import ContentPage from "../Components/ContentPage/ContentPage"
-import Markdown from "../Components/Markdown/Markdown"
-import Comments from "../Components/Comments/Comments"
-import Layout from "../../src/Layout"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
+import React from 'react'
+import ContentPage from '../Components/ContentPage/ContentPage'
+import Markdown from '../Components/Markdown/Markdown'
+import Comments from '../Components/Comments/Comments'
+import Layout from '../../src/Layout'
+import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import "./Post.css"
-import Meta from "../Components/Meta/Meta"
-import sortMarkdownPosts from "../../utils/sortMarkdownPosts"
+import './Post.css'
+import Meta from '../Components/Meta/Meta'
+import sortMarkdownPosts from '../../utils/sortMarkdownPosts'
+
+import { getImageSources } from '../Components/Helpers/imageQueryBuilder'
 
 const Post = ({ data, location }) => {
   let Nav = null
@@ -36,12 +38,12 @@ const Post = ({ data, location }) => {
     else
       Nav = (
         <nav className="post-nav">
-          <Link to={posts[postIndex - 1]}>Previous</Link> |{" "}
+          <Link to={posts[postIndex - 1]}>Previous</Link> |{' '}
           <Link to={posts[postIndex + 1]}>Next</Link>
         </nav>
       )
   } catch (error) {
-    console.log("Cannot add navigation items", error)
+    console.log('Cannot add navigation items', error)
   }
 
   return (
@@ -50,12 +52,26 @@ const Post = ({ data, location }) => {
         <ContentPage
           location={location}
           title={data.renderedMarkdownPost.title}
-          subtitle={data.renderedMarkdownPost.subtitle || "loading"}
+          subtitle={data.renderedMarkdownPost.subtitle || ''}
         >
           <Meta
             title={`${data.renderedMarkdownPost.title} | Nabeel Valley`}
-            description={data.renderedMarkdownPost.description}
+            description={data?.renderedMarkdownPost?.description}
+            image={
+              data?.site?.siteMetadata?.siteUrl +
+              data?.mobileImage?.childImageSharp?.fluid?.src
+            }
           />
+
+          {data?.mobileImage ||
+          data?.desktopImage ||
+          data?.largeDesktopImage ? (
+            <Img
+              className="image"
+              fluid={getImageSources(data)}
+              loading="lazy"
+            />
+          ) : null}
 
           <Markdown html={data.renderedMarkdownPost.html} />
           {Nav}
@@ -69,14 +85,43 @@ const Post = ({ data, location }) => {
 export default Post
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $image: String) {
     renderedMarkdownPost(slug: { eq: $slug }) {
       id
       description
       html
       title
       subtitle
+      image
       slug
+    }
+
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+
+    mobileImage: file(relativePath: { eq: $image }) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    desktopImage: file(relativePath: { eq: $image }) {
+      childImageSharp {
+        fluid(maxWidth: 1080, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    largeDesktopImage: file(relativePath: { eq: $image }) {
+      childImageSharp {
+        fluid(maxWidth: 1080, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
     }
 
     allRenderedMarkdownPost(filter: { slug: { regex: "/blog/" } }) {

@@ -8,6 +8,12 @@
   text-align: center;
 }
 
+.Post .image {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--text-spacing);
+}
+
 .Post .main h2,
 .Post .main h3,
 .Post .main h4,
