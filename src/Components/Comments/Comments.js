@@ -2,8 +2,6 @@ import React, { useEffect } from "react"
 import "./Comments.css"
 
 const Comments = () => {
-  console.log(process.env.GATSBY_COMMENTS_REPO_URL)
-
   useEffect(() => {
     let script = document.createElement("script")
     let anchor = document.getElementById("inject-utterances")
