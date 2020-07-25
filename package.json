@@ -10,6 +10,7 @@
     "gatsby-plugin-feed": "^2.5.11",
     "gatsby-plugin-nprogress": "^2.1.18",
     "gatsby-plugin-postcss": "^2.1.19",
+    "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.3.13",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
