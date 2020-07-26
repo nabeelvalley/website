@@ -36,10 +36,9 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
     const dir = path.basename(path.dirname(metaPath))
 
     if (fs.existsSync(metaPath)) {
-      const slug = createFilePath({ node, getNode, basePath: `pages` }).replace(
-        /\s/g,
-        '_'
-      )
+      const slug = createFilePath({ node, getNode, basePath: `pages` })
+        .replace(/\s/g, '-')
+        .toLowerCase()
 
       const content = fs.readFileSync(node.absolutePath, 'utf-8')
 
