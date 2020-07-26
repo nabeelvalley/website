@@ -264,6 +264,7 @@ These environment variables are used in the `config/database.ts` file, we can se
 `database.ts`
 
 ```ts
+  ...
     pg: {
       client: 'pg',
       connection: {
@@ -275,7 +276,7 @@ These environment variables are used in the `config/database.ts` file, we can se
       },
       healthCheck: true,
     },
-  },
+  ...
 ```
 
 In the `database.ts` file above, look for the section for your relevant database, and set the `healthCheck` property to `true`
@@ -415,16 +416,21 @@ export default class Users extends BaseSchema {
 The generated file (above) contains an `up` function which will create a `users` table with an `id` as well as `createdAt` and `updatedAt` fields.  We will need to modify the `up` function to add our new fields as well:
 
 ```ts
+export default class Users extends BaseSchema {
+  ...
+  
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.timestamps(true)
 
       // our added fields
-      table.string('name').nullable()
+      table.string('name').notNullable()
       table.string('email').unique().notNullable()
     })
   }
+  
+  ...
 ```
 
 Once we've defined our migration script we can run the migration using `ace` as follows:
