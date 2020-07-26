@@ -39,6 +39,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
