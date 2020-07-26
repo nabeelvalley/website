@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import "./index.css"
+import './index.css'
 
 export default function HTML(props) {
   return (
@@ -13,6 +13,12 @@ export default function HTML(props) {
         <meta name="theme-color" content="#ffffff" />
 
         <link rel="manifest" href="/manifest.json" />
+
+        {/* Google Search Site Verification Tag */}
+        <meta
+          name="google-site-verification"
+          content="eqR9vdsWmb7gglH0R4CilWu8iysUMq1-AII0eotV6JM"
+        />
 
         <title>Nabeel Valley</title>
         <script
