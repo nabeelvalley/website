@@ -1,4 +1,4 @@
-In this post, we'll take a look at building an API using the AdonisJS framework. We'll specifically be looking at the [AdonisJS v5 Release Preview](https://preview.adonisjs.com/) and how we can create a simple REST API that handles some CRUD operations on a  Database
+In this post, we'll take a look at building an API using the AdonisJS framework. We'll specifically be looking at the [AdonisJS v5 Release Preview](https://preview.adonisjs.com/) and how we can create a simple REST API that handles some CRUD operations on a Database
 
 Because we're going to be creating a REST API, you should have some experience making HTTP Requests, for our purposes we can use a website called [Postwoman](https://postwoman.io/) to interact with our API, but you can also use any other tool you prefer
 
@@ -24,12 +24,12 @@ We'll be using a Node.js and a SQL Database for this post, so if you're going to
 
 - [Node.js and NPM](http://nodejs.org/)
 - Any Supported SQL Database:
-	- MySQL
-	- SQLite
-	- Microsoft SQL Server
-	- PostgreSQL
-	- MariaDB
-	- OracleDB	
+  - MySQL
+  - SQLite
+  - Microsoft SQL Server
+  - PostgreSQL
+  - MariaDB
+  - OracleDB
 
 Alternatively, you can run a Docker image for the database which may be easier, I'll be using Postgres via Docker with VSCode
 
@@ -116,7 +116,7 @@ AdonisJS can define routes using a method similar to libraries like Express.js, 
 
 `routes.ts`
 
- ```ts
+```ts
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
@@ -147,8 +147,7 @@ This will generate an `app/Controllers/Http/UsersController.ts` file with the fo
 `UsersController.ts`
 
 ```ts
-export default class UsersController {
-}
+export default class UsersController {}
 ```
 
 Which exports a class called `UsersController` with no default functionality
@@ -165,17 +164,16 @@ A few things to note about the function we're going to create:
 
 ```ts
 export default class UsersController {
-    public async get() {
-        return [
-            {
-                id: 1,
-                name: "Bob Smith",
-                email: "bob@smithmail.com"
-            }
-        ]
-    }
+  public async get() {
+    return [
+      {
+        id: 1,
+        name: 'Bob Smith',
+        email: 'bob@smithmail.com',
+      },
+    ]
+  }
 }
-
 ```
 
 Now that we have defined our function, we can add a `route` that will cause this function to be called. We do this by adding the following in the `routes.ts` file:
@@ -219,7 +217,7 @@ Which should give the following output:
    update    .env
    update    tsconfig.json { types += @adonisjs/lucid }
    update    .adonisrc.json { commands += @adonisjs/lucid/build/commands }
-   update    .adonisrc.json { providers += @adonisjs/lucid } 
+   update    .adonisrc.json { providers += @adonisjs/lucid }
 ✔  create    ace-manifest.json
 ```
 
@@ -363,16 +361,25 @@ export default class User extends BaseModel {
 }
 ```
 
+> When viewing the above file your code editor may give you a warning saying that decorators are not supported, if you see this then set the `experimentalDecorators` property to `true` in your `tsconfig.json` file:
+
+```json
+...
+  "compilerOptions": {
+    "experimentalDecorators": true,
+...
+```
+
 Note the `@column` decorators, these are used to map columns in our database to our model fields. We'll add a field for our user's `name` and `email` as follows:
 
 `User.ts`
 
 ```ts
 export default class User extends BaseModel {
- // ... other stuff in class
+  // ... other stuff in class
   @column()
   public name: String
-  
+
   @column()
   public email: String
 }
@@ -400,25 +407,25 @@ import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 export default class Users extends BaseSchema {
   protected tableName = 'users'
 
-  public async up () {
+  public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.timestamps(true)
     })
   }
 
-  public async down () {
+  public async down() {
     this.schema.dropTable(this.tableName)
   }
 }
 ```
 
-The generated file (above) contains an `up` function which will create a `users` table with an `id` as well as `createdAt` and `updatedAt` fields.  We will need to modify the `up` function to add our new fields as well:
+The generated file (above) contains an `up` function which will create a `users` table with an `id` as well as `createdAt` and `updatedAt` fields. We will need to modify the `up` function to add our new fields as well:
 
 ```ts
 export default class Users extends BaseSchema {
   ...
-  
+
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
@@ -429,15 +436,155 @@ export default class Users extends BaseSchema {
       table.string('email').unique().notNullable()
     })
   }
-  
+
   ...
 ```
 
-Once we've defined our migration script we can run the migration using `ace` as follows:
+Once we've defined our migration script we need to build the application with:
+
+```bash
+node ace build
+```
+
+And then we can run the migration using `ace` as follows:
 
 ```bash
 node ace migration:run
 ```
 
-> If there is an error in a migration script, we can rollback the migration with `node ace migration:rollback`
+> If there is an error in a migration script, we can rollback the migration with `node ace migration:rollback` which will run the `down` function in your migration
 
+# Interact with the Database
+
+Now that we've got our database, we can interact with it using the `User` model we defined earlier
+
+The first change we'll make is to modify the `get` function to return all users. To do this we need to import `App/Models/User` and use the `User.all` method:
+
+```ts
+import User from 'App/Models/User'
+
+export default class UsersController {
+  public async get() {
+    // get all users
+    return await User.all()
+  }
+}
+```
+
+> We use `await` because the `User.all` function is asynchronous
+
+Next, we'll add a function to create a `User`. We will call it `post`. To make this function work we need to do a couple of things:
+
+1. Import `HttpContextContract` from `@ioc:Adonis/Core/HttpContext`
+2. Retrieve the `request` from the `HttpContextContract`
+3. Create a `User`
+4. Return the created user
+
+```ts
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+// ... other imports
+
+export default class UsersController {
+  // ... get user code above
+  public async post({ request }: HttpContextContract) {
+    // get the user from the request body
+    const newUser = request.all() as Partial<User>
+
+    // create a user using the object we received
+    const user = await User.create(newUser)
+
+    // return the created user object
+    return user
+  }
+}
+```
+
+> The `request.all` function combines the data from the request body and query string into a single object
+
+When we've added that, our completed `UsersController.ts` file should look like this:
+
+`UsersController.ts`
+
+```ts
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import User from 'App/Models/User'
+
+export default class UsersController {
+  public async get() {
+    return await User.all()
+  }
+
+  public async post({ request }: HttpContextContract) {
+    const newUser = request.all() as Partial<User>
+    const user = await User.create(newUser)
+    return user
+  }
+}
+```
+
+Now that we've added a new function to our controller, we need to expose a route to it in the `routes.ts` file:
+
+`routes.ts`
+
+```ts
+...
+Route.post('users', 'UsersController.post')
+...
+```
+
+# Consume the API
+
+Now that we've created API endpoints for listing all users and creating a user we can restart our development server with `npm start` and consume our API from wherever we want to make some HTTP requests
+
+## Create a User
+
+To create a `User we need to make a`POST`request to`http://localhost:3333/users` and a Content-Type of `application/json` with the following as the `body` for our request:
+
+```json
+{
+  "name": "Bob Smith",
+  "email": "bob@smithmail.com"
+}
+```
+
+Which should return a created user like:
+
+```json
+{
+  "name": "Bob Smith",
+  "email": "bob@smithmail.com",
+  "created_at": "2020-07-26T14:35:25.987-00:00",
+  "updated_at": "2020-07-26T14:35:25.988-00:00",
+  "id": 4
+}
+```
+
+> We can also try to create a `User` with the same information but we will see that this fails due to the database constraints we added in our migration script
+
+Next, we can get a list of all Users by making a `GET` request to `http://localhost:333/users` which should give us back our created users:
+
+```json
+[
+  {
+    "id": 4,
+    "created_at": "2020-07-26T14:35:25.987-00:00",
+    "updated_at": "2020-07-26T14:35:25.988-00:00",
+    "name": "Bob Smith",
+    "email": "bob@smithmail.com"
+  }
+]
+```
+
+# Summary
+
+My overall impression of AdonisJS is pretty good. The framework feels very stable and I had much fewer issues in the process of learning it and writing this post than I have had using other more popular frameworks.
+
+AdonisJS is very well documented with code samples for most traditional tasks and is backed by some solid libraries for things like database integration
+
+Working with SQL using the framework has been fairly straightforward, and the ability to write database migrations using functionality provided by the framework instead of just tossing some wild SQL together makes it more approachable
+
+Personally, however, I prefer no-SQL databases like MongoDB and tend to use them more often when using JavaScript or TypeScript, but I feel like if the need arises for a SQL database then AdonisJS is a really good option, especially if you're a JavaScript developer and don't want to have to learn Java or C# for this type of functionality
+
+There is also a **lot** more functionality than what I've gone through in this post, so I'd recommend browsing [the AdonisJS docs](https://preview.adonisjs.com/) to get a broader sense of what the framework entails
+
+If you feel like playing around with the code I've gone through in this post without having to write it all then I've got it all [on GitHub](https://github.com/nabeelvalley/blog-code/tree/post/adonisjs-first-look) and it should just be plug-and-play using Visual Studio Code Remote Containers. If you want to learn more about that, then you can check out [my previous blog post](/blog/2020/25-07/developing-in-a-container-vscode/) on developing within a container
