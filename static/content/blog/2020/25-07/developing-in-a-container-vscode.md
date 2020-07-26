@@ -155,7 +155,7 @@ The above command can be broken down as follows:
 
 1. `docker build` the command from the Docker CLI to build an image
 2. `-t my-docker-app` says what we want our image to be called, in the above `my-docker-app`
-3. `` which is the directory in which the `Dockerfile` is located, in our case `.`
+3. `.` which is the directory in which the `Dockerfile` is located, in our case our current directory
 
 We can then run the image we just built like so:
 
@@ -283,7 +283,7 @@ Once we make the above changes we should have this:
 }
 ```
 
-Now that we've configured out build container, use `ctrl + shift + p` to open the Command Palette again and search for `Remote-Containers: Reopen in Container` and click `enter` which will build the container and set up an image with the following setup for us:
+Now that we've configured our build container, use `ctrl + shift + p` to open the Command Palette again and search for `Remote-Containers: Reopen in Container` and click `enter` which will build the container and set up an image with the following setup for us:
 
 - Linked ports as defined in the `forwardPorts` property
 - Configure a VSCode development server inside the container so our editor can link to it
