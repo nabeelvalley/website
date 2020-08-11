@@ -1,6 +1,7 @@
-![Twitter Bio Action](https://github.com/nabeelvalley/twitter-bio-action/workflows/Run%20Twitter%20Bio%20Action/badge.svg)
+![Build Action Dist](https://github.com/nabeelvalley/twitter-bio-update/workflows/Build%20Action%20Dist/badge.svg)
+![Run Twitter Bio Action](https://github.com/nabeelvalley/twitter-bio-update/workflows/Run%20Twitter%20Bio%20Action/badge.svg)
 
-> You can take a look at the Action we build in this post [here on GitHub](https://github.com/nabeelvalley/twitter-bio-action/actions)
+> You can take a look at the Action we build in this post [here on GitHub](https://github.com/nabeelvalley/twitter-bio-update/actions). I've also included an action that's responsible for building and updating the action `dist` which may also be of interest. It's all in [this Repository](https://github.com/nabeelvalley/twitter-bio-update)
 
 A few weeks ago I was playing around with GitHub actions and the recently introduced GitHub Account README functionality and wanted a way to make this "static" file a bit more dynamic
 
