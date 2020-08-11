@@ -474,6 +474,7 @@ To run the action, we first need to get everything to GitHub. From Repo director
 ```sh
 git add .
 git commit -m "I made a GitHub Action!"
+git push
 ```
 
 Then, go to your repository on GitHub and click on the `Actions` tab. You should then see your Workflow listed. Click on your workflow name, and then the `Run workflow` dropdown. Fill in your `Twitter Bio`, wait for the workflow to complete and look at your Twitter profile!
