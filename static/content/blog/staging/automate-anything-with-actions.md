@@ -1,10 +1,10 @@
 A few weeks ago I was playing around with GitHub actions and the recently introduced GitHub Account README functionality and wanted a way to make this "static" file a bit more dynamic
 
-Enter GitHub Actions. GitHub actions are a way for you to define and run programatic tasks. If you can put it in code, then you can run it as an action
+Enter GitHub Actions. GitHub actions are a way for you to define and run programmatic tasks. If you can put it in code, then you can run it as an action
 
 Usually, you'll be using actions that have been defined by GitHub or another developer for common tasks, such as running your application CI or deployment processes. However, since actions are **extremely** generic, we're going to do something a little different - update our Twitter bio?
 
-In this post we're going create a GitHub action that uses the Twitter API to update our bio, as well as make the action we created run automatically on GitHub
+In this post, we're going create a GitHub action that uses the Twitter API to update our bio, as well as make the action we created run automatically on GitHub
 
 1. Create a GitHub Repository for us to work in
 2. Set up Twitter Developer Credentials
@@ -21,11 +21,11 @@ In this post we're going create a GitHub action that uses the Twitter API to upd
 
 # Create a GitHub Repo
 
-In order for us to run our action we'll need a GitHub Repository to use, to create a Repo go to [GitHub](https://github.com/) and sign in, thereafter go the ['Create a new repository page'](https://github.com/new) and fill in the details, be sure to select `Initialize this repository with a README`, pick `Node` as the `.gitignore` file, and select a license if you'd like to
+For us to run our action we'll need a GitHub Repository to use, to create a Repo go to [GitHub](https://github.com/) and sign in, thereafter go the ['Create a new repository page'](https://github.com/new) and fill in the details, be sure to select `Initialize this repository with a README`, pick `Node` as the `.gitignore` file, and select a license if you'd like to
 
 Once you've done that, click `Create repository` and you should see the initial files we added to the Repo. Next, click on the `Code` button and copy the URL in the text box
 
-Now, from a terminal you will need to clone the repository. Run the following command and make sure to paste the link you just copied in place of `<YOUR URL>` below:
+Now, from a terminal, you will need to clone the repository. Run the following command and make sure to paste the link you just copied in place of `<YOUR URL>` below:
 
 ```sh
 git clone <YOUR URL>
@@ -42,13 +42,13 @@ TWITTER_ACCESS_KEY=
 TWITTER_ACCESS_SECRET=
 ```
 
-In the next step we're going to get the credentials from twitter, we'll add them into the file above when we're done
+In the next step, we're going to get the credentials from Twitter, we'll add them into the file above when we're done
 
 # Get Some Twitter Cred.
 
 Twitter exposes the Twitter Developer API that allows us to do all kinds of useful and pointless things by interacting with Twitter's data
 
-In order for us to consume the Twitter API we require credentials for the API. To set these up we'll need to do a few things
+For us to consume the Twitter API we require credentials for the API. To set these up we'll need to do a few things
 
 First, open your browser on [the Twitter Developer Portal](https://developer.twitter.com/) and click the sign-in button. Then, once you've signed in, you should see your name on the top right of the page, click on the dropdown arrow and select `Apps` to go to the App Dashboard
 
@@ -71,7 +71,6 @@ TWITTER_ACCESS_SECRET=xxxxxxxxxxxxxxxxxxxxx
 
 (With the actual keys, and not just `xxxx`)
 
-
 Now that we've got our credentials set up, we can start to work on the application
 
 # Using the Twitter API
@@ -84,7 +83,7 @@ To get started, run the following command from a terminal within your repository
 npm init -y
 ```
 
-Next, we'll add the dependencies that our application is going to need in order to run:
+Next, we'll add the dependencies that our application is going to need to run:
 
 - `@actions/core` allows us to interact with the data provided to our action by GitHub
 - `twit` is used to interact with the Twitter API
@@ -94,7 +93,7 @@ Next, we'll add the dependencies that our application is going to need in order 
 npm install @actions/core twit dotenv
 ```
 
-Once the application is done installing we'll create an `index.js` file inside of our repo folder and we can get stated on our code
+Once the application is done installing we'll create an `index.js` file inside of our repo folder and we can get started on our code
 
 Inside of the `index.js` the first thing we'll want to do is import our environment variables from the `.env` file we configured, we'll do that using the `dotenv` NPM Package we installed previously:
 
@@ -119,14 +118,14 @@ const client = new Twitter({
 })
 ```
 
-Now that we've got an instance of a `Twitter` client that we can use to interact with the API we'll want to actually use it
+Now that we've got an instance of a `Twitter` client that we can use to interact with the API we'll want to use it
 
-The Twitter API Client runs asynchronously, in order for us to work with it correctly we have two options:
+The Twitter API Client runs asynchronously, for us to work with it correctly we have two options:
 
 1. Using the `callback` method, which means that we give the `client` a function to run when it's done sending the data to Twitter. While this is easier in our specific circumstance it can become difficult to keep track of when we have many different callback functions
-2. The second option is to use `async` and `await` syntax, which allows us to write our code in a more sequential manner and makes it easier for us to control our sequence and flow
+2. The second option is to use `async` and `await` syntax, which allows us to write our code more sequentially and makes it easier for us to control our sequence and flow
 
-In order to use the `async/await` functionality, we need the code that we need to `await` to be inside of an `async` function. In this one function we can `await` as many tasks as we want sequentially without worrying about callbacks
+To use the `async/await` functionality, we need the code that we need to `await` to be inside of an `async` function. In this one function, we can `await` as many tasks as we want sequentially without worrying about callbacks
 
 We'll create a `main` function that is `async` in which we will do any asynchronous interactions, in our case - interact with Twitter
 
@@ -135,7 +134,7 @@ After the code we've already got in our `index.js` file, define the `main` funct
 `index.js`
 
 ```js
-const main = async() => {
+const main = async () => {
   // this is where we'll work with the twitter client
 }
 ```
@@ -162,7 +161,7 @@ The way we've written the above code is a little bit dangerous as we aren't hand
 
 When working with an API via an HTTP Request there's always the chance that there could be an error. Errors can be caused by anything ranging from poor network connections, incorrect credentials, or a system outage on the API host itself
 
-In order for our application to give us a bit more information about what happened, we may want to handle the error before passing it on to the process that kicked off our script. We'll make use of a `try/catch` to handle this error:
+For our application to give us a bit more information about what happened, we may want to handle the error before passing it on to the process that kicked off our script. We'll make use of a `try/catch` to handle this error:
 
 `index.js`
 
@@ -195,7 +194,7 @@ main()
 
 This should make a request to the Twitter API and print our the `response` or `error` if there is one
 
-So, the above function will always set our Twitter Bio to the same value, this isn't really interesting. Next, we'd like to get some data from the workflow that's going to be running our action. The way we would do this is with an `input`
+So, the above function will always set our Twitter Bio to the same value, this isn't interesting. Next, we'd like to get some data from the workflow that's going to be running our action. The way we would do this is with an `input`
 
 Our action is going to take an `input` called `bio`. We can use the `@actions/core` library to get the value of the `input`. We can do this with the following:
 
@@ -209,7 +208,7 @@ const bio = core.getInput('bio') || 'Hello, World!'
 
 The above code also sets a default value of `Hello, World!` to the description, this will allow us to also run the action without throwing an exception on our local machine as well as if the `bio` is not provided to the action
 
-Furthermore, instead of just throwing errors, we can rather set the error status using the `core.setFailed` function. Updating our `main` function to do this we now have:
+Furthermore, instead of just throwing errors, we can rather set the error-status using the `core.setFailed` function. Updating our `main` function to do this we now have:
 
 `index.js`
 
@@ -267,11 +266,11 @@ const main = async () => {
 main()
 ```
 
-Now that we've written the functionality for our action we'll want to actually turn it into an action
+Now that we've written the functionality for our action we'll want to turn it into an action
 
 # Configure the Action Metadata
 
-In order for GitHub to recognise our code as an action, we need to create an `action.yml` file that contains a description of our action. Our `action.yml` file needs to have the following information:
+For GitHub to recognise our code as an action, we need to create an `action.yml` file that contains a description of our action. Our `action.yml` file needs to have the following information:
 
 - `name` for our action
 - `description` of the action itself
@@ -283,19 +282,19 @@ The `action.yml` file for our action looks like the following:
 `action.yml`
 
 ```yml
-name: "Twitter Bio Update"
-description: "Update your Twitter Account Bio"
+name: 'Twitter Bio Update'
+description: 'Update your Twitter Account Bio'
 inputs:
   bio:
-    description: "Text that you would like to set as your Twitter Bio"
+    description: 'Text that you would like to set as your Twitter Bio'
     required: true
-    default: "Hello, World!"
+    default: 'Hello, World!'
 runs:
-  using: "node12"
-  main: "index.js"
+  using: 'node12'
+  main: 'index.js'
 ```
 
-The fields we've got above are all pretty much required. The above fields are the simples configuration for a Node.js action. The [GitHub Docs](https://docs.github.com/en/actions) have a lot more information on more complex configurations and actions
+The fields we've got above are all pretty much required. The above fields are the simplest configuration for a Node.js action. The [GitHub Docs](https://docs.github.com/en/actions) have a lot more information on more complex configurations and actions
 
 Now that we've defined our action, we will want to configure it to run. But before we can do that, we'll want to set up our secrets
 
@@ -311,7 +310,6 @@ Workflows are GitHub's way of tying together a bunch of actions to run. Often, w
 
 The structure of a workflow is something like this:
 
-
 ```
 workflow
 |-- Job 1
@@ -323,14 +321,14 @@ workflow
 
 A Workflow can have any number of jobs and steps
 
-We're going to create a Workflow with a single job with the goal of running our script. In order for us to do this, the job will need to do the following:
+We're going to create a Workflow with a single job with the goal of running our script. For us to do this, the job will need to do the following:
 
 1. Checkout our code
 2. Configure Node.js and NPM
 3. Install Dependencies
 4. Run our Action
 
-In order to do Steps 1 and 2 we're going to use actions that are defined by GitHub. We're going to go through our Workflow file working from the top down as this is the order in which everything will be run
+To do Steps 1 and 2 we're going to use actions that are defined by GitHub. We're going to go through our Workflow file working from the top-down as this is the order in which everything will be run
 
 Firstly, we'll need to create a new directory in our Repository named `.github` and inside of this another called `workflows`. Inside of the `.github/workflows` directory create a file named `main.yml` (this can be any name so long as it's a `yml` file)
 
@@ -351,11 +349,11 @@ on:
   workflow_dispatch:
     inputs:
       bio:
-        description: "Twitter Bio"
+        description: 'Twitter Bio'
         required: true
 ```
 
-In the above we set an `on` event for `workflow_dispatch` with an `input` for `bio` that we're going to pass on to our action
+In the above, we set an `on` event for `workflow_dispatch` with an `input` for `bio` that we're going to pass on to our action
 
 Now that we've got the workflow metadata defined, we're going to add a `job`. To do this, we'll add a `jobs` object with a name of `update-bio`, a specification on what OS it needs to run on, and the `steps` that will be a part of it:
 
@@ -370,27 +368,27 @@ jobs:
       # we'll add the steps here in a moment
 ```
 
-We can see above that we're running on the `ubuntu-latest` OS. Next, we'll add the first step for checking our our code in the action. This will use `actions/checkout`:
+We can see above that we're running on the `ubuntu-latest` OS. Next, we'll add the first step for checking out our code in the action. This will use `actions/checkout`:
 
 `main.yml`
 
 ```yml
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+steps:
+  - name: Checkout
+    uses: actions/checkout@v2
 ```
 
-In the above we give our step a `name` which is for display purposes, and a `uses` which says what action this step should use. In our case, we're checking out our code using the `actions/checkout@v2` action
+In the above, we give our step a `name` which is for display purposes, and a `uses` which says what action this step should use. In our case, we're checking out our code using the `actions/checkout@v2` action
 
 Next, we'll want to configure Node.js and NPM because our action needs these to run. We can use the `actions/setup-node@v1` for this:
 
 `main.yml`
 
 ```yml
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
+- name: Setup Node.js
+  uses: actions/setup-node@v1
+  with:
+    node-version: 12.x
 ```
 
 In this action, we use the `with` to state an `input` that the action needs. In this case, we specify that we want to use a `node-version` of `12.x`
@@ -400,8 +398,8 @@ Now we've got Node.js and NPM, we need to install the dependencies for our actio
 `main.yml`
 
 ```yml
-      - name: Install Dependencies
-        run: npm install
+- name: Install Dependencies
+  run: npm install
 ```
 
 And lastly, we will configure our action to run with the following:
@@ -409,15 +407,15 @@ And lastly, we will configure our action to run with the following:
 `main.yml`
 
 ```yml
-      - name: Run Action
-        uses: ./
-        env:
-          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
-          TWITTER_ACCESS_KEY: ${{ secrets.TWITTER_ACCESS_KEY }}
-          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
-        with:
-          bio: ${{ github.event.inputs.bio }}
+- name: Run Action
+  uses: ./
+  env:
+    TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+    TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+    TWITTER_ACCESS_KEY: ${{ secrets.TWITTER_ACCESS_KEY }}
+    TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+  with:
+    bio: ${{ github.event.inputs.bio }}
 ```
 
 In this last step we're doing quite a few things:
@@ -437,7 +435,7 @@ on:
   workflow_dispatch:
     inputs:
       bio:
-        description: "Twitter Bio"
+        description: 'Twitter Bio'
         required: true
 
 jobs:
@@ -466,21 +464,21 @@ jobs:
 
 # Run the Action
 
-To run the action, we first need to get everything to GitHub. From Repo directory, in the terminal, run the following commmands:
+To run the action, we first need to get everything to GitHub. From Repo directory, in the terminal, run the following commands:
 
 ```sh
 git add .
 git commit -m "I made a GitHub Action!"
 ```
 
-Then, go to your repository on GitHub and click on the `Actions` tab. You should then see your Workflow listed. Click on your workflow name, and then the `Run workflow` dropdown. Fill in your `Twitter Bio`, wait for the workflow to comlpete and look at your Twitter profile!
+Then, go to your repository on GitHub and click on the `Actions` tab. You should then see your Workflow listed. Click on your workflow name, and then the `Run workflow` dropdown. Fill in your `Twitter Bio`, wait for the workflow to complete and look at your Twitter profile!
 
-From GitHub you are also able to inspect and view any logs or errors from a Workflow run. If the workflow fails you can also take a look at the output that was thrown by the step that resulted in the failure
+From GitHub, you are also able to inspect and view any logs or errors from a Workflow run. If the workflow fails you can also take a look at the output that was thrown by the step that resulted in the failure
 
 # Summary
 
 And that's about it. We've taken a look at how you can use GitHub actions to automate a pretty silly task, but there's a lot more to using GitHub Actions, and the sky's the limit in terms of what you can use them for
 
-Overall, GitHub actions aren't too different from similar options like Azure Pipelines, Jenkins, or really any other CI service. What makes them so useful is how easily they hook into the source control system and how well they work and are supported within the GitHub ecosystem
+Overall, GitHub actions aren't too different from similar options like Azure Pipelines, Jenkins, or any other CI service. What makes them so useful is how easily they hook into the source control system and how well they work and are supported within the GitHub ecosystem
 
 That all being said, they're not the easiest things to configure and it can take a while to get them right if you're doing something especially complex. Overall they're pretty cool and are a pretty good place to get started with automating tasks and working with things like continuous integration and deployments and I'd definitely recommend giving them a shot
