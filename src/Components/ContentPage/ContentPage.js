@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react'
 
-import SocialIcons from "../SocialIcons/SocialIcons"
+import SocialIcons from '../SocialIcons/SocialIcons'
 
-import "./ContentPage.css"
-import Sidebar from "../Sidebar/Sidebar"
-import SidebarItem from "../Sidebar/SidebarItem"
-import sortMarkdownPosts from "../../../utils/sortMarkdownPosts"
-import { graphql, useStaticQuery } from "gatsby"
+import './ContentPage.css'
+import Sidebar from '../Sidebar/Sidebar'
+import SidebarItem from '../Sidebar/SidebarItem'
+import sortMarkdownPosts from '../../../utils/sortMarkdownPosts'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const ContentPage = ({ title, subtitle, children, location }) => {
   const data = useStaticQuery(graphql`
@@ -38,7 +38,7 @@ const ContentPage = ({ title, subtitle, children, location }) => {
       <div className="content grid">
         <main className="main">{children}</main>
         <div className="links">
-          {location.pathname !== "/blog" ? (
+          {location.pathname !== '/blog' ? (
             <Sidebar title="Blog">
               {sortedPosts.slice(0, 3).map((p, i) => (
                 <SidebarItem
@@ -52,21 +52,28 @@ const ContentPage = ({ title, subtitle, children, location }) => {
               ))}
             </Sidebar>
           ) : null}
-          {location.pathname !== "/code" ? (
+          {location.pathname !== '/code' ? (
             <Sidebar title="Code">
               <SidebarItem
-                title="Docs"
-                tech={["literally everything"]}
-                description="Documentation and notes on pretty much everything programming and software development related"
-                link="/docs"
-                linkText="View Docs"
+                title="Waddle.js"
+                tech={['ts', 'js']}
+                description="A collection of general-purpose JavaScript and TypeScript libraries"
+                link="https://github.com/nabeelvalley/waddle.js"
+                linkText="View Project"
               />
               <SidebarItem
-                title="Rak'ah"
-                tech={["svelte", "js", "netlify"]}
-                description="Information on the number of Rak'ah for different Salaat. Essentially a fork of 'Form and Structure' with different content"
-                link="https://rakah.netlify.com"
-                linkText="Go to Site"
+                title="Project Init"
+                tech={['ts', 'js']}
+                description="A CLI for setting up codebases using preconfigured starter templates for different frameworks, languages, and configurations"
+                link="https://github.com/nabeelvalley/project-init"
+                linkText="View Project"
+              />
+              <SidebarItem
+                title="Pi Manager"
+                tech={['ts', 'js', 'raspberry-pi']}
+                description="A lightweight process and application manager for Raspberry Pi"
+                link="https://github.com/nabeelvalley/pi-manager"
+                linkText="View Project"
               />
             </Sidebar>
           ) : null}

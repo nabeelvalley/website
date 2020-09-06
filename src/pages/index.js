@@ -63,11 +63,11 @@ const Home = ({ location, data }) => {
             linkText="View Docs"
           />
           <ProjectItem
-            title="Rak'ah"
-            tech={['svelte', 'js', 'netlify']}
-            description="Information on the number of Rak'ah for different Salaat. Essentially a fork of 'Form and Structure' with different content"
-            link="https://rakah.netlify.com"
-            linkText="Go to Site"
+            title="Waddle.js"
+            tech={['ts', 'js']}
+            description="A collection of general-purpose JavaScript and TypeScript libraries"
+            link="https://github.com/nabeelvalley/waddle.js"
+            linkText="View Project"
           />
         </ProjectGroup>
         <SectionDivider title="From the Blog" />
