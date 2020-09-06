@@ -48,14 +48,14 @@ const Code = ({ location, data }) => (
         />
         <ProjectItem
           title="Project Init"
-          tech={['ts', 'js']}
+          tech={['js', 'npm', 'npx']}
           description="A CLI for setting up codebases using preconfigured starter templates for different frameworks, languages, and configurations"
           link="https://github.com/nabeelvalley/project-init"
           linkText="View Project"
         />
         <ProjectItem
           title="Pi Manager"
-          tech={['ts', 'js', 'raspberry-pi']}
+          tech={['ts', 'js', 'raspberry-pi', 'pm2']}
           description="A lightweight process and application manager for Raspberry Pi"
           link="https://github.com/nabeelvalley/pi-manager"
           linkText="View Project"
