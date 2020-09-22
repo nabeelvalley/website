@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const crypto = require('crypto')
+const puppeteer = require('puppeteer')
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -8,6 +9,9 @@ const {
   convertMarkdownToHtml,
   convertJupyterToMarkdown,
 } = require('./utils/markdown')
+const generatePostImage = require('./utils/generatePostImage')
+
+let browser
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html') {
@@ -52,8 +56,14 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'))
 
+      if (typeof browser === 'undefined') {
+        browser = await puppeteer.launch()
+      }
+      const coverImage = await generatePostImage(browser, meta.title)
+
       const fieldData = {
         ...meta,
+        coverImage,
         html,
         slug,
         dir,
