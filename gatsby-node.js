@@ -62,6 +62,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
       if (typeof browser === 'undefined') {
         browser = await puppeteer.launch({
           headless: true,
+          timeout: 0,
         })
       }
 
