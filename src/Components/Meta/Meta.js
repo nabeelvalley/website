@@ -17,7 +17,7 @@ const Meta = ({ title, description, image }) => {
       <title>{title}</title>
       <meta name="description" content={description} />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@not_nabeel" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
