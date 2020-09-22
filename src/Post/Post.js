@@ -60,6 +60,7 @@ const Post = ({ data, location }) => {
             image={
               data?.site?.siteMetadata?.siteUrl +
               (data?.mobileImage?.childImageSharp?.fluid?.src ||
+                data?.renderedMarkdownPost?.ogImage ||
                 data?.placeholderImage?.childImageSharp?.fluid?.src)
             }
           />
@@ -95,6 +96,7 @@ export const query = graphql`
       subtitle
       image
       slug
+      ogImage
     }
 
     site {

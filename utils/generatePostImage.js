@@ -15,47 +15,59 @@ const writeCachedFile = async (key, contents, extension) => {
   // thing which impacts the final image. If you were to have something
   // more elaborate, you should just use the HTML as the hash instead.
   const fileName = createHash('md5').update(key).digest('hex') + '.' + extension
-  const absolutePath = resolve('.cache', fileName)
+  const absolutePath = resolve('public', fileName)
   await writeFileAsync(absolutePath, contents)
-  return absolutePath
+  return { fileName, absolutePath }
 }
 /*
  * Returns the path to an image generated from the provided HTML.
  */
 const imageFromHtml = async (browser, title, html) => {
   // Write the HTML to a file and get its filename
-  const filePath = await writeCachedFile(title, html, 'html')
+  const { filePath, absolutePath } = await writeCachedFile(title, html, 'html')
   const page = await browser.newPage()
+
+  await page.setDefaultNavigationTimeout(0)
+
   // Navigate to our saved HTML
-  await page.goto(`file://${filePath}`)
+  await page.goto(`file://${absolutePath}`)
   // My HTML includes webfonts, so make sure they're ready
   await page.evaluateHandle('document.fonts.ready')
   // Set the viewport to the desired dimensions of the image
-  await page.setViewport({ width: 2048, height: 1170 })
+  await page.setViewport({ width: 1024, height: 680 })
   // Take a screenshot, we use PNG because it's higher quality - and the
   // compression works well for images which contain a lot of areas of
   // solid colour.
   const file = await page.screenshot({ type: 'png' })
+  await page.close()
+
   // Write the screenshot to a file, and return its filename
-  return await writeCachedFile(title, file, 'png')
+  const fileResult = await writeCachedFile(title, file, 'png')
+
+  return fileResult.fileName
 }
 
 /*
  * Takes a post (probably a Gatsby node of some kind), generates some HTML,
  * saves a screenshot, then returns the path to the saved image.
  */
-module.exports = async (browser, title) => {
+module.exports = async (browser, title, subtitle) => {
   // This renders some React to HTML, nothing too clever here.
   // I haven't included my actual code for this because it's
   // highly specific to my preferences.
-  const html = await getSocialCardHtml(title)
+  const html = await getSocialCardHtml(title, subtitle)
   const result = imageFromHtml(browser, title, html)
   return result
 }
 
-const getSocialCardHtml = async (title) => {
+const getSocialCardHtml = async (title, subtitle) => {
   const templatePath = resolve('utils/og-image/template.html')
   const template = await readFileAsync(templatePath, 'utf-8')
 
-  return template.replace('TITLE_PLACEHOLDER', title)
+  const imagePath = resolve('utils/og-image/IMAGE_PLACEHOLDER.jpg')
+
+  return template
+    .replace('TITLE_PLACEHOLDER', title || '')
+    .replace('SUBTITLE_PLACEHOLDER', subtitle || '')
+    .replace('IMAGE_PLACEHOLDER.jpg', imagePath)
 }

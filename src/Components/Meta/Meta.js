@@ -22,6 +22,9 @@ const Meta = ({ title, description, image }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {image ? <meta name="twitter:image" content={image}></meta> : null}
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={description} />
+      {image ? <meta name="og:image" content={image}></meta> : null}
     </Helmet>
   )
 }

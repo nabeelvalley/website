@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const crypto = require('crypto')
 const puppeteer = require('puppeteer')
+const { promisify } = require('util')
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -10,6 +11,7 @@ const {
   convertJupyterToMarkdown,
 } = require('./utils/markdown')
 const generatePostImage = require('./utils/generatePostImage')
+const readFileAsync = promisify(fs.readFile)
 
 let browser
 
@@ -29,6 +31,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 }
 
 exports.onCreateNode = async ({ node, getNode, actions }) => {
+  //   setTimeout(async () => {
   const { createNode } = actions
 
   if (node.extension === `md` || node.extension === `ipynb`) {
@@ -59,11 +62,18 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
       if (typeof browser === 'undefined') {
         browser = await puppeteer.launch()
       }
-      const coverImage = await generatePostImage(browser, meta.title)
+
+      const ogImage =
+        '/' +
+        (await generatePostImage(
+          browser,
+          meta.title,
+          meta.subtitle || meta.description
+        ))
 
       const fieldData = {
+        ogImage,
         ...meta,
-        coverImage,
         html,
         slug,
         dir,
@@ -86,6 +96,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
       })
     }
   }
+  //   }, 0)
 }
 
 exports.createPages = async ({ graphql, actions }) => {

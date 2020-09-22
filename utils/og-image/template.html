@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>TITLE_PLACEHOLDER</h1>
-</body>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:200|Nova+Mono&display=swap');
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        max-height: 100vh;
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --font-primary: 'Nova Mono', monospace;
+        --font-secondary: 'Montserrat Alternates', sans-serif;
+          --color-primary: #e44d90;
+      }
+
+      * {
+        font-family: var(--font-secondary);
+        color: #000000;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h1 {
+        font-family: var(--font-primary);
+        font-size: 50px;
+      }
+
+      h2 {
+          margin: 10px 0;
+      }
+
+      p {
+          font-size: 20px;
+          margin: 0;
+      }
+
+      div {
+        position: absolute;
+        top: 10vw;
+        left: 10vw;
+        max-width: 50vw;
+        padding: 2vw;
+        background-color: #ffffffc9;
+
+      }
+
+      img {
+        width: 1024px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="IMAGE_PLACEHOLDER.jpg" />
+    <div>
+        <h1>TITLE_PLACEHOLDER</h1>
+        <h2>SUBTITLE_PLACEHOLDER</h2>
+        <p>- nabeel valley</p>
+    </div>
+  </body>
 </html>
