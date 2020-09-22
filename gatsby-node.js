@@ -60,7 +60,9 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'))
 
       if (typeof browser === 'undefined') {
-        browser = await puppeteer.launch()
+        browser = await puppeteer.launch({
+          headless: true,
+        })
       }
 
       const ogImage =
