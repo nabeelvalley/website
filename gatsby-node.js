@@ -1,8 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const crypto = require('crypto')
-const puppeteer = require('puppeteer')
 const { promisify } = require('util')
+const chromium = require('chrome-aws-lambda')
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -57,8 +57,12 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'))
 
-      const browser = await puppeteer.launch({
-        headless: true,
+      const browser = await chromium.puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
         timeout: 0,
       })
 
