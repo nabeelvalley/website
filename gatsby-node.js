@@ -59,6 +59,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
       const browser = await chromium.puppeteer.launch({
         args: chromium.args,
+        executablePath: await chromium.executablePath,
         headless: true,
         ignoreHTTPSErrors: true,
         timeout: 0,
