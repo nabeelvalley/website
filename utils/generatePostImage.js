@@ -30,7 +30,9 @@ const imageFromHtml = async (browser, title, html) => {
   await page.setDefaultNavigationTimeout(0)
 
   // Navigate to our saved HTML
-  await page.goto(`file://${absolutePath}`)
+  await page.goto(`file://${absolutePath}`, {
+    timeout: 0,
+  })
   // My HTML includes webfonts, so make sure they're ready
   await page.evaluateHandle('document.fonts.ready')
   // Set the viewport to the desired dimensions of the image

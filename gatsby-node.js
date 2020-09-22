@@ -13,8 +13,6 @@ const {
 const generatePostImage = require('./utils/generatePostImage')
 const readFileAsync = promisify(fs.readFile)
 
-let browser
-
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html') {
     actions.setWebpackConfig({
@@ -59,12 +57,10 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'))
 
-      if (typeof browser === 'undefined') {
-        browser = await puppeteer.launch({
-          headless: true,
-          timeout: 0,
-        })
-      }
+      const browser = await puppeteer.launch({
+        headless: true,
+        timeout: 0,
+      })
 
       const ogImage =
         '/' +
