@@ -28,8 +28,8 @@ const Stdout = ({ data, location }) => {
       <div className="Post">
         <ContentPage
           location={location}
-          title="Log"
-          subtitle="console.log(dev)"
+          title="Stdout"
+          subtitle="mostly just a mess"
         >
           <Meta
             title="Stdout | Nabeel Valley"
