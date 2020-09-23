@@ -319,7 +319,7 @@ export const query = graphql`
       }
     }
 
-    allRenderedMarkdownPost(filter: { slug: { regex: "/^/content/blog/" } }) {
+    allRenderedMarkdownPost(filter: { slug: { regex: "/^/blog/" } }) {
       edges {
         node {
           slug

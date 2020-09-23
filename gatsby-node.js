@@ -41,6 +41,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
     if (fs.existsSync(metaPath)) {
       const slug = createFilePath({ node, getNode, basePath: `pages` })
+        .replace(/^\/content/, '')
         .replace(/\s/g, '-')
         .toLowerCase()
 

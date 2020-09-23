@@ -164,226 +164,228 @@ const Home = ({ location, data }) => {
 export default Home
 
 export const query = graphql`
-  {
-    site {
-      buildTime
-      siteMetadata {
-        siteUrl
-      }
-    }
-    mqtt_mobileImage: file(
-      relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    mqtt_desktopImage: file(
-      relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1080, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    mqtt_largeDesktopImage: file(
-      relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1080, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+         {
+           site {
+             buildTime
+             siteMetadata {
+               siteUrl
+             }
+           }
+           mqtt_mobileImage: file(
+             relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           mqtt_desktopImage: file(
+             relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 1080, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           mqtt_largeDesktopImage: file(
+             relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 1080, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    fsweb_mobileImage: file(
-      relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    fsweb_desktopImage: file(
-      relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    fsweb_largeDesktopImage: file(
-      relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+           fsweb_mobileImage: file(
+             relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           fsweb_desktopImage: file(
+             relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           fsweb_largeDesktopImage: file(
+             relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    wild_mobileImage: file(
-      relativePath: { eq: "images/home/landing/slide.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    wild_desktopImage: file(
-      relativePath: { eq: "images/home/landing/slide.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1080, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    wild_largeDesktopImage: file(
-      relativePath: { eq: "images/home/landing/slide.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+           wild_mobileImage: file(
+             relativePath: { eq: "images/home/landing/slide.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           wild_desktopImage: file(
+             relativePath: { eq: "images/home/landing/slide.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 1080, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           wild_largeDesktopImage: file(
+             relativePath: { eq: "images/home/landing/slide.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 1200, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    zwk1_mobileImage: file(
-      relativePath: { eq: "images/zwartkops/image12.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk1_desktopImage: file(
-      relativePath: { eq: "images/zwartkops/image12.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk1_largeDesktopImage: file(
-      relativePath: { eq: "images/zwartkops/image12.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+           zwk1_mobileImage: file(
+             relativePath: { eq: "images/zwartkops/image12.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk1_desktopImage: file(
+             relativePath: { eq: "images/zwartkops/image12.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk1_largeDesktopImage: file(
+             relativePath: { eq: "images/zwartkops/image12.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    zwk2_mobileImage: file(
-      relativePath: { eq: "images/zwartkops/image2.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk2_desktopImage: file(
-      relativePath: { eq: "images/zwartkops/image2.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk2_largeDesktopImage: file(
-      relativePath: { eq: "images/zwartkops/image2.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+           zwk2_mobileImage: file(
+             relativePath: { eq: "images/zwartkops/image2.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk2_desktopImage: file(
+             relativePath: { eq: "images/zwartkops/image2.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk2_largeDesktopImage: file(
+             relativePath: { eq: "images/zwartkops/image2.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    zwk3_mobileImage: file(
-      relativePath: { eq: "images/zwartkops/image15.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk3_desktopImage: file(
-      relativePath: { eq: "images/zwartkops/image15.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk3_largeDesktopImage: file(
-      relativePath: { eq: "images/zwartkops/image15.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+           zwk3_mobileImage: file(
+             relativePath: { eq: "images/zwartkops/image15.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk3_desktopImage: file(
+             relativePath: { eq: "images/zwartkops/image15.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk3_largeDesktopImage: file(
+             relativePath: { eq: "images/zwartkops/image15.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    zwk4_mobileImage: file(
-      relativePath: { eq: "images/zwartkops/image11.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk4_desktopImage: file(
-      relativePath: { eq: "images/zwartkops/image11.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk4_largeDesktopImage: file(
-      relativePath: { eq: "images/zwartkops/image11.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+           zwk4_mobileImage: file(
+             relativePath: { eq: "images/zwartkops/image11.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk4_desktopImage: file(
+             relativePath: { eq: "images/zwartkops/image11.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
+           zwk4_largeDesktopImage: file(
+             relativePath: { eq: "images/zwartkops/image11.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    coverImage: file(relativePath: { eq: "images/home/landing/landing.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+           coverImage: file(
+             relativePath: { eq: "images/home/landing/landing.jpg" }
+           ) {
+             childImageSharp {
+               fluid(maxWidth: 690, quality: 100) {
+                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
+               }
+             }
+           }
 
-    allRenderedMarkdownPost(filter: { slug: { regex: "/blog/" } }) {
-      edges {
-        node {
-          slug
-          title
-          subtitle
-          description
-        }
-      }
-    }
-  }
-`
+           allRenderedMarkdownPost(filter: { slug: { regex: "/^/blog/" } }) {
+             edges {
+               node {
+                 slug
+                 title
+                 subtitle
+                 description
+               }
+             }
+           }
+         }
+       `
