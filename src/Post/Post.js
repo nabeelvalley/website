@@ -59,8 +59,8 @@ const Post = ({ data, location }) => {
             description={data?.renderedMarkdownPost?.description}
             image={
               data?.site?.siteMetadata?.siteUrl +
-              (data?.mobileImage?.childImageSharp?.fluid?.src ||
-                data?.renderedMarkdownPost?.ogImage ||
+              (data?.renderedMarkdownPost?.ogImage ||
+                data?.mobileImage?.childImageSharp?.fluid?.src ||
                 data?.placeholderImage?.childImageSharp?.fluid?.src)
             }
           />
