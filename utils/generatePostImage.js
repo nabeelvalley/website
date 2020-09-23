@@ -53,20 +53,26 @@ const imageFromHtml = async (browser, title, html) => {
  * Takes a post (probably a Gatsby node of some kind), generates some HTML,
  * saves a screenshot, then returns the path to the saved image.
  */
-module.exports = async (browser, title, subtitle) => {
+module.exports = async (browser, title, subtitle, image) => {
   // This renders some React to HTML, nothing too clever here.
   // I haven't included my actual code for this because it's
   // highly specific to my preferences.
-  const html = await getSocialCardHtml(title, subtitle)
+  const html = await getSocialCardHtml(title, subtitle, image)
   const result = imageFromHtml(browser, title, html)
   return result
 }
 
-const getSocialCardHtml = async (title, subtitle) => {
+const getSocialCardHtml = async (title, subtitle, image) => {
   const templatePath = resolve('utils/og-image/template.html')
   const template = await readFileAsync(templatePath, 'utf-8')
 
-  const imagePath = resolve('utils/og-image/IMAGE_PLACEHOLDER.jpg')
+  let imagePath
+
+  if (image && image.length) {
+    imagePath = resolve('static/' + image)
+  } else {
+    imagePath = resolve('utils/og-image/IMAGE_PLACEHOLDER.jpg')
+  }
 
   return template
     .replace('TITLE_PLACEHOLDER', title || '')

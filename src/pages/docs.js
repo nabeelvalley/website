@@ -81,7 +81,7 @@ export const query = graphql`
     }
 
     allRenderedMarkdownPost(
-      filter: { slug: { regex: "/^/docs/" } }
+      filter: { slug: { regex: "/^/content/docs/" } }
       sort: { fields: dir }
     ) {
       group(field: dir) {

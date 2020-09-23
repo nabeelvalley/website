@@ -1,11 +1,11 @@
-require("dotenv").config({
-  path: ".env",
-});
+require('dotenv').config({
+  path: '.env',
+})
 
 module.exports = {
   siteMetadata: {
     buildTimeUnix: Date.now(),
-    siteUrl: process.env.URL || "https://nabeelvalley.netlify.app",
+    siteUrl: process.env.URL || 'https://nabeelvalley.netlify.app',
   },
   plugins: [
     {
@@ -21,18 +21,25 @@ module.exports = {
         showSpinner: false,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `content`,
+    //     path: `${__dirname}/static/content`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/static/images`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/static/content`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/static/images`,
+        name: `static`,
+        path: `${__dirname}/static`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -54,7 +61,7 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({query}) => {
+            serialize: ({ query }) => {
               return query.allRenderedMarkdownPost.edges.map((edge) => {
                 const {
                   id,
@@ -63,9 +70,9 @@ module.exports = {
                   subtitle,
                   title,
                   html,
-                } = edge.node;
+                } = edge.node
 
-                const date = new Date(subtitle);
+                const date = new Date(subtitle)
 
                 return {
                   title,
@@ -73,9 +80,9 @@ module.exports = {
                   description,
                   url: query.site.siteMetadata.siteUrl + slug,
                   guid: id,
-                  custom_elements: [{ "content:encoded": html }],
-                };
-              });
+                  custom_elements: [{ 'content:encoded': html }],
+                }
+              })
             },
             query: `
             {
@@ -93,11 +100,11 @@ module.exports = {
               }
             }                     
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
             title: "Nabeel Valley's Blog",
           },
         ],
       },
     },
   ],
-};
+}

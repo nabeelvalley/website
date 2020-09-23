@@ -11,7 +11,6 @@ const {
   convertJupyterToMarkdown,
 } = require('./utils/markdown')
 const generatePostImage = require('./utils/generatePostImage')
-const readFileAsync = promisify(fs.readFile)
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html') {
@@ -70,7 +69,8 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
         (await generatePostImage(
           browser,
           meta.title,
-          meta.subtitle || meta.description
+          meta.subtitle || meta.description,
+          meta.image
         ))
 
       const fieldData = {

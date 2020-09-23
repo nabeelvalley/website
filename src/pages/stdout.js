@@ -67,7 +67,7 @@ export const query = graphql`
     }
 
     allRenderedMarkdownPost(
-      filter: { slug: { regex: "/^/stdout/" } }
+      filter: { slug: { regex: "/^/content/stdout/" } }
       sort: { fields: dir }
     ) {
       edges {

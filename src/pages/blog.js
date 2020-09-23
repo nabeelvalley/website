@@ -115,7 +115,9 @@ export const query = graphql`
       }
     }
 
-    mqtt_mobileImage: file(relativePath: { eq: "blog/2019/12-11/header.jpg" }) {
+    mqtt_mobileImage: file(
+      relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -123,7 +125,7 @@ export const query = graphql`
       }
     }
     mqtt_desktopImage: file(
-      relativePath: { eq: "blog/2019/12-11/header.jpg" }
+      relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -132,7 +134,7 @@ export const query = graphql`
       }
     }
     mqtt_largeDesktopImage: file(
-      relativePath: { eq: "blog/2019/12-11/header.jpg" }
+      relativePath: { eq: "content/blog/2019/12-11/header.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -142,7 +144,7 @@ export const query = graphql`
     }
 
     fsweb_mobileImage: file(
-      relativePath: { eq: "blog/2019/30-10/header.jpg" }
+      relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -151,7 +153,7 @@ export const query = graphql`
       }
     }
     fsweb_desktopImage: file(
-      relativePath: { eq: "blog/2019/30-10/header.jpg" }
+      relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -160,7 +162,7 @@ export const query = graphql`
       }
     }
     fsweb_largeDesktopImage: file(
-      relativePath: { eq: "blog/2019/30-10/header.jpg" }
+      relativePath: { eq: "content/blog/2019/30-10/header.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -169,7 +171,9 @@ export const query = graphql`
       }
     }
 
-    wild_mobileImage: file(relativePath: { eq: "blog/2019/12-10/header.jpg" }) {
+    wild_mobileImage: file(
+      relativePath: { eq: "content/blog/2019/12-10/header.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -177,7 +181,7 @@ export const query = graphql`
       }
     }
     wild_desktopImage: file(
-      relativePath: { eq: "blog/2019/12-10/header.jpg" }
+      relativePath: { eq: "content/blog/2019/12-10/header.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -186,7 +190,7 @@ export const query = graphql`
       }
     }
     wild_largeDesktopImage: file(
-      relativePath: { eq: "blog/2019/12-10/header.jpg" }
+      relativePath: { eq: "content/blog/2019/12-10/header.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -195,43 +199,27 @@ export const query = graphql`
       }
     }
 
-    zwk_mobileImage: file(relativePath: { eq: "zwartkops/image12.jpg" }) {
+    zwk_mobileImage: file(
+      relativePath: { eq: "images/zwartkops/image12.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    zwk_desktopImage: file(relativePath: { eq: "zwartkops/image12.jpg" }) {
+    zwk_desktopImage: file(
+      relativePath: { eq: "images/zwartkops/image12.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    zwk_largeDesktopImage: file(relativePath: { eq: "zwartkops/image12.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-
-    zwk2_mobileImage: file(relativePath: { eq: "zwartkops/image2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk2_desktopImage: file(relativePath: { eq: "zwartkops/image2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 690, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    zwk2_largeDesktopImage: file(relativePath: { eq: "zwartkops/image2.jpg" }) {
+    zwk_largeDesktopImage: file(
+      relativePath: { eq: "images/zwartkops/image12.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -239,14 +227,46 @@ export const query = graphql`
       }
     }
 
-    zwk3_mobileImage: file(relativePath: { eq: "zwartkops/image15.jpg" }) {
+    zwk2_mobileImage: file(
+      relativePath: { eq: "images/zwartkops/image2.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    zwk3_desktopImage: file(relativePath: { eq: "zwartkops/image15.jpg" }) {
+    zwk2_desktopImage: file(
+      relativePath: { eq: "images/zwartkops/image2.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    zwk2_largeDesktopImage: file(
+      relativePath: { eq: "images/zwartkops/image2.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+
+    zwk3_mobileImage: file(
+      relativePath: { eq: "images/zwartkops/image15.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 690, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    zwk3_desktopImage: file(
+      relativePath: { eq: "images/zwartkops/image15.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -254,7 +274,7 @@ export const query = graphql`
       }
     }
     zwk3_largeDesktopImage: file(
-      relativePath: { eq: "zwartkops/image15.jpg" }
+      relativePath: { eq: "images/zwartkops/image15.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -263,14 +283,18 @@ export const query = graphql`
       }
     }
 
-    zwk4_mobileImage: file(relativePath: { eq: "zwartkops/image11.jpg" }) {
+    zwk4_mobileImage: file(
+      relativePath: { eq: "images/zwartkops/image11.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    zwk4_desktopImage: file(relativePath: { eq: "zwartkops/image11.jpg" }) {
+    zwk4_desktopImage: file(
+      relativePath: { eq: "images/zwartkops/image11.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -278,7 +302,7 @@ export const query = graphql`
       }
     }
     zwk4_largeDesktopImage: file(
-      relativePath: { eq: "zwartkops/image11.jpg" }
+      relativePath: { eq: "images/zwartkops/image11.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
@@ -287,7 +311,7 @@ export const query = graphql`
       }
     }
 
-    coverImage: file(relativePath: { eq: "home/landing/landing.jpg" }) {
+    coverImage: file(relativePath: { eq: "images/home/landing/landing.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -295,7 +319,7 @@ export const query = graphql`
       }
     }
 
-    allRenderedMarkdownPost(filter: { slug: { regex: "/blog/" } }) {
+    allRenderedMarkdownPost(filter: { slug: { regex: "/^/content/blog/" } }) {
       edges {
         node {
           slug

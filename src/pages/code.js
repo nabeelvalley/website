@@ -124,21 +124,21 @@ export const query = graphql`
       }
     }
 
-    mobileImage: file(relativePath: { eq: "pages/code.jpg" }) {
+    mobileImage: file(relativePath: { eq: "images/pages/code.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 690, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    desktopImage: file(relativePath: { eq: "pages/code.jpg" }) {
+    desktopImage: file(relativePath: { eq: "images/pages/code.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1080, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    largeDesktopImage: file(relativePath: { eq: "pages/code.jpg" }) {
+    largeDesktopImage: file(relativePath: { eq: "images/pages/code.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1080, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
