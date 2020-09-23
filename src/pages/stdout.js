@@ -9,7 +9,7 @@ import '../Post/Post.css'
 import Meta from '../Components/Meta/Meta'
 import sortMarkdownPosts from '../../utils/sortMarkdownPosts'
 
-const Docs = ({ data, location }) => {
+const Stdout = ({ data, location }) => {
   const sortedPosts = sortMarkdownPosts(data.allRenderedMarkdownPost)
     .reverse()
     .map((e) => e.node)
@@ -32,7 +32,7 @@ const Docs = ({ data, location }) => {
           subtitle="console.log(dev)"
         >
           <Meta
-            title="Log | Nabeel Valley"
+            title="Stdout | Nabeel Valley"
             description="Dev Logs"
             image={
               data?.site?.siteMetadata?.siteUrl +
@@ -67,7 +67,7 @@ export const query = graphql`
     }
 
     allRenderedMarkdownPost(
-      filter: { slug: { regex: "/^/log/" } }
+      filter: { slug: { regex: "/^/stdout/" } }
       sort: { fields: dir }
     ) {
       edges {

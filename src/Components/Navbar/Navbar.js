@@ -1,13 +1,13 @@
-import React from "react"
-import "./Navbar.css"
-import { Link } from "gatsby"
+import React from 'react'
+import './Navbar.css'
+import { Link } from 'gatsby'
 
 const Navbar = () => (
   <nav className="Navbar">
     <div className="logo">
       <Link
         activeClassName="active"
-        activeStyle={{ visibility: "hidden", width: 0, height: 0 }}
+        activeStyle={{ visibility: 'hidden', width: 0, height: 0 }}
         to="/"
       >
         Nabeel Valley
@@ -25,13 +25,18 @@ const Navbar = () => (
         </Link>
       </li>
       <li className="link">
-        <Link activeClassName="active" partiallyActive={true} to="/code">
-          Code
+        <Link activeClassName="active" partiallyActive={true} to="/stdout">
+          Stdout
         </Link>
       </li>
       <li className="link">
         <Link activeClassName="active" partiallyActive={true} to="/docs">
           Docs
+        </Link>
+      </li>
+      <li className="link">
+        <Link activeClassName="active" partiallyActive={true} to="/code">
+          Code
         </Link>
       </li>
       <li className="link">
