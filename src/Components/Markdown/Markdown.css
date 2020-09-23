@@ -53,6 +53,19 @@
   overflow-x: auto;
 }
 
+.Markdown .log {;
+    padding: var(--size-s);
+    margin-top: var(--size-s);
+    border: solid var(--color-primary-l) 1px;
+    color: var(--color-secondary);
+}
+
+.Markdown .log .title,
+.Markdown .log .description {
+    margin-bottom: var(--size-s);
+    margin-top: 0;
+}
+
 /* Table Styling */
 
 .Markdown .scrollable {
