@@ -48,7 +48,7 @@ const Stdout = ({ data, location }) => {
   )
 }
 
-export default Docs
+export default Stdout
 
 export const query = graphql`
   {
