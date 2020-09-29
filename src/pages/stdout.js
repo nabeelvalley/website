@@ -8,42 +8,43 @@ import { graphql, Link } from 'gatsby'
 import '../Post/Post.css'
 import Meta from '../Components/Meta/Meta'
 import sortMarkdownPosts from '../../utils/sortMarkdownPosts'
+import ProjectItem from '../Components/ProjectGroup/ProjectItem'
+import ProjectGroup from '../Components/ProjectGroup/ProjectGroup'
 
 const Stdout = ({ data, location }) => {
   const sortedPosts = sortMarkdownPosts(data.allRenderedMarkdownPost)
     .reverse()
     .map((e) => e.node)
 
-  const content = sortedPosts.map((el) => (
-    <article className="log" key={el.slug}>
-      <h4 className="title">{el.title}</h4>
-      <h5 className="date">{el.subtitle}</h5>
-      <div className="description">{el.description}</div>
-      <Link to={el.slug}>Open</Link>
-    </article>
-  ))
-
   return (
     <Layout>
-      <div className="Post">
-        <ContentPage
-          location={location}
-          title="Stdout"
-          subtitle="mostly just a mess"
-        >
-          <Meta
-            title="Stdout | Nabeel Valley"
-            description="Dev Logs"
-            image={
-              data?.site?.siteMetadata?.siteUrl +
-              data?.coverImage?.childImageSharp?.fluid?.src
-            }
-          />
+      <ContentPage
+        location={location}
+        title="Stdout"
+        subtitle="mostly just a mess"
+      >
+        <Meta
+          title="Stdout | Nabeel Valley"
+          description="Dev Logs"
+          image={
+            data?.site?.siteMetadata?.siteUrl +
+            data?.coverImage?.childImageSharp?.fluid?.src
+          }
+        />
 
-          <Markdown children={<section className="logs">{content}</section>} />
-          <Comments />
-        </ContentPage>
-      </div>
+        <ProjectGroup isFullWidth={false}>
+          {sortedPosts.map((p, i) => (
+            <ProjectItem
+              key={i}
+              title={p.title}
+              subtitle={p.subtitle}
+              description={p.description}
+              link={p.slug}
+              linkText="Read More"
+            />
+          ))}
+        </ProjectGroup>
+      </ContentPage>
     </Layout>
   )
 }

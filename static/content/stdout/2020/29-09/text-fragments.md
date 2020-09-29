@@ -20,8 +20,8 @@ If you need to highlight a larger piece of text, you can use the start and end o
 https://my.website.com/#:~:text=when%20linking,HTML%20of%20a%20page
 ```
 
-The link below should link to the first paragraph of this page provided your browser supports this:
+The link below should link to the first paragraph of this page if opened in a new tab (provided your browser supports text fragments):
 
-> [Click me](#:~:text=when%20linking,HTML%20of%20a%20page)
+> [ctrl + click me](#:~:text=when%20linking,HTML%20of%20a%20page)
 
-You can read more about text fragments in URLs on [web.dev](https://web.dev/text-fragments/)
+You can read more about text fragments in URLs on <a href="https://web.dev/text-fragments/" rel=”noopener noreferrer” target="\_blank">web.dev</a>
