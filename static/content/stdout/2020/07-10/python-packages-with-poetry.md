@@ -60,7 +60,13 @@ To run an application using the virtual environment created by `poetry` you can 
 poetry run python app.py
 ```
 
-## Create a Shell
+Running a `flask` app would look something like this:
+
+```sh
+poetry run flask run
+```
+
+# Create a Shell
 
 To create a shell in the `poetry` virtual environment run:
 
