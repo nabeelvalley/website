@@ -4,7 +4,7 @@ Node.js has a few methods by which we can get the directory in which we are curr
 
 ## Process Directory
 
-We can get the current process working directory by using:
+We can get the working directory from where we started the `node` script with:
 
 ```js
 const processDir = process.cwd()
