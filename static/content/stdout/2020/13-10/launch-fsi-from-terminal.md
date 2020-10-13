@@ -1,14 +1,19 @@
+> Before you can use the following, you will need the [.NET Core SDK installed](https://dotnet.microsoft.com/download)   
+
 # Open the F# Interactive Console
 
-You can open an F# interactive console using the `dotnet` CLI. To do so, run the following command:
+To open an F# interactive console using the `dotnet` CLI. You can run the following command:
 
 ```sh
 dotnet fsi
 ```
 
-You can then run `#help;;` from the `fsi` console to view the help menu, and `#quit;;` to quit the interactive session
+> Note that to end statements/execute in the F# Interactive console use `;;` at the end of a line or section of code
 
-Additionally, you can write multi-line `F#` code, to end a section of code add a `;;`. For example, you can write a function that will print some data into the console:
+
+Once in the console, running `#help;;` from the `fsi` console to view the help menu, and `#quit;;` to quit the interactive session
+
+Additionally, you can write multi-line `F#` code as well as just single line expressions. Each expression should be terminated with `;;`. For example, you can write a function that will print some data into the console:
 
 ```fs
 let printer s =
@@ -22,11 +27,11 @@ Next, you can call the function with:
 printer "Hello World";;
 ```
 
-Which will execute the above code
+Which will execute the above code and output `Hello World`
 
 # Run an F# Script
 
-To run an F# script, you can use the `dotnet fsi` command, followed by an F# script file to execute the script:
+F# scripts can be run using the `dotnet fsi` command as well, followed by the path to an F# script file:
 
 ```sh
 dotnet fsi ./myscript.fsx
