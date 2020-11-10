@@ -1,0 +1,5 @@
+{
+  "title": "Intercept Fetch with Cypress",
+  "subtitle": "10-11-2020",
+  "description": "Capture and Use Fetch Requests and Responses in Cypress"
+}
