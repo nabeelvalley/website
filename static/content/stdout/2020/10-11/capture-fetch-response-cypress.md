@@ -17,7 +17,6 @@ The `cy.route2` command needs to be enabled in your `cypress.json` file before u
 Next, using the command to capture requests to a route looks a bit like this in a test:
 
 ```js
-cy.server() // to enable capture
 cy.route2('POST', '/do-stuff').as('data')
 ```
 
