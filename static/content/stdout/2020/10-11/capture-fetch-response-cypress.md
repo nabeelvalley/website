@@ -1,4 +1,4 @@
-To intercept the result of a `fetch` request with Cypress you will need to make use of `cy.route2`
+To capture the result of a `fetch` request with Cypress you will need to make use of `cy.route2`
 
 # Setup
 
@@ -14,7 +14,7 @@ The `cy.route2` command needs to be enabled in your `cypress.json` file before u
 
 # Usage
 
-Next, using the command to intercept routes looks a bit like this in a test:
+Next, using the command to capture requests to a route looks a bit like this in a test:
 
 ```js
 cy.server() // to enable capture
