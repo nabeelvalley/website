@@ -40,6 +40,13 @@ const Code = ({ location, data }) => (
 
       <ProjectGroup isFullWidth={false}>
         <ProjectItem
+          title="All the Greens"
+          tech={['js', 'gatsby', 'mdx', 'tailwindcss']}
+          description="My plant journal"
+          link="https://all-the-greens.netlify.app"
+          linkText="Go to Site"
+        />
+        <ProjectItem
           title="Waddle.js"
           tech={['ts', 'js']}
           description="A collection of general-purpose JavaScript and TypeScript libraries"
