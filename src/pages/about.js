@@ -34,9 +34,9 @@ const About = ({ location, data }) => (
       <InfoBlock
         heading="Mercedes-Benz"
         location="Pretoria, South Africa"
-        description="Web Developer"
+        description="Web Developer / Technical Specialist"
         date="Mar'19-Present"
-        body="web developer in the marketing/customer data analytics team working on optimizing customer experiences on web platforms and integrating with a variety 1st and 3rd party applications and supporting with data related operations\nmaking use of agile methodologies and delivering software in a three tier application infrastructure using primarily .net, node.js, react, and jenkins as well as machine learning applications with python and ml.net"
+        body="full stack web developer in the marketing/customer data analytics team focused on end-to-end delivery of software projects from the identification of business requirements to the application architecture and solution delivery. working on optimizing customer experiences on web platforms and integrating with a variety 1st and 3rd party applications and supporting with data related operations\nmaking use of agile methodologies and delivering software in a three tier, service-oriented architecture using primarily .net, node.js, react, and jenkins as well as machine learning applications with python and ml.net"  
         summaryAlignRight
       />
 
