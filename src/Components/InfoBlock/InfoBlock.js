@@ -1,7 +1,7 @@
 import React from 'react'
 import './InfoBlock.css'
 
-const InfoBlock = ({ heading, location, description, date, body, summaryAlignRight = false }) =>
+const InfoBlock = ({ heading, location, description, subtext, date, body, summaryAlignRight = false }) =>
     <div className={'InfoBlock grid summary-' + (summaryAlignRight === true ? 'right' : 'left')}>
         <div className="summary">
             <h2 className="heading">{heading}</h2>
@@ -13,6 +13,11 @@ const InfoBlock = ({ heading, location, description, date, body, summaryAlignRig
             {
                 description
                     ? <div className="description">{description}</div>
+                    : null
+            }
+            {
+                subtext
+                    ? <div className="subtext">- {subtext}</div>
                     : null
             }
             {

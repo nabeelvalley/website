@@ -44,6 +44,7 @@ const About = ({ location, data }) => (
         heading="IBM"
         location="Johannesburg, South Africa"
         description="Cloud Developer Advocate"
+        subtext="Graduate Program"
         date="Sept'18-Feb'19"
         body="focused on enabling developers on ibm cloud technologies, building poc applications and demos for prospective clients showcasing technologies such as artificial intelligence, internet of things, containers and microservices, devops tools and methodologies, blockchain and design thinking\nadditionally i also wrote an article on assembling a continious deployment pipeline for web applications and coordinated and assisted developers with the data science johannesburg meetup group and the mtn tad hack in 2018"
       />
@@ -51,7 +52,8 @@ const About = ({ location, data }) => (
       <InfoBlock
         heading="Microsoft"
         location="Johannesburg, South Africa"
-        description="AppFactory Intern"
+        description="Full Stack Web Developer"
+        subtext="Internship"
         date="Feb'18-Aug'18"
         body="development of mobile-first progressive web applications for a mentorship program using angular and asp.net core for azure called lifexchange, and the microsoft cloud summit 2018 event information site as well as engaged in client reviews and workshops as well as project planning. researched topics on web design and development"
         summaryAlignRight

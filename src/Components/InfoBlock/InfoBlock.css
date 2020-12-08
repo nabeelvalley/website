@@ -9,29 +9,6 @@
   grid-row: 2;
 }
 
-/* @media (min-width: 690px) {
-  .InfoBlock .summary,
-  .InfoBlock .body {
-    grid-row: 1;
-  }
-
-  .InfoBlock.summary-left .summary {
-    grid-column: 1 / 4;
-  }
-
-  .InfoBlock.summary-left .body {
-    grid-column: 4 / 9;
-  }
-
-  .InfoBlock.summary-right .summary {
-    grid-column: 4 / 9;
-  }
-
-  .InfoBlock.summary-right .body {
-    grid-column: 1 / 4;
-  }
-} */
-
 @media (min-width: 690px) {
   .InfoBlock {
     grid-template-columns: repeat(8, 1fr);
@@ -93,7 +70,8 @@
 
 .InfoBlock .description,
 .InfoBlock .date,
-.InfoBlock .body {
+.InfoBlock .body,
+.InfoBlock .subtext {
   margin-bottom: calc(var(--text-spacing) / 4);
   font-family: var(--font-secondary);
   font-size: var(--size-s);
