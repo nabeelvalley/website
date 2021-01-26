@@ -1,5 +1,0 @@
-{
-  "title": "Visual Studio is unable to connect to Web Server IIS Express",
-  "subtitle": "26-01-2021",
-  "description": "Fix an issue with Visual Studio being unable to connect to IIS Express when debugging"
-}
