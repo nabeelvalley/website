@@ -96,9 +96,9 @@ const Code = ({ location, data }) => (
           linkText="Go to GitHub"
         />
         <ProjectItem
-          title="Real-Time Communication with MQTT"
-          tech={['JS', 'MQTT', 'WS', 'Mosquitto']}
-          description="MQTT and real-time communication with the browser, JavaScript, Web Sockets and a Mosquitto message broker"
+          title="Instagram Backup"
+          tech={['f#', 'graphql', 'github', 'cron']}
+          description="A GitHub-actions powered instagram backup using F# and the Instagram Graph API to retreive and backup a user's instgram posts automatically"
           link="https://github.com/nabeelvalley/RTCWithMQTT"
           linkText="Go to GitHub"
         />
