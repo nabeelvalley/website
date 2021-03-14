@@ -30,13 +30,15 @@ jobs:
       uses: srt32/git-actions@v0.0.3
       with:
         args: git submodule update --init --recursive
-    - name: Checkout submodules
+    - name: Update submodules
       uses: srt32/git-actions@v0.0.3
       with:
         args: git submodule update --remote --merge
-    - name: Update submodules
+    - name: Commit submodule update
       uses: test-room-7/action-update-file@v1
       with:
-        file-path: ./*
+        file-path: "*"
         commit-msg: ":construction_worker: github action submodule auto update"
         github-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-dot: true
+        
