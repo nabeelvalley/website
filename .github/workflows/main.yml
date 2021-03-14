@@ -41,7 +41,7 @@ jobs:
     - name: Commit submodule update
       uses: test-room-7/action-update-file@v1
       with:
-        file-path: "*"
+        file-path: static/content/docs
         commit-msg: ":construction_worker: github action submodule auto update"
         github-token: ${{ secrets.GITHUB_TOKEN }}
         allow-dot: true
