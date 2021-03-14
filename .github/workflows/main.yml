@@ -33,7 +33,7 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: extract_branch
     - name: Switch to master
-      uses: srt32/git-action@v0.0.3
+      uses: srt32/git-actions@v0.0.3
       with: 
         args: git switch -c ${{ steps.extract_branch.outputs.branch }}
     - name: Update submodules
