@@ -11,8 +11,10 @@ const serializePost = ({ query }) => {
 
     const date = new Date(subtitle)
 
+    const titlePrefix = slug.startsWith("/blog") ? "blog: " : "stdout: "
+
     return {
-      title,
+      title: titlePrefix + title,
       date,
       description,
       url: query.site.siteMetadata.siteUrl + slug,
