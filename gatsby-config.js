@@ -1,3 +1,5 @@
+const serializePost = require('./utils/serializePost')
+
 require('dotenv').config({
   path: '.env',
 })
@@ -61,32 +63,10 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query }) => {
-              return query.allRenderedMarkdownPost.edges.map((edge) => {
-                const {
-                  id,
-                  description,
-                  slug,
-                  subtitle,
-                  title,
-                  html,
-                } = edge.node
-
-                const date = new Date(subtitle)
-
-                return {
-                  title,
-                  date,
-                  description,
-                  url: query.site.siteMetadata.siteUrl + slug,
-                  guid: id,
-                  custom_elements: [{ 'content:encoded': html }],
-                }
-              })
-            },
+            serialize: serializePost,
             query: `
             {
-              allRenderedMarkdownPost(filter: {slug: {regex: "/\/blog/"}}) {
+              allRenderedMarkdownPost(filter: {slug: {regex: "/\/(blog|stdout)/"}}) {
                 edges {
                   node {
                     id

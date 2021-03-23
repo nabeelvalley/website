@@ -45,6 +45,9 @@
 .Navbar .link {
   display: inline;
   margin-left: 15px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 
@@ -62,4 +65,11 @@
   border-bottom: 1px solid var(--color-primary);
   margin-bottom: 3px;
   padding-bottom: 3px;
+}
+
+.Navbar .link .icon {
+  height: 20px;
+  width: 20px;
+  margin-left: 4px;
+  margin-bottom: -4px;
 }

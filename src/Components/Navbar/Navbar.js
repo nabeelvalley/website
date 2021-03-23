@@ -44,6 +44,13 @@ const Navbar = () => (
           About
         </Link>
       </li>
+
+      <li className="link rss">
+        <a href="/rss.xml">
+          RSS
+          <img className="icon" src="/icons/rss.svg" alt=""></img>
+        </a>
+      </li>
     </ul>
   </nav>
 )

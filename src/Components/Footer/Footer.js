@@ -16,6 +16,7 @@ const Footer = () => <div className="Footer grid">
         <li className="link"><AnyLink to="/blog">Blog</AnyLink></li>
         <li className="link"><AnyLink to="/code">Code</AnyLink></li>
         <li className="link"><AnyLink to="/about">About</AnyLink></li>
+        <li className="link"><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li>
     </ol>
 </div>
 
