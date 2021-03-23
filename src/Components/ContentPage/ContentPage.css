@@ -23,10 +23,6 @@
   text-transform: lowercase;
 }
 
-.ContentPage.grid {
-  display: block;
-}
-
 .ContentPage .links {
   grid-column: 1 / -1;
 }
@@ -37,10 +33,6 @@
 }
 
 @media (min-width: 1080px) {  
-  .ContentPage.grid {
-    display: block;
-  }
-
   .ContentPage .main {
     grid-column: 1 / span 8;
   }

@@ -93,20 +93,20 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0,1fr));
   grid-column-gap: var(--grid-gap);
   grid-row-gap: var(--grid-gap);
 }
 
 @media (min-width: 690px) {
   .grid {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(8, minmax(0,1fr));
   }
 }
 
 @media (min-width: 1200px) {
   .grid {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0,1fr));
   }
 }
 
