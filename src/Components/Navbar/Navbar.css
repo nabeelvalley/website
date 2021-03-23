@@ -45,9 +45,9 @@
 .Navbar .link {
   display: inline;
   margin-left: 15px;
-  display: inline-flex;
   flex-direction: row;
   align-items: center;
+  white-space: nowrap;
 }
 
 
