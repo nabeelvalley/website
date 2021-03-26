@@ -1,41 +1,55 @@
-const Converter = require("showdown").Converter;
-const showdownHighlighter = require("showdown-highlight");
+const Converter = require('showdown').Converter
+const showdownHighlighter = require('showdown-highlight')
 
-const jsdom = require("jsdom");
+const jsdom = require('jsdom')
 
-const ipynb = require("ipynb2html");
+const ipynb = require('ipynb2html')
 
 const externalLinksInNewWindow = {
-  type: "output",
+  type: 'output',
   regex: /<a\shref[^>]+>/g,
-  replace: text => {
-    var url = text.match(/"(.*?)"/)[1];
-    if (url.includes("http://") || url.includes("https://")) {
-      return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">';
+  replace: (text) => {
+    var url = text.match(/"(.*?)"/)[1]
+    if (url.includes('http://') || url.includes('https://')) {
+      return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">'
     }
-    return text;
-  }
-};
+    return text
+  },
+}
 
 const scrollableTables = {
-  type: "output",
+  type: 'output',
   regex: /<table[^>]*>(?:.|\n)*?<\/table>/,
-  replace: text => `<div class="scrollable">${text}</div>`
-};
+  replace: (text) => `<div class="scrollable">${text}</div>`,
+}
 
 const codeTab = {
-  type: "lang",
+  type: 'lang',
   regex: /^`([^`]*)`$/gm,
-  replace: text => `<p class="code-tab"><code>${text.slice(1, -1)}</code></p>`
-};
+  replace: (text) =>
+    `<p class="code-tab"><code>${text.slice(1, -1)}</code></p>`,
+}
 
 const codeSummary = {
-  type: "output",
+  type: 'output',
   regex: /<summary>`([^`]*)`<\/summary>/gm,
-  replace: text => `${text.replace("`", "<code>").replace("`", "</code>")}`
-};
+  replace: (text) => `${text.replace('`', '<code>').replace('`', '</code>')}`,
+}
 
-const convertMarkdownToHtml = text => {
+
+const doubleDotImagePathCorrect = {
+  type: 'output',
+  regex: /<img.*src="\.\.\//gm,
+  replace: (text) => `${text.replace('src="../', 'src="../../')}`,
+}
+
+const singleDotImagePathCorrect = {
+  type: 'output',
+  regex: /<img.*src="\.\//gm,
+  replace: (text) => `${text.replace('src="./', 'src="../')}`,
+}
+
+const convertMarkdownToHtml = (text) => {
   const converter = new Converter({
     headerLevelStart: 2,
     parseImgDimensions: true,
@@ -44,38 +58,40 @@ const convertMarkdownToHtml = text => {
       showdownHighlighter,
       externalLinksInNewWindow,
       scrollableTables,
-      codeSummary
+      codeSummary,
+      doubleDotImagePathCorrect,
+      singleDotImagePathCorrect,
     ],
     simplifiedAutoLink: true,
     tables: true,
     ghCompatibleHeaderId: true,
-    disableForced4SpacesIndentedSublists: true
-  });
-  const html = converter.makeHtml(text);
-  return html;
-};
+    disableForced4SpacesIndentedSublists: true,
+  })
+  const html = converter.makeHtml(text)
+  return html
+}
 
-const convertJupyterToMarkdown = content => {
-  const window = new jsdom.JSDOM().window;
-  const document = window.document;
+const convertJupyterToMarkdown = (content) => {
+  const window = new jsdom.JSDOM().window
+  const document = window.document
 
-  const renderNotebook = ipynb.createRenderer(document);
+  const renderNotebook = ipynb.createRenderer(document)
 
-  const notebook = JSON.parse(content);
+  const notebook = JSON.parse(content)
 
   // remove all inline style tags
-  let renderedContent = renderNotebook(notebook);
+  let renderedContent = renderNotebook(notebook)
   renderedContent
-    .querySelectorAll("style")
-    .forEach(el => el.parentNode.removeChild(el));
+    .querySelectorAll('style')
+    .forEach((el) => el.parentNode.removeChild(el))
 
   const html = renderedContent.innerHTML
-    .replace(/class="dataframe"/g, "")
-    .replace(/border="1"/g, "");
+    .replace(/class="dataframe"/g, '')
+    .replace(/border="1"/g, '')
 
   // const markdown = new Converter().makeMarkdown(html, document);
 
-  return html;
-};
+  return html
+}
 
-module.exports = { convertMarkdownToHtml, convertJupyterToMarkdown };
+module.exports = { convertMarkdownToHtml, convertJupyterToMarkdown }

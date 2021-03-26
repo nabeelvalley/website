@@ -38,6 +38,13 @@ module.exports = {
     //   },
     // },
     {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/static/content/docs`,
+        destination: '/docs'
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `static`,
