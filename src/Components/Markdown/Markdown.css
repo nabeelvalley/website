@@ -11,6 +11,8 @@
   object-fit: cover;
   object-position: center;
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Markdown > * {

@@ -4520,6 +4520,11 @@ commander@^2.11.0, commander@^2.18.0, commander@^2.19.0, commander@^2.20.0, comm
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
+commander@^6.0.0:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
+  integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
+
 commander@~2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
@@ -10494,6 +10499,13 @@ katex@^0.11.1:
   dependencies:
     commander "^2.19.0"
 
+katex@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.13.0.tgz#62900e56c1ad8fdf7da23399e50d7a7b690b39ab"
+  integrity sha512-6cHbzbegYgS9vvVGuH8UA+o97X+ZshtboSqJJCdq7trBYzuD75JNwr7Ef606xkUjecPPhFnyB+afx1dVafielg==
+  dependencies:
+    commander "^6.0.0"
+
 keyv@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-3.0.0.tgz#44923ba39e68b12a7cec7df6c3268c031f2ef373"
@@ -15282,6 +15294,14 @@ showdown-highlight@^2.1.3:
     highlight.js "^9.18.1"
     html-encoder-decoder "^1.3.8"
     showdown "^1.9.1"
+
+showdown-katex@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/showdown-katex/-/showdown-katex-0.8.0.tgz#9350637259227218ac370b2638be217500386141"
+  integrity sha512-LPoX5InPRZ15nNRZ79yToh8UqmZvQDeQLsAlT11rvi437ZMhpJa9KorBmikHybrsyi4/MdIo/zZsrMnU+z07LQ==
+  dependencies:
+    jsdom "^16.2.1"
+    katex "^0.11.1"
 
 showdown@^1.9.0, showdown@^1.9.1:
   version "1.9.1"

@@ -1,7 +1,8 @@
 const Converter = require('showdown').Converter
 const showdownHighlighter = require('showdown-highlight')
-
 const jsdom = require('jsdom')
+
+const latexFilterExtension = require('./latexFilterExtension')
 
 const ipynb = require('ipynb2html')
 
@@ -36,7 +37,6 @@ const codeSummary = {
   replace: (text) => `${text.replace('`', '<code>').replace('`', '</code>')}`,
 }
 
-
 const doubleDotImagePathCorrect = {
   type: 'output',
   regex: /<img.*src="\.\.\//gm,
@@ -54,6 +54,7 @@ const convertMarkdownToHtml = (text) => {
     headerLevelStart: 2,
     parseImgDimensions: true,
     extensions: [
+      latexFilterExtension,
       codeTab,
       showdownHighlighter,
       externalLinksInNewWindow,
@@ -67,7 +68,9 @@ const convertMarkdownToHtml = (text) => {
     ghCompatibleHeaderId: true,
     disableForced4SpacesIndentedSublists: true,
   })
+
   const html = converter.makeHtml(text)
+
   return html
 }
 
@@ -89,9 +92,11 @@ const convertJupyterToMarkdown = (content) => {
     .replace(/class="dataframe"/g, '')
     .replace(/border="1"/g, '')
 
-  // const markdown = new Converter().makeMarkdown(html, document);
+  const htmlWithKatex = new Converter({
+    extensions: [],
+  }).makeHtml(html)
 
-  return html
+  return htmlWithKatex
 }
 
 module.exports = { convertMarkdownToHtml, convertJupyterToMarkdown }
