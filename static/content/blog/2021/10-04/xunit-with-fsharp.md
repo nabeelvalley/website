@@ -59,13 +59,13 @@ MyProject.Lib.Tests
 
 To add an new XUnit test project you can run:
 
-``bash
+```bash
 dotnet new xunit -lang=f# -o MyProject.Tests
 ```
 
 Then, so we're able to test the code from `MyProject.Lib`, we need to add a reference to it from the Test project we just created:
 
-``bash
+```bash
 dotnet add MyProject.Tests reference MyProject.Lib
 ```
 
