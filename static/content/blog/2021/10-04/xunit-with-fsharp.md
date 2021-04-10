@@ -10,6 +10,7 @@ This post will take a look at the process of setting up a new F# library and two
   - [Fact](#fact)
   - [Theory](#theory)
 - [Running Tests](#running-tests)
+- [Additional Resources](#additional-resources)
 
 # Create a Project
 
@@ -216,3 +217,15 @@ In order to run tests we can use the `dotnet-cli`. Depending on the method used 
 - **Method 2** - `dotnet test MyProject.Lib`
 
 Alternatively, tests can also be run from your IDE or Visual Studio Code with the `Ionide` and `.NET Core Test Explorer` extensions installed
+
+# Additional Resources
+
+If you'd like a deeper look into F# or XUnit here are some of my other posts which cover those:
+
+- [Introduction to F# Web APIs](../../2019/30-10/fsharp-webapi)
+- [Introduction to F#](../../../docs/dotnet/intro-to-fs)
+- [Entity Framework with F#](../../../docs/dotnet/fs-entity-framework)
+- [Introduction to Unit Testing](../../../docs/dotnet/unit-testing-intro)
+- [Testing Private Members](../../../docs/dotnet/test-private-members)
+
+> Nabeel Valley
