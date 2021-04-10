@@ -1,3 +1,7 @@
+An important part of writing any software is testing. Unit testing is an automated testing method in which we test individual components of our software to verify that their behaviour aligns with our expectations
+
+This post will take a look at the process of setting up a new F# library and two methods of configuring XUnit to test your project's code
+
 - [Create a Project](#create-a-project)
 - [Adding Tests](#adding-tests)
   - [Method 1: Create Tests in Separate Project](#method-1-create-tests-in-separate-project)
@@ -5,7 +9,7 @@
 - [Test Files](#test-files)
   - [Fact](#fact)
   - [Theory](#theory)
-  - [Running Tests](#running-tests)
+- [Running Tests](#running-tests)
 
 # Create a Project
 
@@ -155,7 +159,7 @@ let ``Say.hello -> "Hello name" `` () =
     Assert.Equal(expected, result)
 ```
 
-F# allows us to name our functions using special characters provided they're enclosed in backticks as seen above. Naming test functions this way allows them to be more discriptive than more traditional variable names. 
+F# allows us to name our functions using special characters provided they're enclosed in backticks as seen above. Naming test functions this way allows them to be more discriptive than more traditional variable names
 
 Additionally, there's the normal XUnit test setup which includes calling our test function with some input and asserting something about it using `Assert.Equal` from `XUnit`
 
@@ -204,7 +208,7 @@ let ``Say.hello -> concantenated string`` (name:string, expected: string) =
     Assert.Equal(expected, result)
 ```
 
-## Running Tests
+# Running Tests
 
 In order to run tests we can use the `dotnet-cli`. Depending on the method used you can run your test from the project's root directory using the following command:
 
