@@ -10,8 +10,8 @@ const About = ({ location, data }) => (
   <Layout>
     <ContentPage
       location={location}
-      title="About"
-      subtitle="Software Developer, Student"
+      title="Nabeel Valley"
+      subtitle="i make things on the internet"
     >
       <Meta
         title="About Me | Nabeel Valley"
