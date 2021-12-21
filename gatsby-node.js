@@ -57,25 +57,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'))
 
-      const browser = await chromium.puppeteer.launch({
-        args: [...chromium.args, '--single-process'],
-        executablePath: await chromium.executablePath,
-        headless: true,
-        ignoreHTTPSErrors: true,
-        timeout: 0,
-      })
-
-      const ogImage =
-        '/' +
-        (await generatePostImage(
-          browser,
-          meta.title,
-          meta.subtitle || meta.description,
-          meta.image
-        ))
-
       const fieldData = {
-        ogImage,
         ...meta,
         html,
         slug,
