@@ -4,6 +4,12 @@
   base = ""
 
 [[redirects]]
+  from = "https://nabeelvalley.netlify.app/*"
+  to = "https://nabeelvalley.co.za/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/home"
   to = "/"
   status = 301
